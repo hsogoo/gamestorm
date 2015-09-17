@@ -44,7 +44,7 @@
         </#if>
     </#if>
 
-	<ul class="pagination">
+	<ul class="pagination pull-right">
 		<#if startPage gt 1>
 			<li><a href="javascript:void(0);" onclick="${function}(${startPage-1})">Prev</a></li>
 		<#else>
@@ -54,9 +54,9 @@
 		  <li <#if currentPage?number == i>class="active"</#if>><a href="javascript:void(0);" onclick="${function}(${i})">${i}</a></li>
 	 	</#list>
 	 	<#if endPage lt totalPage?number>
-			<li><a href="javascript:void(0);" onclick="${function}(${endPage+1})">Prev</a></li>
+			<li><a href="javascript:void(0);" onclick="${function}(${endPage+1})">Next</a></li>
 		<#else>
-			<li class="disabled"><a href="javascript:void(0);" onclick="${function}(${totalPage})">Prev</a></li>
+			<li class="disabled"><a href="javascript:void(0);" onclick="${function}(${totalPage})">Next</a></li>
 		</#if>
 	</ul>
 </#macro>

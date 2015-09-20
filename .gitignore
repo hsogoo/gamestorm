@@ -40,4 +40,12 @@ $RECYCLE.BIN/
 .AppleDesktop
 Network Trash Folder
 Temporary Items
+
+#Ignore idea over file or category
+/target/
 .apdisk
+.idea/
+gamestorm.iml
+webapp/WEB-INF/classes/
+webapp/WEB-INF/lib/
+

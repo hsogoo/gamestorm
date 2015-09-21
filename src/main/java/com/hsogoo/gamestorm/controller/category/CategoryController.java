@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -22,16 +23,20 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    @RequestMapping("/")
+    @RequestMapping("/manage")
     public String getCategoryPage(Model model){
-        return "backend/categoryManager";
+        return "backend/category/categoryManager";
     }
 
     @RequestMapping("/categoryList")
     @ResponseBody
-    public ModelAndView getCategoryList(ModelAndView model){
+    public ModelAndView getCategoryList(ModelAndView model,@RequestParam(value ="page") String page){
         List<Category> categoryList = categoryService.getAllCategoryList();
-        model.setViewName("backend/category/categoryList");
+        model.setViewName("/backend/category/categoryList");
+        model.addObject("currentPage", page);
+        //TODO:分页查询
+        model.addObject("totalPage", categoryList.size());
+        model.addObject("gameList", categoryList);
         return model;
     }
 }

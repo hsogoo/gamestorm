@@ -130,7 +130,7 @@
 	          <li class="has_sub"><a <#if menuId=="2">class="open"</#if> href="#"><i class="icon-list-alt"></i> 游戏设置<span class="pull-right"><i class="icon-chevron-right"></i></span></a>
 	            <ul>
 	              <li><a href="/backend/game/manage">游戏管理</a></li>
-	              <li><a href="/backend/category">类别管理</a></li>
+	              <li><a href="/backend/category/manage">类别管理</a></li>
 	              <li><a href="widgets3.html">游戏类别管理</a></li>
 	            </ul>
 	          </li>  

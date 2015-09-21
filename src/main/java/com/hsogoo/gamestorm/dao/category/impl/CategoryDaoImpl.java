@@ -3,12 +3,14 @@ package com.hsogoo.gamestorm.dao.category.impl;
 import com.hsogoo.gamestorm.dao.BaseDao;
 import com.hsogoo.gamestorm.dao.category.CategoryDao;
 import com.hsogoo.gamestorm.vo.Category;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * Created by weile on 15/9/21.
  */
+@Repository
 public class CategoryDaoImpl extends BaseDao implements CategoryDao{
 
     public List<Category> getAllCategoryList() {

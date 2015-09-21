@@ -23,7 +23,7 @@
 			</div>
 		</div>
 	</div>
-	<div id="gameList" class="row"></div>
+	<div id="gameList"></div>
 </div>
 
 </@page>

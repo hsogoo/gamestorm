@@ -1,4 +1,5 @@
-<#include "macro_pagination.ftl">
+<#include "../macro_pagination.ftl">
+<#if gameList??&&gameList?size gt 0>
 <div class="row">
 	
 	<#-- strat-->
@@ -27,50 +28,30 @@
 	            </tr>
 	          </thead>
 	          <tbody>
+	          <#list gameList as game>
 	            <tr>
-	              <td>1</td>
-	              <td>Ashok</td>
-	              <td>India</td>
-	              <td>23</td>
-	              <td>B.Tech</td>
+	              <td>${game_index}</td>
+	              <td>${game.gameName}</td>
+	              <td><img src="${game.iconImage}" width="50" height="50"></td>
+	              <td><img src="${game.displayImage}" width="50" height="50"></td>
+	              <td><img src="${game.bannerImage}" width="50" height="50"></td>
+	              <td><#if game.status><span class="label label-sm label-success">Active</span><#else><span class="label label-sm label-danger">Stoped</span></#if></td>
+	              <td><a class="btn default btn-xs purple" href="javascript:;"><i class="fa fa-edit"></i> Edit </a></td>
 	            </tr>
-	            <tr>
-	              <td>2</td>
-	              <td>Kumarasamy</td>
-	              <td>USA</td>
-	              <td>22</td>
-	              <td>BE</td>
-	            </tr>
-	            <tr>
-	              <td>3</td>
-	              <td>Babura</td>
-	              <td>UK</td>
-	              <td>43</td>
-	              <td>PhD</td>
-	            </tr>
-	            <tr>
-	              <td>4</td>
-	              <td>Ravi Kumar</td>
-	              <td>China</td>
-	              <td>73</td>
-	              <td>PUC</td>
-	            </tr>
-	            <tr>
-	              <td>5</td>
-	              <td>Santhosh</td>
-	              <td>Japan</td>
-	              <td>43</td>
-	              <td>M.Tech</td>
-	            </tr>                                                                        
+	          </#list>
 	          </tbody>
 	        </table>
 	        <div class="widget-foot">
-	        	<@pagination totalPage="10" currentPage="3" function="queryForUser"></@pagination>
+	        	<@pagination totalPage="${totalPage}" currentPage="${currentPage}" function="queryForUser"></@pagination>
 	          <div class="clearfix"></div> 
 	        </div>
 	      </div>
 	    </div>
 	  </div>
 	<#--end-->
-	
+<#else>
+	<div class="col-md-12">
+	 	<div class="alert alert-warning" style="margin-top:10px;">暂无游戏，请先添加游戏</div>
+	</div>
+</#if>	
 	</div>

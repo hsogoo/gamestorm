@@ -1,5 +1,5 @@
 <#include "../page_macro.ftl">
-<@page title="游戏管理" keywords="keywords" description="description" type="base" pageCss="/static/style/backend/login.css" pageJs="/static/js/backend/order.js" menuId="3">
+<@page title="游戏管理" keywords="keywords" description="description" type="base" pageCss="/static/style/backend/login.css" pageJs="/static/js/backend/game.js" menuId="3">
 
 <div class="page-head">
     <h2 class="pull-left"><i class="icon-table"></i> 订单管理</h2>

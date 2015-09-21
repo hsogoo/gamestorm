@@ -42,9 +42,10 @@ Network Trash Folder
 Temporary Items
 
 #Ignore idea over file or category
-/target/
+#target/
 .apdisk
 .idea/
+.settings/
 gamestorm.iml
 webapp/WEB-INF/classes/
 webapp/WEB-INF/lib/

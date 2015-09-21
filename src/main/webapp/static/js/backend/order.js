@@ -1,4 +1,6 @@
 $(document).ready(function() {
+	//
+	ComponentsPickers.init();
 	queryForUser(1);
 });
 

@@ -13,7 +13,29 @@
     <div class="clearfix"></div>
 </div>
 
-<div class="container" id="orderList">
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="btn-group">
+				<button class="btn green" id="sample_editable_1_new">
+					Add New <i class="fa fa-plus"></i>
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-group">
+			<div class="col-md-3">
+				<div data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="9-09-2015" class="input-group input-medium date date-picker">
+					<input type="text" readonly="" class="form-control">
+					<span class="input-group-btn">
+					<button type="button" class="btn default"><i class="fa fa-calendar"></i></button>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="orderList"></div>
 </div>
 
 </@page>

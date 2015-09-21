@@ -9,10 +9,13 @@
   <meta name="${keywords}" />
   <meta name="${description}" />
   <!-- Stylesheets -->
-  
-  <link rel="stylesheet" href="/static/style/bootstrap.css">
+
   <!-- Font awesome icon -->
   <link rel="stylesheet" href="/static/style/font-awesome.css"> 
+  <link rel="stylesheet" href="/static/style/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/style/bootstrap.css">
+  <link rel="stylesheet" href="/static/style/components.css"> 
+  <link rel="stylesheet" href="/static/style/plugins.css"> 
   <!-- jQuery UI -->
   <link rel="stylesheet" href="/static/style/jquery-ui.css"> 
   <!-- Calendar -->
@@ -22,6 +25,7 @@
   <!-- Star rating -->
   <link rel="stylesheet" href="/static/style/rateit.css">
   <!-- Date picker -->
+  <link rel="stylesheet" href="/static/style/bootstrap-datepicker3.min.css">
   <link rel="stylesheet" href="/static/style/bootstrap-datetimepicker.min.css">
   <!-- CLEditor -->
   <link rel="stylesheet" href="/static/style/jquery.cleditor.css"> 
@@ -179,16 +183,11 @@
 <script src="/static/js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
 <script src="/static/js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
 
-<!-- jQuery Flot -->
-<script src="/static/js/excanvas.min.js"></script>
-<script src="/static/js/jquery.flot.js"></script>
-<script src="/static/js/jquery.flot.resize.js"></script>
-<script src="/static/js/jquery.flot.pie.js"></script>
-<script src="/static/js/jquery.flot.stack.js"></script>
-
 <script src="/static/js/sparklines.js"></script> <!-- Sparklines -->
 <script src="/static/js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+<script src="/static/js/bootstrap-datepicker.min.js"></script> <!-- Date picker -->
 <script src="/static/js/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+<script src="/static/js/components-pickers.js"></script> <!-- Date picker -->
 <script src="/static/js/bootstrap-switch.min.js"></script> <!-- Bootstrap Toggle -->
 <script src="/static/js/filter.js"></script> <!-- Filter for support page -->
 <script src="/static/js/charts.js"></script> <!-- Charts & Graphs -->

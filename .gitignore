@@ -42,7 +42,7 @@ Network Trash Folder
 Temporary Items
 
 #Ignore idea over file or category
-#target/
+target/
 .apdisk
 .idea/
 .settings/

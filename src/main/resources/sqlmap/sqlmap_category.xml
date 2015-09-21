@@ -2,6 +2,35 @@
 <!DOCTYPE sqlMap
 PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
 "http://ibatis.apache.org/dtd/sql-map-2.dtd">
-<sqlMap namespace="user">
+<sqlMap namespace="category">
+    <select id="gs_category.getAllCategoryList" resultClass="com.hsogoo.gamestorm.vo.Category">
+        select
+        id,
+        category_name categoryName,
+        status
+        from gs_category
+    </select>
+
+    <insert id="gs_category.insertCategory" parameterClass="com.hsogoo.gamestorm.vo.Category" >
+      insert into gs_category (category_name,status) VALUES (#categoryName#,#status#);
+    </insert>
+
+    <update id="gs_category.updateCategory" parameterClass="com.hsogoo.gamestorm.vo.Category" >
+      UPDATE  gs_category
+        <dynamic prepend="set">
+            <isNotNull prepend="," property="categoryName">category_name=#categoryName#</isNotNull>
+            <isNotNull prepend="," property="status">status=#status#</isNotNull>
+        </dynamic>
+        where id = #id#
+    </update>
+
+    <select id="gs_category.getCategory" parameterClass="long" resultClass="com.hsogoo.gamestorm.vo.Category">
+        select
+        id,
+        category_name categoryName,
+        status
+        from gs_category
+        where id = #id#
+    </select>
 
 </sqlMap>

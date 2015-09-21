@@ -13,8 +13,8 @@
   <!-- Font awesome icon -->
   <link rel="stylesheet" href="/static/style/font-awesome.css"> 
   <link rel="stylesheet" href="/static/style/font-awesome.min.css">
-  <link rel="stylesheet" href="/static/style/bootstrap.css">
   <link rel="stylesheet" href="/static/style/components.css"> 
+  <link rel="stylesheet" href="/static/style/bootstrap.css">
   <link rel="stylesheet" href="/static/style/plugins.css"> 
   <!-- jQuery UI -->
   <link rel="stylesheet" href="/static/style/jquery-ui.css"> 
@@ -129,14 +129,14 @@
 	          </li>
 	          <li class="has_sub"><a <#if menuId=="2">class="open"</#if> href="#"><i class="icon-list-alt"></i> 游戏设置<span class="pull-right"><i class="icon-chevron-right"></i></span></a>
 	            <ul>
-	              <li><a href="widgets1.html">游戏管理</a></li>
-	              <li><a href="widgets2.html">类别管理</a></li>
+	              <li><a href="/backend/game">游戏管理</a></li>
+	              <li><a href="/backend/category">类别管理</a></li>
 	              <li><a href="widgets3.html">游戏类别管理</a></li>
 	            </ul>
 	          </li>  
-	          <li class="has_sub"><a <#if menuId=="3">class="open"</#if> href="#"><i class="icon-file-alt"></i> 商品管理 <span class="pull-right"><i class="icon-chevron-right"></i></span></a>
+	          <li ><a <#if menuId=="3">class="open"</#if> href="#"><i class="icon-file-alt"></i> 商品管理 <span class="pull-right"><i class="icon-chevron-right"></i></span></a>
 	          </li> 
-	          <li class="has_sub"><a <#if menuId=="4">class="open"</#if> href="/backend/order"><i class="icon-file-alt"></i> 订单管理  <span class="pull-right"><i class="icon-chevron-right"></i></span></a>
+	          <li ><a <#if menuId=="4">class="open"</#if> href="/backend/order"><i class="icon-file-alt"></i> 订单管理  <span class="pull-right"><i class="icon-chevron-right"></i></span></a>
 	          </li>                             
 	          <li><a <#if menuId=="5">class="open"</#if> href="charts.html"><i class="icon-bar-chart"></i> 用户管理</a></li> 
 	          <li><a <#if menuId=="6">class="open"</#if> href="tables.html"><i class="icon-table"></i> 帮助中心</a></li>

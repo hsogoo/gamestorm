@@ -49,4 +49,5 @@ target/
 gamestorm.iml
 webapp/WEB-INF/classes/
 webapp/WEB-INF/lib/
+src/main/resources/config/jdbc.properties
 

@@ -51,4 +51,12 @@ public class CategoryController {
         ModelAndView model = new ModelAndView("redirect:/backend/category/manage");
         return model;
     }
+
+    @RequestMapping("/doSaveCategory")
+    public ModelAndView doSaveCategory(Category category){
+        categoryService.updateCategory(category);
+        ModelAndView model = new ModelAndView("redirect:/backend/category/manage");
+        return model;
+    }
+
 }

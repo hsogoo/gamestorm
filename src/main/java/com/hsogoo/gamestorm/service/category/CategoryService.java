@@ -22,4 +22,11 @@ public interface CategoryService {
      * @return
      */
     int addCategory(Category category);
+
+    /**
+     * 修改更新保存分类信息
+     * @param category
+     * @return
+     */
+    int updateCategory(Category category);
 }

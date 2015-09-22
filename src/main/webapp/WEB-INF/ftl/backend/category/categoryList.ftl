@@ -29,9 +29,10 @@
 	          <#list categoryList as category>
 	            <tr>
 	              <td>${category_index+1}</td>
-	              <td>${category.categoryName}</td>
-	              <td><#if category.status><span class="label label-sm label-success">Active</span><#else><span class="label label-sm label-danger">Stoped</span></#if></td>
-	              <td><a class="btn default btn-xs purple" href="javascript:;"><i class="fa fa-edit"></i> Edit </a></td>
+	              <td><input name="${category.id}_category.categoryName" value="${category.categoryName}"/></td>
+	              <td> <input type="radio" name="${category.id}_category.status" value="1" <#if category.status>checked="checked"</#if>/>&nbsp;&nbsp;<span class="label label-sm label-success">Active</span></td>
+                  <td> <input type="radio" name="${category.id}_category.status" value="0" <#if !category.status>checked="checked"</#if>/>&nbsp;&nbsp;<span class="label label-sm label-danger">Stoped</span></td>
+	              <td><a class="btn default btn-xs purple" href="javascript:;" onclick="saveCategory(${category.id});"><i class="fa fa-edit"></i> Save </a></td>
 	            </tr>
 	          </#list>
 	          </tbody>

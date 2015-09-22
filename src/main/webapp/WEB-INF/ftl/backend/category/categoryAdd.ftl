@@ -1,5 +1,5 @@
 <#include "../page_macro.ftl">
-<@page title="游戏管理" keywords="keywords" description="description" type="base" pageCss="/static/style/backend/login.css" pageJs="/static/js/backend/category.js" menuId="2">
+<@page title="分类管理" keywords="keywords" description="description" type="base" pageCss="/static/style/backend/login.css" pageJs="/static/js/backend/category.js" menuId="2">
 
 <div class="page-head">
     <h2 class="pull-left"><i class="icon-table"></i> 分类管理</h2>
@@ -24,7 +24,7 @@
 					</div>
 				</div>
 				<div class="portlet-body form">
-					<form role="form" class="form-horizontal" action="/backend/category/doAddCategory" id="addCategoryForm" method="post">
+					<form role="form" class="form-horizontal" action="/backend/category/doSaveCategory" id="addCategoryForm" method="post">
 						<div class="form-body">
 							<div class="form-group">
 								<label class="col-md-4 control-label">分类名称</label>

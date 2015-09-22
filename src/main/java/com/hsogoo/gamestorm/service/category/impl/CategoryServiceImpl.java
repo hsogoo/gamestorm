@@ -24,4 +24,8 @@ public class CategoryServiceImpl implements CategoryService {
     public int addCategory(Category category) {
         return categoryDao.insert(category);
     }
+
+    public int updateCategory(Category category) {
+        return categoryDao.update(category);
+    }
 }

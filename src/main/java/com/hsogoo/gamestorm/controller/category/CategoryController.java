@@ -36,7 +36,7 @@ public class CategoryController {
         model.addObject("currentPage", page);
         //TODO:分页查询
         model.addObject("totalPage", categoryList.size());
-        model.addObject("gameList", categoryList);
+        model.addObject("categoryList", categoryList);
         return model;
     }
 }

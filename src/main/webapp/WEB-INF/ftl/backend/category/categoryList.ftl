@@ -1,5 +1,6 @@
 <#include "../macro_pagination.ftl">
 <#if categoryList??&&categoryList?size gt 0>
+${categoryList.size}
 <div class="row">
 	
 	<#-- strat-->
@@ -7,7 +8,7 @@
 	<div class="col-md-12">
 	    <div class="widget">
 	    <div class="widget-head">
-	      <div class="pull-left">游戏列表</div>
+	      <div class="pull-left">分类列表</div>
 	      <div class="widget-icons pull-right">
 	        <a class="wminimize" href="#"><i class="icon-chevron-up"></i></a> 
 	        <a class="wclose" href="#"><i class="icon-remove"></i></a>

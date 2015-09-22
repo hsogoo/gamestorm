@@ -1,6 +1,6 @@
 <#include "../macro_pagination.ftl">
 <#if categoryList??&&categoryList?size gt 0>
-${categoryList.size}
+
 <div class="row">
 	
 	<#-- strat-->
@@ -26,11 +26,11 @@ ${categoryList.size}
 	            </tr>
 	          </thead>
 	          <tbody>
-	          <#list categoryList as categoey>
+	          <#list categoryList as category>
 	            <tr>
-	              <td>${categoey_index}</td>
-	              <td>${categoey.categoeyName}</td>
-	              <td><#if categoey.status><span class="label label-sm label-success">Active</span><#else><span class="label label-sm label-danger">Stoped</span></#if></td>
+	              <td>${category_index}</td>
+	              <td>${category.categoryName}</td>
+	              <td><#if category.status><span class="label label-sm label-success">Active</span><#else><span class="label label-sm label-danger">Stoped</span></#if></td>
 	              <td><a class="btn default btn-xs purple" href="javascript:;"><i class="fa fa-edit"></i> Edit </a></td>
 	            </tr>
 	          </#list>

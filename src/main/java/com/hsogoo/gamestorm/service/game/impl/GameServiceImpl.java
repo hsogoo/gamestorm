@@ -23,5 +23,9 @@ public class GameServiceImpl implements GameService{
 	public List<Game> getAllGameList() {
 		return gameDao.getAllGameList();
 	}
+	@Override
+	public void addGame(Game game) {
+		gameDao.addGame(game);
+	}
 
 }

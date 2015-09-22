@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -26,7 +25,7 @@ public class GameController {
 	private GameService gameService;
 	
 	@RequestMapping("/manage")
-	public String getGamePage(Model model){
+	public String getGamePage(ModelAndView model){
 		return "/backend/game/gameManager";
 	}
 	
@@ -39,6 +38,18 @@ public class GameController {
 		//TODO:分页查询
 		model.addObject("totalPage", gameList.size());
 		model.addObject("gameList", gameList);
+		return model;
+	}
+	
+	@RequestMapping("/addGame")
+	public String addGamePage(ModelAndView model){
+		return "/backend/game/gameAdd";
+	}
+	
+	@RequestMapping("/doAddGame")
+	public ModelAndView doAddGame(Game game){
+		gameService.addGame(game);
+		ModelAndView model = new ModelAndView("redirect:/backend/game/manage");
 		return model;
 	}
 	

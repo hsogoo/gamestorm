@@ -13,5 +13,12 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
 		status
 		from gs_game 
 	</select>
+	
+	<insert id="gs_game.addGame" parameterClass="map">
+		insert into gs_game
+		(game_name,game_icon,game_display,game_banner)
+		values
+		(#gameName#,#iconImage#,#displayImage#,#bannerImage#)
+	</insert>
 
 </sqlMap>

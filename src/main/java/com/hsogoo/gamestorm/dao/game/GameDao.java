@@ -11,5 +11,7 @@ import com.hsogoo.gamestorm.vo.Game;
  */
 public interface GameDao {
 
-	List<Game> getAllGameList();
+	public List<Game> getAllGameList();
+
+	public void addGame(Game game);
 }

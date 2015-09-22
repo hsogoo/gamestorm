@@ -30,7 +30,7 @@
 	          <tbody>
 	          <#list gameList as game>
 	            <tr>
-	              <td>${game_index}</td>
+	              <td>${game_index+1}</td>
 	              <td>${game.gameName}</td>
 	              <td><img src="${game.iconImage}" width="35" height=35"></td>
 	              <td><img src="${game.displayImage}" width="100" height="50"></td>

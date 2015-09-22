@@ -15,6 +15,8 @@ public interface GameService {
 	 * 获取所有的游戏列表
 	 * @return
 	 */
-	List<Game> getAllGameList();
+	public List<Game> getAllGameList();
+
+	public void addGame(Game game);
 	
 }

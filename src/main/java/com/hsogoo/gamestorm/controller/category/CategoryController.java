@@ -39,4 +39,16 @@ public class CategoryController {
         model.addObject("categoryList", categoryList);
         return model;
     }
+
+    @RequestMapping("/addCategory")
+    public String addCategoryPage(ModelAndView model){
+        return "/backend/category/categoryAdd";
+    }
+
+    @RequestMapping("/doAddCategory")
+    public ModelAndView doAddCategory(Category category){
+        categoryService.addCategory(category);
+        ModelAndView model = new ModelAndView("redirect:/backend/category/manage");
+        return model;
+    }
 }

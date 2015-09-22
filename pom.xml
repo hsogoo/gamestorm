@@ -6,7 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>war</name>
+	<name>gamestorm webapp</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -152,7 +152,7 @@
 
 
 	<build>
-		<finalName>gamestorm manager Webapp</finalName>
+		<finalName>war</finalName>
 		<plugins>
 
 			<plugin>

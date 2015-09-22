@@ -33,7 +33,7 @@
 	              <td>${game_index}</td>
 	              <td>${game.gameName}</td>
 	              <td><img src="${game.iconImage}" width="35" height=35"></td>
-	              <td><img src="${game.displayImage}" width="25" height="50"></td>
+	              <td><img src="${game.displayImage}" width="100" height="50"></td>
 	              <td><img src="${game.bannerImage}" width="150" height="50"></td>
 	              <td><#if game.status><span class="label label-sm label-success">Active</span><#else><span class="label label-sm label-danger">Stoped</span></#if></td>
 	              <td><a class="btn default btn-xs purple" href="javascript:;"><i class="fa fa-edit"></i> Edit </a></td>

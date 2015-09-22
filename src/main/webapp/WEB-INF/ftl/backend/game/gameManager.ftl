@@ -21,6 +21,16 @@
 					添加新游戏  <i class="fa fa-plus"></i>
 				</button>
 			</div>
+			<div class="btn-group">
+				<button class="btn purple" id="addNewGame" onclick="addGame();">
+					游戏类别管理  <i class="fa fa-plus"></i>
+				</button>
+			</div>
+			<div class="btn-group">
+				<button class="btn blue-madison" id="addNewGame" onclick="addGame();">
+					游戏服务器管理  <i class="fa fa-plus"></i>
+				</button>
+			</div>
 		</div>
 	</div>
 	<div id="gameList"></div>

@@ -16,4 +16,10 @@ public interface CategoryService {
      */
     List<Category> getAllCategoryList();
 
+    /**
+     * 添加分类信息
+     * @param category
+     * @return
+     */
+    int addCategory(Category category);
 }

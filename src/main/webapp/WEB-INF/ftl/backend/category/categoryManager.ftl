@@ -17,7 +17,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="btn-group">
-				<button class="btn green" id="sample_editable_1_new">
+				<button class="btn green" id="addNewCategory" onclick="addCategory();">
 					添加新分类  <i class="fa fa-plus"></i>
 				</button>
 			</div>

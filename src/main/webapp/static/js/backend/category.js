@@ -9,3 +9,15 @@ function queryForCategory(page){
 		$("#categoryList").html(data);
 	});
 }
+
+function addCategory(){
+	window.location.href = "/backend/category/addCategory";
+}
+
+function submitAddCategory(){
+	$("#addGameForm").submit();
+}
+
+function cancelAddCategory(){
+	window.location.href = "/backend/category/manage";
+}

@@ -24,7 +24,7 @@
 					</div>
 				</div>
 				<div class="portlet-body form">
-					<form role="form" class="form-horizontal" action="/backend/category/doSaveCategory" id="addCategoryForm" method="post">
+					<form role="form" class="form-horizontal" action="/backend/category/doAddCategory" id="addCategoryForm" method="post">
 						<div class="form-body">
 							<div class="form-group">
 								<label class="col-md-4 control-label">分类名称</label>

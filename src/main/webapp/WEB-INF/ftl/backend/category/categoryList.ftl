@@ -30,7 +30,7 @@
 	          <#list categoryList as category>
 	            <tr>
 	              <td>${category_index+1}</td>
-	              <td><input name="categoryName" value="${category.categoryName}" class="form-control input-medium"/></td>
+	              <td><input name="categoryName_${category.id}" value="${category.categoryName}" class="form-control input-medium"/></td>
 	              <td>
 	              	<span><input type="radio" name="status_${category.id}" value="1" <#if category.status>checked="checked"</#if>/>激活</span>
 	              	<span><input type="radio" name="status_${category.id}" value="0" <#if !category.status>checked="checked"</#if>/>暂停</span>

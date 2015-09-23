@@ -22,10 +22,10 @@ function cancelAddCategory(){
 	window.location.href = "/backend/category/manage";
 }
 function saveCategory(categoryId){
-	var status = $("input[name='"+categoryId+"_category.status"+"']:checked").val();
-	var categoryName = $("input[name='"+categoryId+"_category.categoryName"+"']").val();
+	var status = $("input[name='status_"+categoryId+"']:checked").val();
+	var categoryName = $("input[name='categoryName_"+categoryId+"']").val();
 	var url = "/backend/category/doSaveCategory";
-	var param={"category.status":status,"category.categoryName":categoryName,"category.id":categoryId};
+	var param={"status":status,"categoryName":categoryName,"id":categoryId};
 	$.post(url,param,function(data){
 		window.location.href = "/backend/category/manage";
 	});

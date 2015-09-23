@@ -32,8 +32,8 @@
 	              <td>${category_index+1}</td>
 	              <td><input name="categoryName" value="${category.categoryName}" class="form-control input-medium"/></td>
 	              <td>
-	              	<span><input type="radio" name="status" value="1" <#if category.status>checked="checked"</#if>/>激活</span>
-	              	<span><input type="radio" name="status" value="0" <#if !category.status>checked="checked"</#if>/>暂停</span>
+	              	<span><input type="radio" name="status_${category.id}" value="1" <#if category.status>checked="checked"</#if>/>激活</span>
+	              	<span><input type="radio" name="status_${category.id}" value="0" <#if !category.status>checked="checked"</#if>/>暂停</span>
 	              </td>
                       <td><#if category.status><span class="label label-sm label-success">Active</span><#else><span class="label label-sm label-danger">Stoped</span></#if></td>
 	              <td><a class="btn default btn-xs purple" href="javascript:;" onclick="saveCategory(${category.id});"><i class="fa fa-edit"></i> Save </a></td>

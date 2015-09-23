@@ -31,7 +31,7 @@
 	          <#list gameList as game>
 	            <tr>
 	              <td>
-	              <input type="checkbox" class="icheck">
+	              <span class="uni"><input type="checkbox"></span>
 	              </td>
 	              <td>${game.gameName}</td>
 	              <td><img src="${game.iconImage}" width="35" height=35"></td>

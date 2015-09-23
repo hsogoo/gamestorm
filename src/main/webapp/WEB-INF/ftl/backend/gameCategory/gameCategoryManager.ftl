@@ -41,7 +41,14 @@
 							<div class="form-group">
 								<label class="control-label col-md-3">选择游戏</label>
 								<div class="col-md-4">
-									<div class="select2-container form-control input-medium select2me" id="s2id_autogen1"><a tabindex="-1" class="select2-choice select2-default" href="javascript:void(0)">   <span class="select2-chosen" id="select2-chosen-2">Select...</span><abbr class="select2-search-choice-close"></abbr>   <span role="presentation" class="select2-arrow"><b role="presentation"></b></span></a><label class="select2-offscreen" for="s2id_autogen2"></label><input type="text" role="button" aria-haspopup="true" class="select2-focusser select2-offscreen" aria-labelledby="select2-chosen-2" id="s2id_autogen2"></div><select data-placeholder="Select..." class="form-control input-xlarge select2me select2-offscreen" tabindex="-1" title="">
+									<div class="select2-container form-control input-medium select2me" id="s2id_autogen1">
+									<a tabindex="-1" class="select2-choice select2-default" href="javascript:void(0)">
+									<span class="select2-chosen" id="select2-chosen-2">Select...</span>
+									<abbr class="select2-search-choice-close"></abbr> 
+									<span role="presentation" class="select2-arrow"><b role="presentation"></b></span></a><label class="select2-offscreen" for="s2id_autogen2"></label>
+									<input type="text" role="button" aria-haspopup="true" class="select2-focusser select2-offscreen" aria-labelledby="select2-chosen-2" id="s2id_autogen2">
+									</div>
+									<select data-placeholder="Select..." class="form-control input-medium select2me select2-offscreen" tabindex="-1" title="">
 										<option value=""></option>
 										<option value="AL">Alabama</option>
 										<option value="WY">Wyoming</option>
@@ -51,7 +58,15 @@
 							<div class="form-group">
 								<label class="control-label col-md-3">选择类别</label>
 								<div class="col-md-4">
-									<div class="select2-container form-control input-medium select2me" id="s2id_autogen3"><a tabindex="-1" class="select2-choice select2-default" href="javascript:void(0)">   <span class="select2-chosen" id="select2-chosen-4">Select...</span><abbr class="select2-search-choice-close"></abbr>   <span role="presentation" class="select2-arrow"><b role="presentation"></b></span></a><label class="select2-offscreen" for="s2id_autogen4"></label><input type="text" role="button" aria-haspopup="true" class="select2-focusser select2-offscreen" aria-labelledby="select2-chosen-4" id="s2id_autogen4"></div><select data-placeholder="Select..." class="form-control input-large select2me select2-offscreen" tabindex="-1" title="">
+									<div class="select2-container form-control input-medium select2me" id="s2id_autogen3">
+									<a tabindex="-1" class="select2-choice select2-default" href="javascript:void(0)">   
+									<span class="select2-chosen" id="select2-chosen-4">Select...</span>
+									<abbr class="select2-search-choice-close"></abbr>   
+									<span role="presentation" class="select2-arrow"><b role="presentation"></b></span>
+									</a><label class="select2-offscreen" for="s2id_autogen4"></label>
+									<input type="text" role="button" aria-haspopup="true" class="select2-focusser select2-offscreen" aria-labelledby="select2-chosen-4" id="s2id_autogen4">
+									</div>
+									<select data-placeholder="Select..." class="form-control input-medium select2me select2-offscreen" tabindex="-1" title="">
 										<option value=""></option>
 										<option value="AL">Alabama</option>
 										<option value="WY">Wyoming</option>

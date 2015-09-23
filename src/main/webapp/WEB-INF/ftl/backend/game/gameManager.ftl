@@ -17,7 +17,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="btn-group">
-				<a href="#addNewGameModal" data-toggle="modal" class="btn green">游戏服务器管理 <i class="fa fa-plus"></i></a>
+				<a href="#addNewGameModal" data-toggle="modal" class="btn green">添加游戏 <i class="fa fa-plus"></i></a>
 			</div>
 			<div class="btn-group">
 				<button class="btn purple" id="addNewGame" onclick="addGame();">

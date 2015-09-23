@@ -39,7 +39,7 @@
 									<label class="col-md-4 control-label">分类名称</label>
 									<div class="col-md-6">
 										<input type="text" placeholder="分类名称" class="form-control input-medium" name="categoryName">
-										<span class="help-block">例如：益智，棋牌，竞技 </span>
+										<span class="help-block">例如：PowerLeveling、Item、gold </span>
 									</div>
 								</div>
 							</div>

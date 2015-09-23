@@ -13,9 +13,10 @@
   <!-- Font awesome icon -->
   <link rel="stylesheet" href="/static/style/font-awesome.css"> 
   <link rel="stylesheet" href="/static/style/font-awesome.min.css">
-  <link rel="stylesheet" href="/static/style/components.css"> 
   <link rel="stylesheet" href="/static/style/bootstrap.css">
+  <link rel="stylesheet" href="/static/style/components.css"> 
   <link rel="stylesheet" href="/static/style/plugins.css"> 
+  <link rel="stylesheet" href="/static/style/select2.css"> 
   <!-- jQuery UI -->
   <link rel="stylesheet" href="/static/style/jquery-ui.css"> 
   <!-- Calendar -->
@@ -131,7 +132,7 @@
 	            <ul>
 	              <li><a href="/backend/game/manage">游戏管理</a></li>
 	              <li><a href="/backend/category/manage">类别管理</a></li>
-	              <li><a href="widgets3.html">游戏类别管理</a></li>
+	              <li><a href="/backend/gameCategory/manage">游戏类别管理</a></li>
 	            </ul>
 	          </li>  
 	          <li ><a <#if menuId=="3">class="open"</#if> href="#"><i class="icon-file-alt"></i> 商品管理 <span class="pull-right"><i class="icon-chevron-right"></i></span></a>
@@ -178,6 +179,9 @@
 <!-- JS -->
 <script src="/static/js/jquery.js"></script> <!-- jQuery -->
 <script src="/static/js/bootstrap.js"></script> <!-- Bootstrap -->
+<script src="/static/js/bootstrap-select.min.js"></script> <!-- Bootstrap -->
+<script src="/static/js/select2.min.js"></script> <!-- Bootstrap -->
+<script src="/static/js/components-dropdowns.js"></script> <!-- Bootstrap -->
 <script src="/static/js/jquery-ui-1.9.2.custom.min.js"></script> <!-- jQuery UI -->
 <script src="/static/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
 <script src="/static/js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->

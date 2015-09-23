@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	queryForCategory(1);
+	ComponentsDropdowns.init();
 });
 
 function queryForCategory(page){
@@ -10,17 +11,10 @@ function queryForCategory(page){
 	});
 }
 
-function addCategory(){
-	window.location.href = "/backend/category/addCategory";
-}
-
 function submitAddCategory(){
-	$("#addGameForm").submit();
+	$("#addCategoryForm").submit();
 }
 
-function cancelAddCategory(){
-	window.location.href = "/backend/category/manage";
-}
 function saveCategory(categoryId){
 	var status = $("input[name='status_"+categoryId+"']:checked").val();
 	var categoryName = $("input[name='categoryName_"+categoryId+"']").val();

@@ -11,14 +11,6 @@ function queryForGame(page){
 	});
 }
 
-function addGame(){
-	window.location.href = "/backend/game/addGame";
-}
-
 function submitAddGame(){
 	$("#addGameForm").submit();
-}
-
-function cancelAddGame(){
-	window.location.href = "/backend/game/manage";
 }

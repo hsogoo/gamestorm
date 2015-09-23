@@ -1,5 +1,5 @@
 <#include "../page_macro.ftl">
-<@page title="分类管理" keywords="keywords" description="description" type="base" pageCss="/static/style/backend/login.css" pageJs="/static/js/backend/category.js" menuId="3">
+<@page title="分类管理" keywords="keywords" description="description" type="base" pageCss="/static/style/backend/login.css" pageJs="/static/js/backend/category.js" menuId="2">
 
 <div class="page-head">
     <h2 class="pull-left"><i class="icon-table"></i> 分类管理</h2>
@@ -43,20 +43,12 @@
 									</div>
 								</div>
 							</div>
-							<div class="form-actions">
-								<div class="row">
-									<div class="col-md-offset-3 col-md-9">
-										<button class="btn green" type="submit" onclick="submitAddCategory();">添加</button>
-										<button class="btn default" type="button" onclick="cancelAddCategory();">取消</button>
-									</div>
-								</div>
-							</div>
 						</form>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button data-dismiss="modal" class="btn default" type="button">关闭</button>
-					<button class="btn blue" type="button">添加</button>
+					<button class="btn blue" type="button" onclick="submitAddCategory();">添加</button>
 				</div>
 			</div>
 			<!-- /.modal-content -->

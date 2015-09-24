@@ -21,4 +21,25 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
 		(#gameName#,#iconImage#,#displayImage#,#bannerImage#)
 	</insert>
 
+	<select id="gs_game.findFuzzyGames" parameterClass="map" resultClass="com.hsogoo.gamestorm.vo.Game">
+		select
+		id,
+		game_name gameName,
+		game_icon iconImage,
+		game_display displayImage,
+		game_banner bannerImage,
+		status
+		from gs_game
+		where status = 1
+		<dynamic prepend="and" open="(" close=")">
+			<isNotEmpty prepend="or" property="gameName">
+				game_name like '%#gameName#%'
+			</isNotEmpty>
+			<isNotEmpty prepend="or" property="id">
+				id like '#id#%'
+			</isNotEmpty>
+		</dynamic>
+	</select>
+
+
 </sqlMap>

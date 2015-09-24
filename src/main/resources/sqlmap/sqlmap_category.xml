@@ -33,4 +33,21 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
         where id = #id#
     </select>
 
+    <select id="gs_category.findFuzzyCategorys" parameterClass="map" resultClass="com.hsogoo.gamestorm.vo.Category">
+        select
+        id,
+        category_name categoryName,
+        status
+        from gs_category
+        where status = 1
+        <dynamic prepend="and" open="(" close=")">
+            <isNotEmpty prepend="or" property="categoryName">
+                category_name like '%#categoryName#%'
+            </isNotEmpty>
+            <isNotEmpty prepend="or" property="id">
+                id like '#id#%'
+            </isNotEmpty>
+        </dynamic>
+    </select>
+
 </sqlMap>

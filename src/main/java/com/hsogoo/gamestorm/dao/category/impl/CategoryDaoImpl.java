@@ -28,4 +28,8 @@ public class CategoryDaoImpl extends BaseDao implements CategoryDao{
     public Category get(Long id) {
         return (Category) getSqlMapClientTemplate().queryForObject("gs_category.getCategory", id);
     }
+
+    public List<Category> findFuzzyGameByGameName(String gameId, String gameName) {
+        return null;
+    }
 }

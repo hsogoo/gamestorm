@@ -18,12 +18,10 @@ import com.hsogoo.gamestorm.vo.Game;
 @Repository
 public class GameDaoImpl extends BaseDao implements GameDao{
 
-	@Override
 	public List<Game> getAllGameList() {
 		return this.getSqlMapClientTemplate().queryForList("gs_game.getAllGameList");
 	}
 
-	@Override
 	public void addGame(Game game) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("gameName", game.getGameName());
@@ -33,4 +31,7 @@ public class GameDaoImpl extends BaseDao implements GameDao{
 		this.getSqlMapClientTemplate().insert("gs_game.addGame",map);
 	}
 
+	public List<Game> findFuzzyGameByGameName(String gameId, String gameName) {
+		return null;
+	}
 }

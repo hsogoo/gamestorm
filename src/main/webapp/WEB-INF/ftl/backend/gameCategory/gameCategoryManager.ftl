@@ -38,10 +38,21 @@
 					 <div class="portlet-body form">
 					<form role="form" class="form-horizontal" action="/backend/gameCategory/doAddGameCategory" id="addGameCategoryForm" method="post">
 						<div class="form-body">
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Extra Large</label>
+                                <div class="col-md-4">
+                                    <div class="select2-container form-control input-xlarge select2me" id="s2id_autogen1"><a href="javascript:void(0)" class="select2-choice select2-default" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-2">Select...</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen2" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-2" id="s2id_autogen2"></div><select class="form-control input-xlarge select2me select2-offscreen" data-placeholder="Select..." tabindex="-1" title="">
+                                    <option value=""></option>
+                                    <option value="AL">Alabama</option>
+                                    <option value="WY">Wyoming</option>
+                                </select>
+                                </div>
+                            </div>
+							<!--
 							<div class="form-group">
 								<label class="control-label col-md-3">选择游戏</label>
 								<div class="col-md-4">
-									<div class="select2-container form-control input-medium select2me" id="s2id_autogen1">
+									<div class="select2-container form-control input-medium select2me">
 									<a tabindex="-1" class="select2-choice select2-default" href="javascript:void(0)">
 									<span class="select2-chosen" id="select2-chosen-2">Select...</span>
 									<abbr class="select2-search-choice-close"></abbr> 
@@ -55,6 +66,7 @@
 									</select>
 								</div>
 							</div>
+							-->
 							<div class="form-group">
 								<label class="control-label col-md-3">选择类别</label>
 								<div class="col-md-4">

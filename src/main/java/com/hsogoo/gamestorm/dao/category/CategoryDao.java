@@ -1,6 +1,7 @@
 package com.hsogoo.gamestorm.dao.category;
 
 import com.hsogoo.gamestorm.vo.Category;
+import com.hsogoo.gamestorm.vo.Game;
 
 import java.util.List;
 
@@ -35,4 +36,12 @@ public interface CategoryDao {
      * @return
      */
     Category get(Long id);
+
+    /**
+     * 根据游戏名称和id模糊查询分类信息
+     * @param gameId
+     * @param gameName
+     * @return
+     */
+    public List<Category> findFuzzyGameByGameName(String gameId,String gameName);
 }

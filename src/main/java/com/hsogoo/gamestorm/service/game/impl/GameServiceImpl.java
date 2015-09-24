@@ -19,11 +19,9 @@ public class GameServiceImpl implements GameService{
 	
 	@Autowired
 	private GameDao gameDao;
-	@Override
 	public List<Game> getAllGameList() {
 		return gameDao.getAllGameList();
 	}
-	@Override
 	public void addGame(Game game) {
 		gameDao.addGame(game);
 	}

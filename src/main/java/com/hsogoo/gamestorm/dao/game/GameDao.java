@@ -14,4 +14,11 @@ public interface GameDao {
 	public List<Game> getAllGameList();
 
 	public void addGame(Game game);
+
+	/**
+	 * 根据游戏名称和id模糊查询游戏信息
+	 * @param gameName
+	 * @return
+	 */
+	public List<Game> findFuzzyGameByGameName(String gameId,String gameName);
 }

@@ -14,7 +14,7 @@ public interface GameCategoryDao {
      * @param gameId
      * @return
      */
-    public Game findExsitCategorysGameByGameId(Long gameId);
+    public Game findExsitCategorysByGameId(Long gameId);
 
     /**
      * 查找已经存在且有效游戏结合的分类

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class GameCategoryDaoImpl implements GameCategoryDao {
 
-    public Game findExsitCategorysGameByGameId(Long gameId) {
+    public Game findExsitCategorysByGameId(Long gameId) {
         return null;
     }
 

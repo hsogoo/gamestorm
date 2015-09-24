@@ -20,5 +20,5 @@ public interface GameDao {
 	 * @param gameName
 	 * @return
 	 */
-	public List<Game> findFuzzyGameByGameName(String gameId,String gameName);
+	public List<Game> findFuzzyGamesByGameName(String gameId,String gameName);
 }

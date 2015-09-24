@@ -31,7 +31,7 @@ public class GameDaoImpl extends BaseDao implements GameDao{
 		this.getSqlMapClientTemplate().insert("gs_game.addGame",map);
 	}
 
-	public List<Game> findFuzzyGameByGameName(String gameId, String gameName) {
+	public List<Game> findFuzzyGamesByGameName(String gameId, String gameName) {
 		return null;
 	}
 }

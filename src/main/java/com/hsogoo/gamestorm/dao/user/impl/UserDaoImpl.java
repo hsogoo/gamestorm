@@ -14,7 +14,6 @@ import com.hsogoo.gamestorm.vo.User;
 @Repository
 public class UserDaoImpl extends BaseDao implements UserDao {
 	
-	@Override
 	public User getUserById(Long userId) {
 		return (User) this.getSqlMapClientTemplate().queryForObject("gs_user.getUserById", userId);
 	}

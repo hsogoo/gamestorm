@@ -1,0 +1,3 @@
+function submitAddGame(){
+	$("#addGameForm").submit();
+}

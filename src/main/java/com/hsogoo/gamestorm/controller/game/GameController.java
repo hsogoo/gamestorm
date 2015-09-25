@@ -25,8 +25,11 @@ public class GameController {
 	private GameService gameService;
 	
 	@RequestMapping("/manage")
-	public String getGamePage(ModelAndView model){
-		return "/backend/game/gameManager";
+	public ModelAndView getGamePage(ModelAndView model){
+		List<Game> gameList = gameService.getAllGameList();
+		model.setViewName("/backend/game/gameManager");
+		model.addObject("gameList", gameList);
+		return model;
 	}
 	
 	@RequestMapping("/gameList")

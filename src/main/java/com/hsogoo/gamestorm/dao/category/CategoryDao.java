@@ -21,7 +21,7 @@ public interface CategoryDao {
      * @param category
      * @return
      */
-    int insert(Category category);
+    void insert(Category category);
 
     /**
      * 更新修改分类信息
@@ -43,5 +43,5 @@ public interface CategoryDao {
      * @param categoryName
      * @return
      */
-    public List<Category> findFuzzyCategorysByGameName(String categoryId,String categoryName);
+    public List<Category> findFuzzyCategorys(String categoryId,String categoryName);
 }

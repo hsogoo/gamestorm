@@ -1,7 +1,6 @@
 package com.hsogoo.gamestorm.dao.gameCategory;
 
-import com.hsogoo.gamestorm.vo.Category;
-import com.hsogoo.gamestorm.vo.Game;
+import java.util.List;
 
 
 /**
@@ -10,18 +9,18 @@ import com.hsogoo.gamestorm.vo.Game;
 public interface GameCategoryDao {
 
     /**
-     * 查找已经存在且有效该分类集合的游戏
+     * 查找已经存在且有效该分类id集合
      * @param gameId
      * @return
      */
-    public Game findExsitCategorysGameByGameId(Long gameId);
+    public List<Long> findExsitCategoryIdsByGameId(Long gameId);
 
     /**
-     * 查找已经存在且有效游戏结合的分类
+     * 查找已经存在且有效游戏id集合
      * @param categoryId
      * @return
      */
-    public Category findExsitGamesByCategoryId(Long categoryId);
+    public List<Long> findExsitGameIdsByCategoryId(Long categoryId);
 
     /**
      * 新增游戏和分类对应关系数据
@@ -29,13 +28,15 @@ public interface GameCategoryDao {
      * @param categoryId
      * @return
      */
-    int insertGameAndCategoryRelation(Long gameId,Long categoryId);
+    void insertGameAndCategoryRelation(Long gameId,Long categoryId);
 
     /**
      * 更新游戏和分类对应关系数据
-     * @param gameId
-     * @param categoryId
+     * @param id 关联关系id
+     * @param gameId 游戏id
+     * @param categoryId 分类id
+     * @param status 状态
      * @return
      */
-    int updateGameAndCategoryRelation(Long gameId,Long categoryId);
+    int updateGameAndCategoryRelation(Long id,Long gameId, Long categoryId,Boolean status);
 }

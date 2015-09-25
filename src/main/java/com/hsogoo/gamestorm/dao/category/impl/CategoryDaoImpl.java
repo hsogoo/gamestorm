@@ -5,7 +5,9 @@ import com.hsogoo.gamestorm.dao.category.CategoryDao;
 import com.hsogoo.gamestorm.vo.Category;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by weile on 15/9/21.
@@ -17,8 +19,8 @@ public class CategoryDaoImpl extends BaseDao implements CategoryDao{
         return this.getSqlMapClientTemplate().queryForList("gs_category.getAllCategoryList");
     }
 
-    public int insert(Category category) {
-        return this.getSqlMapClientTemplate().update("gs_category.insertCategory",category);
+    public void insert(Category category) {
+        this.getSqlMapClientTemplate().insert("gs_category.insertCategory",category);
     }
 
     public int update(Category category) {
@@ -29,7 +31,10 @@ public class CategoryDaoImpl extends BaseDao implements CategoryDao{
         return (Category) getSqlMapClientTemplate().queryForObject("gs_category.getCategory", id);
     }
 
-    public List<Category> findFuzzyCategorysByGameName(String categoryId,String categoryName){
-        return null;
+    public List<Category> findFuzzyCategorys(String categoryId,String categoryName){
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("id",categoryId);
+        map.put("categoryName",categoryName);
+        return this.getSqlMapClientTemplate().queryForList("gs_category.findFuzzyCategorys",map);
     }
 }

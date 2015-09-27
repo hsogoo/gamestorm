@@ -66,7 +66,7 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label">选择游戏</label>
 										<div class="col-sm-6">
-											<select class="select2_category form-control input-medium" data-placeholder="选择游戏" tabindex="1">
+											<select class="select2_category form-control input-medium" data-placeholder="选择游戏" tabindex="1" id="game">
 												<option value="Category 1">Category 1</option>
 												<option value="Category 2">Category 2</option>
 												<option value="Category 3">Category 5</option>
@@ -78,7 +78,7 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label">选择游戏</label>
 										<div class="col-sm-6">
-											<select class="select2_category form-control input-medium" data-placeholder="选择类别" tabindex="2">
+											<select class="select2_category form-control input-medium" data-placeholder="选择类别" tabindex="2" id="category">
 												<option value="Category 1">Category 1</option>
 												<option value="Category 2">Category 2</option>
 												<option value="Category 3">Category 5</option>

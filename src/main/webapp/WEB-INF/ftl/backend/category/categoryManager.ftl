@@ -99,8 +99,10 @@
 							</tbody>
 							</table>
 							<#else>
-								<div class="col-md-12">
-								 	<div class="alert alert-warning" style="margin-top:10px;">暂无分类，请先添加分类</div>
+								<div class="row">
+									<div class="col-md-12">
+									 	<div class="alert alert-warning" style="margin-top:10px;">暂无分类，请先添加分类</div>
+									</div>
 								</div>
 							</#if>
 						</div>

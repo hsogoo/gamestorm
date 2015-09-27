@@ -32,7 +32,7 @@
 <!-- END PAGE LEVEL STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
-<@layout menuId="1">
+<@layout menuId="3">
 			<div class="page-content">
 	
 			<!-- BEGIN PAGE HEADER-->
@@ -44,7 +44,7 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">游戏管理</a>
+						<a href="#">订单管理</a>
 					</li>
 				</ul>
 			</div>
@@ -55,81 +55,94 @@
 					<div class="portlet box grey-cascade">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-star"></i>游戏列表
+								<i class="fa fa-star"></i>订单列表
 							</div>
 						</div>
 						<div class="portlet-body">
 							<div class="table-toolbar">
-								<div class="row">
-									<div class="col-md-6">
-										<div class="btn-group">
-											<a class="btn green" href="#addNewGameModal" data-toggle="modal">
-											添加新游戏 <i class="fa fa-plus"></i>
-											</a>
+								<form role="form" class="form-inline">
+									<div class="row">
+										<div class="form-group">
+											<label class="col-sm-3 control-label">选择游戏</label>
+											<div class="col-sm-6">
+												<select class="select2_category form-control input-medium" data-placeholder="选择游戏" tabindex="1" id="game">
+													<option value="Category 1">Category 1</option>
+													<option value="Category 2">Category 2</option>
+													<option value="Category 3">Category 5</option>
+													<option value="Category 4">Category 4</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">选择游戏</label>
+											<div class="col-sm-6">
+												<select class="select2_category form-control input-medium" data-placeholder="选择类别" tabindex="2" id="category">
+													<option value="Category 1">Category 1</option>
+													<option value="Category 2">Category 2</option>
+													<option value="Category 3">Category 5</option>
+													<option value="Category 4">Category 4</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-4 control-label">游戏名称</label>
+											<div class="col-sm-8">
+												<input type="text" placeholder="游戏名称" class="form-control input-medium" name="gameName">
+											</div>
 										</div>
 									</div>
-									<div class="col-md-6">
-										<div class="btn-group pull-right">
-											<button class="btn dropdown-toggle green" data-toggle="dropdown">操作 <i class="fa fa-angle-down"></i>
-											</button>
-											<ul class="dropdown-menu pull-right">
-												<li>
-													<a href="#"><i class="fa fa-trash-o"></i>
-													修改 </a>
-												</li>
-												<li>
-													<a href="#"><i class="fa fa-times"></i>
-													删除 </a>
-												</li>
-											</ul>
+									
+									<div class="row" style="margin-top:15px;">
+										<div class="form-group">
+											<label class="col-sm-3 control-label">选择游戏</label>
+											<div class="col-sm-6">
+												<select class="select2_category form-control input-medium" data-placeholder="选择游戏" tabindex="1" id="game">
+													<option value="Category 1">Category 1</option>
+													<option value="Category 2">Category 2</option>
+													<option value="Category 3">Category 5</option>
+													<option value="Category 4">Category 4</option>
+												</select>
+											</div>
 										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">选择游戏</label>
+											<div class="col-sm-6">
+												<select class="select2_category form-control input-medium" data-placeholder="选择类别" tabindex="2" id="category">
+													<option value="Category 1">Category 1</option>
+													<option value="Category 2">Category 2</option>
+													<option value="Category 3">Category 5</option>
+													<option value="Category 4">Category 4</option>
+												</select>
+											</div>
+										</div>
+										<button class="btn blue" type="submit"> 订单搜索 <i class="icon-magnifier"></i></button>
 									</div>
-								</div>
+								</form>
 							</div>
-							<#if gameList??&&gameList?size gt 0>
+							<#if orderList??&&orderList?size gt 0>
 							<table class="table table-striped table-bordered table-hover" id="sample_2">
 							<thead>
 							<tr>
 								<th class="table-checkbox">
 									<input type="checkbox" class="group-checkable" data-set="#sample_2 .checkboxes"/>
 								</th>
-								<th>
-									 游戏名称
-								</th>
-								<th>
-									 游戏小图标
-								</th>
-								<th>
-									 游戏显示图片
-								</th>
-								<th>
-									 游戏banner图
-								</th>
-								<th>
-									 游戏状态
-								</th>
+								<th>游戏名称</th>
+								<th>类别名称</th>
+								<th>状态</th>
+								<th>操作</th>
 							</tr>
 							</thead>
 							<tbody>
-							<#list gameList as game>
+							<#list orderList as order>
 							<tr class="odd gradeX">
 								<td>
 									<input type="checkbox" class="checkboxes" value="1"/>
 								</td>
+								<td></td>
+								<td></td>
 								<td>
-									 ${game.gameName}
-								</td>
-								<td>
-									<img src="${game.iconImage}" width="35" height=35">
-								</td>
-								<td>
-									<img src="${game.displayImage}" width="100" height="50">
 								</td>
 								<td class="center">
-									 <img src="${game.bannerImage}" width="150" height="50">
-								</td>
-								<td>
-									<#if game.status><span class="label label-sm label-success">Active</span><#else><span class="label label-sm label-danger">Stoped</span></#if>
 								</td>
 							</tr>
 							</#list>
@@ -138,7 +151,7 @@
 							<#else>
 								<div class="row">
 									<div class="col-md-12">
-									 	<div class="alert alert-warning" style="margin-top:10px;">暂无游戏，请先添加游戏</div>
+									 	<div class="alert alert-warning" style="margin-top:10px;">暂无订单！</div>
 									</div>
 								</div>
 							</#if>
@@ -146,59 +159,6 @@
 					</div>
 					<!-- END EXAMPLE TABLE PORTLET-->
 				</div>
-			</div>
-
-			<div aria-hidden="true" role="basic" tabindex="-1" id="addNewGameModal" class="modal fade">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
-							<h4 class="modal-title">添加新游戏</h4>
-						</div>
-						<div class="modal-body">
-							 <div class="portlet-body form">
-							<form role="form" class="form-horizontal" action="/backend/game/doAddGame" id="addGameForm" method="post">
-								<div class="form-body">
-									<div class="form-group">
-										<label class="col-sm-4 control-label">游戏名称</label>
-										<div class="col-sm-8">
-											<input type="text" placeholder="游戏名称" class="form-control input-medium" name="gameName">
-											<span class="help-block">例如：World of Warcraft US </span>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-sm-4 control-label">游戏小图标</label>
-										<div class="col-sm-8">
-											<input type="text" placeholder="游戏小图标的地址" class="form-control input-inline input-medium" name="iconImage">
-											<span class="help-inline">暂时先输入图片地址，后续改成图片上传</span>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-sm-4 control-label">展示图片</label>
-										<div class="col-sm-8">
-											<input type="text" placeholder="游戏展示图片的地址" class="form-control input-inline input-medium" name="displayImage">
-											<span class="help-inline">暂时先输入图片地址，后续改成图片上传</span>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-sm-4 control-label">广告图片</label>
-										<div class="col-sm-8">
-											<input type="text" placeholder="游戏广告图片的地址" class="form-control input-inline input-medium" name="bannerImage">
-											<span class="help-inline">暂时先输入图片地址，后续改成图片上传</span>
-										</div>
-									</div>
-								</div>
-							</form>
-						</div>
-						</div>
-						<div class="modal-footer">
-							<button data-dismiss="modal" class="btn default" type="button">关闭</button>
-							<button class="btn blue" type="button" onclick="submitAddGame();">添加</button>
-						</div>
-					</div>
-					<!-- /.modal-content -->
-				</div>
-				<!-- /.modal-dialog -->
 			</div>
 
 		</div>
@@ -227,6 +187,7 @@
 <script src="/static/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
 <script src="/static/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
 <script src="/static/assets/admin/pages/scripts/table-managed.js"></script>
+<script src="/static/assets/admin/pages/scripts/form-samples.js"></script>
 <script src="/static/js/backend/game.js"></script>
 
 <script>
@@ -236,6 +197,7 @@ jQuery(document).ready(function() {
 	QuickSidebar.init(); // init quick sidebar
 	Demo.init(); // init demo features
 	TableManaged.init();
+   	FormSamples.init();
 });
 </script>
 <!-- END JAVASCRIPTS -->

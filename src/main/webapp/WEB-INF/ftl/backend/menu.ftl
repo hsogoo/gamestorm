@@ -76,7 +76,7 @@
 				</a>
 				<ul class="sub-menu">
 					<li>
-						<a href="layout_horizontal_sidebar_menu.html">
+						<a href="/backend/product/manage">
 						<i class="icon-list"></i>
 						商品列表</a>
 					</li>
@@ -90,7 +90,7 @@
 				</a>
 				<ul class="sub-menu">
 					<li>
-						<a href="ui_general.html">
+						<a href="/backend/order/manage">
 						<i class="icon-list"></i>
 						订单列表</a>
 					</li>

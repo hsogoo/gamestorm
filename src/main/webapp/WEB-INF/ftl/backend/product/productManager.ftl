@@ -32,7 +32,7 @@
 <!-- END PAGE LEVEL STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
-<@layout menuId="1">
+<@layout menuId="2">
 			<div class="page-content">
 	
 			<!-- BEGIN PAGE HEADER-->
@@ -44,7 +44,7 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">游戏管理</a>
+						<a href="#">商品管理</a>
 					</li>
 				</ul>
 			</div>
@@ -55,7 +55,7 @@
 					<div class="portlet box grey-cascade">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-star"></i>游戏列表
+								<i class="fa fa-star"></i>商品列表
 							</div>
 						</div>
 						<div class="portlet-body">
@@ -64,7 +64,7 @@
 									<div class="col-md-6">
 										<div class="btn-group">
 											<a class="btn green" href="#addNewGameModal" data-toggle="modal">
-											添加新游戏 <i class="fa fa-plus"></i>
+											添加商品 <i class="fa fa-plus"></i>
 											</a>
 										</div>
 									</div>
@@ -86,7 +86,7 @@
 									</div>
 								</div>
 							</div>
-							<#if gameList??&&gameList?size gt 0>
+							<#if productList??&&productList?size gt 0>
 							<table class="table table-striped table-bordered table-hover" id="sample_2">
 							<thead>
 							<tr>
@@ -97,39 +97,39 @@
 									 游戏名称
 								</th>
 								<th>
-									 游戏小图标
+									 商品类型
 								</th>
 								<th>
-									 游戏显示图片
+									 价格类型
 								</th>
 								<th>
-									 游戏banner图
+									 价格
 								</th>
 								<th>
-									 游戏状态
+									 状态
 								</th>
 							</tr>
 							</thead>
 							<tbody>
-							<#list gameList as game>
+							<#list productList as product>
 							<tr class="odd gradeX">
 								<td>
 									<input type="checkbox" class="checkboxes" value="1"/>
 								</td>
 								<td>
-									 ${game.gameName}
+									 
 								</td>
 								<td>
-									<img src="${game.iconImage}" width="35" height=35">
+									
 								</td>
 								<td>
-									<img src="${game.displayImage}" width="100" height="50">
+									
 								</td>
 								<td class="center">
-									 <img src="${game.bannerImage}" width="150" height="50">
+									 
 								</td>
 								<td>
-									<#if game.status><span class="label label-sm label-success">Active</span><#else><span class="label label-sm label-danger">Stoped</span></#if>
+									
 								</td>
 							</tr>
 							</#list>
@@ -138,7 +138,7 @@
 							<#else>
 								<div class="row">
 									<div class="col-md-12">
-									 	<div class="alert alert-warning" style="margin-top:10px;">暂无游戏，请先添加游戏</div>
+									 	<div class="alert alert-warning" style="margin-top:10px;">暂无商品，请先添加商品</div>
 									</div>
 								</div>
 							</#if>

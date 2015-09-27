@@ -46,93 +46,99 @@
 			</li>
 			<#if menuId?number == 1><li class="active open"><#else><li></#if>
 				<a href="javascript:;">
-				<i class="icon-basket"></i>
+				<i class="icon-settings"></i>
 				<span class="title">游戏管理</span>
 				<span class="arrow "></span>
 				</a>
 				<ul class="sub-menu">
 					<li>
 						<a href="/backend/game/manage">
-						<i class="icon-home"></i>
+						<i class="icon-list"></i>
 						游戏列表</a>
 					</li>
 					<li>
-						<a href="ecommerce_orders.html">
-						<i class="icon-basket"></i>
+						<a href="/backend/category/manage">
+						<i class="icon-list"></i>
 						类目列表</a>
 					</li>
 					<li>
-						<a href="ecommerce_orders_view.html">
-						<i class="icon-tag"></i>
+						<a href="/backend/gameCategory/manage">
+						<i class="icon-link"></i>
 						游戏类目管理</a>
 					</li>
 				</ul>
 			</li>
 			<#if menuId?number == 2><li class="active open"><#else><li></#if>
 				<a href="javascript:;">
-				<i class="icon-rocket"></i>
+				<i class="icon-present"></i>
 				<span class="title">商品管理</span>
 				<span class="arrow "></span>
 				</a>
 				<ul class="sub-menu">
 					<li>
 						<a href="layout_horizontal_sidebar_menu.html">
+						<i class="icon-list"></i>
 						商品列表</a>
 					</li>
 				</ul>
 			</li>
 			<#if menuId?number == 3><li class="active open"><#else><li></#if>
 				<a href="javascript:;">
-				<i class="icon-diamond"></i>
+				<i class="icon-basket"></i>
 				<span class="title">订单管理</span>
 				<span class="arrow "></span>
 				</a>
 				<ul class="sub-menu">
 					<li>
 						<a href="ui_general.html">
+						<i class="icon-list"></i>
 						订单列表</a>
 					</li>
 				</ul>
 			</li>
 			<#if menuId?number == 4><li class="active open"><#else><li></#if>
 				<a href="javascript:;">
-				<i class="icon-puzzle"></i>
+				<i class="icon-user"></i>
 				<span class="title">用户管理</span>
 				<span class="arrow "></span>
 				</a>
 				<ul class="sub-menu">
 					<li>
 						<a href="components_pickers.html">
+						<i class="icon-list"></i>
 						用户列表</a>
 					</li>
 					<li>
 						<a href="components_dropdowns.html">
+						<i class="icon-bar-chart"></i>
 						会员等级设置</a>
 					</li>
 				</ul>
 			</li>
 			<#if menuId?number == 5><li class="active open"><#else><li></#if>
 				<a href="javascript:;">
-				<i class="icon-settings"></i>
+				<i class="icon-question"></i>
 				<span class="title">帮助中心</span>
 				<span class="arrow "></span>
 				</a>
 				<ul class="sub-menu">
 					<li>
 						<a href="form_controls.html">
+						<i class="icon-list"></i>
 						内容列表</a>
 					</li>
 				</ul>
 			</li>
 			<#if menuId?number == 6><li class="active open"><#else><li></#if>
 				<a href="javascript:;">
-				<i class="icon-briefcase"></i>
+				<i class="icon-speech"></i>
 				<span class="title">新闻管理</span>
 				<span class="arrow "></span>
 				</a>
 				<ul class="sub-menu">
 					<li>
 						<a href="table_basic.html">
+						<i class="icon-list"></i>
 						新闻列表</a>
 					</li>
 				</ul>

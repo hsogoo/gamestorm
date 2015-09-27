@@ -87,11 +87,11 @@
 								</div>
 							</div>
 							<#if gameList??&&gameList?size gt 0>
-							<table class="table table-striped table-bordered table-hover" id="sample_1">
+							<table class="table table-striped table-bordered table-hover" id="sample_2">
 							<thead>
 							<tr>
 								<th class="table-checkbox">
-									<input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes"/>
+									<input type="checkbox" class="group-checkable" data-set="#sample_2 .checkboxes"/>
 								</th>
 								<th>
 									 游戏名称

@@ -1,103 +1,183 @@
-<#include "../page_macro.ftl">
-<@page title="游戏管理" keywords="keywords" description="description" type="base" pageCss="/static/style/backend/login.css" pageJs="/static/js/backend/gameCategory.js" menuId="2">
+<#include "../macro_layout.ftl">
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8"/>
+<title>GameStorm | 游戏管理</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<link href="/static/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="/static/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+<link href="/static/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/static/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="/static/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+<!-- END GLOBAL MANDATORY STYLES -->
 
-<div class="page-head">
-    <h2 class="pull-left"><i class="icon-table"></i> 游戏管理</h2>
-    <!-- Breadcrumb -->
-    <div class="bread-crumb pull-right">
-      <a href="index.html"><i class="icon-home"></i> Home</a> 
-      <!-- Divider -->
-      <span class="divider">/</span> 
-      <a class="bread-current" href="#">Dashboard</a>
-    </div>
-    <div class="clearfix"></div>
-</div>
+<!-- BEGIN THEME STYLES -->
+<link href="/static/assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
+<link href="/static/assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="/static/assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
+<link id="style_color" href="/static/assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css"/>
+<link href="/static/assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
+<!-- END THEME STYLES -->
 
-<div class="container" style="margin-top:15px;">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="btn-group">
-				<a href="#addGameCategoryModal" data-toggle="modal" class="btn green">关联游戏和类目 <i class="fa fa-plus"></i></a>
-			</div>
-			<#--<div class="btn-group">
-				<a href="#addCategoryGameModal" data-toggle="modal" class="btn green">添加类目所属的游戏 <i class="fa fa-plus"></i></a>
-			</div>-->
-		</div>
-	</div>
-	<div id="gameCategoryList"></div>
+<!-- BEGIN PAGE LEVEL STYLES-->
+<link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/select2/select2.css"/>
+<link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
+<!-- END PAGE LEVEL STYLES -->
+
+<!-- END PAGE LEVEL STYLES -->
+<link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<@layout menuId="1">
+			<div class="page-content">
 	
-	<#---添加游戏的类目-->
-	<div aria-hidden="true" role="basic" tabindex="-1" id="addGameCategoryModal" class="modal fade">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
-					<h4 class="modal-title">添加游戏的类目</h4>
-				</div>
-				<div class="modal-body">
-					 <div class="portlet-body form">
-					<form role="form" class="form-horizontal" action="/backend/gameCategory/doAddGameCategory" id="addGameCategoryForm" method="post">
-						<div class="form-body">
-                            <div class="form-group">
-                                <label class="control-label col-md-3">Extra Large</label>
-                                <div class="col-md-4">
-                                    <div class="select2-container form-control input-xlarge select2me" id="s2id_autogen1"><a href="javascript:void(0)" class="select2-choice select2-default" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-2">Select...</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen2" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-2" id="s2id_autogen2"></div><select class="form-control input-xlarge select2me select2-offscreen" data-placeholder="Select..." tabindex="-1" title="">
-                                    <option value=""></option>
-                                    <option value="AL">Alabama</option>
-                                    <option value="WY">Wyoming</option>
-                                </select>
-                                </div>
-                            </div>
-							<!--
-							<div class="form-group">
-								<label class="control-label col-md-3">选择游戏</label>
-								<div class="col-md-4">
-									<div class="select2-container form-control input-medium select2me">
-									<a tabindex="-1" class="select2-choice select2-default" href="javascript:void(0)">
-									<span class="select2-chosen" id="select2-chosen-2">Select...</span>
-									<abbr class="select2-search-choice-close"></abbr> 
-									<span role="presentation" class="select2-arrow"><b role="presentation"></b></span></a><label class="select2-offscreen" for="s2id_autogen2"></label>
-									<input type="text" role="button" aria-haspopup="true" class="select2-focusser select2-offscreen" aria-labelledby="select2-chosen-2" id="s2id_autogen2">
-									</div>
-									<select data-placeholder="Select..." class="form-control input-medium select2me select2-offscreen" tabindex="-1" title="">
-										<option value=""></option>
-										<option value="AL">Alabama</option>
-										<option value="WY">Wyoming</option>
-									</select>
-								</div>
-							</div>
-							-->
-							<div class="form-group">
-								<label class="control-label col-md-3">选择类别</label>
-								<div class="col-md-4">
-									<div class="select2-container form-control input-medium select2me" id="s2id_autogen3">
-									<a tabindex="-1" class="select2-choice select2-default" href="javascript:void(0)">   
-									<span class="select2-chosen" id="select2-chosen-4">Select...</span>
-									<abbr class="select2-search-choice-close"></abbr>   
-									<span role="presentation" class="select2-arrow"><b role="presentation"></b></span>
-									</a><label class="select2-offscreen" for="s2id_autogen4"></label>
-									<input type="text" role="button" aria-haspopup="true" class="select2-focusser select2-offscreen" aria-labelledby="select2-chosen-4" id="s2id_autogen4">
-									</div>
-									<select data-placeholder="Select..." class="form-control input-medium select2me select2-offscreen" tabindex="-1" title="">
-										<option value=""></option>
-										<option value="AL">Alabama</option>
-										<option value="WY">Wyoming</option>
-									</select>
-								</div>
+			<!-- BEGIN PAGE HEADER-->
+			<div class="page-bar">
+				<ul class="page-breadcrumb">
+					<li>
+						<i class="fa fa-home"></i>
+						<a href="index.html">控制台</a>
+						<i class="fa fa-angle-right"></i>
+					</li>
+					<li>
+						<a href="#">游戏管理</a>
+					</li>
+				</ul>
+			</div>
+			<!-- END PAGE HEADER-->
+			<div class="row">
+				<div class="col-md-12">
+					<!-- BEGIN EXAMPLE TABLE PORTLET-->
+					<div class="portlet box grey-cascade">
+						<div class="portlet-title">
+							<div class="caption">
+								<i class="fa fa-star"></i>游戏和类别关联列表
 							</div>
 						</div>
-					</form>
-				</div>
-				</div>
-				<div class="modal-footer">
-					<button data-dismiss="modal" class="btn default" type="button">关闭</button>
-					<button class="btn blue" type="button" onclick="submitAddGameCategory();">添加</button>
+						<div class="portlet-body">
+							<div class="table-toolbar">
+								<h4>关联游戏和类别</h4>
+								<form role="form" class="form-inline">
+								
+									<div class="form-group">
+										<label class="col-sm-3 control-label">选择游戏</label>
+										<div class="col-sm-6">
+											<select class="select2_category form-control input-medium" data-placeholder="选择游戏" tabindex="1">
+												<option value="Category 1">Category 1</option>
+												<option value="Category 2">Category 2</option>
+												<option value="Category 3">Category 5</option>
+												<option value="Category 4">Category 4</option>
+											</select>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label">选择游戏</label>
+										<div class="col-sm-6">
+											<select class="select2_category form-control input-medium" data-placeholder="选择类别" tabindex="2">
+												<option value="Category 1">Category 1</option>
+												<option value="Category 2">Category 2</option>
+												<option value="Category 3">Category 5</option>
+												<option value="Category 4">Category 4</option>
+											</select>
+										</div>
+									</div>
+									
+									<button class="btn blue" type="submit">添加</button>
+								</form>
+							</div>
+							<#if gameCategoryList??&&gameCategoryList?size gt 0>
+							<table class="table table-striped table-bordered table-hover" id="sample_2">
+							<thead>
+							<tr>
+								<th class="table-checkbox">
+									<input type="checkbox" class="group-checkable" data-set="#sample_2 .checkboxes"/>
+								</th>
+								<th>游戏名称</th>
+								<th>类别名称</th>
+								<th>状态</th>
+								<th>操作</th>
+							</tr>
+							</thead>
+							<tbody>
+							<#list gameCategoryList as gameCategory>
+							<tr class="odd gradeX">
+								<td>
+									<input type="checkbox" class="checkboxes" value="1"/>
+								</td>
+								<td>${gameCategory.gameName}</td>
+								<td>${gameCategory.categoryName}</td>
+								<td>
+									<#if gameCategory.status><span class="label label-sm label-success">Active</span><#else><span class="label label-sm label-danger">Stoped</span></#if>
+								</td>
+								<td class="center">
+									 <#if gameCategory.status>
+									 	<a onclick="saveCategory(6);" href="javascript:;" class="btn default btn-xs purple"><i class="fa fa-arrow-down"></i> 下架 </a>
+									 <#else>
+									 	<a onclick="saveCategory(6);" href="javascript:;" class="btn default btn-xs green"><i class="fa fa-arrow-up"></i> 上架 </a>
+									 </#if>
+								</td>
+							</tr>
+							</#list>
+							</tbody>
+							</table>
+							<#else>
+								<div class="row">
+									<div class="col-md-12">
+									 	<div class="alert alert-warning" style="margin-top:10px;">暂无游戏和类别的关联，请先关联游戏类别</div>
+									</div>
+								</div>
+							</#if>
+						</div>
+					</div>
+					<!-- END EXAMPLE TABLE PORTLET-->
 				</div>
 			</div>
-			<!-- /.modal-content -->
-		</div>
-		<!-- /.modal-dialog -->
-	</div>
-</div>
 
-</@page>
+		</div>
+</@layout>
+<script src="/static/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="/static/assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="/static/assets/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="/static/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/static/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="/static/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="/static/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="/static/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="/static/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="/static/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script type="text/javascript" src="/static/assets/global/plugins/select2/select2.min.js"></script>
+<script type="text/javascript" src="/static/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/static/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="/static/assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="/static/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="/static/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="/static/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="/static/assets/admin/pages/scripts/table-managed.js"></script>
+<script src="/static/assets/admin/pages/scripts/form-samples.js"></script>
+<script src="/static/js/backend/game.js"></script>
+
+<script>
+jQuery(document).ready(function() {       
+   Metronic.init(); // init metronic core components
+	Layout.init(); // init current layout
+	QuickSidebar.init(); // init quick sidebar
+	Demo.init(); // init demo features
+	TableManaged.init();
+   	FormSamples.init();
+});
+</script>
+<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

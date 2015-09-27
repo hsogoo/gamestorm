@@ -66,6 +66,11 @@
 						<i class="icon-link"></i>
 						游戏类目管理</a>
 					</li>
+					<li>
+					<a href="/backend/gameCategory/manage">
+					<i class="icon-list"></i>
+					游戏服务器列表</a>
+					</li>
 				</ul>
 			</li>
 			<#if menuId?number == 2><li class="active open"><#else><li></#if>
@@ -80,6 +85,16 @@
 						<i class="icon-list"></i>
 						商品列表</a>
 					</li>
+					<li>
+						<a href="/backend/product/manage">
+						<i class="icon-rocket"></i>
+						代练价格配置</a>
+					</li>
+					<li>
+						<a href="/backend/product/manage">
+						<i class="icon-diamond"></i>
+						金币价格配置</a>
+					</li>					
 				</ul>
 			</li>
 			<#if menuId?number == 3><li class="active open"><#else><li></#if>

@@ -1,5 +1,7 @@
 package com.hsogoo.gamestorm.service.user.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +27,21 @@ public class UserServiceImpl implements UserService{
 //		user.setPassword("123456");
 //		return user;
 		return userDao.getUserById(userId);
+	}
+
+	@Override
+	public List<User> getAllUserList() {
+		return userDao.getAllUserList();
+	}
+
+	@Override
+	public List<User> getPageUserList(int page, int pageSize) {
+		return userDao.getPageUserList(page, pageSize);
+	}
+
+	@Override
+	public Long getTotalUserCount() {
+		return userDao.getTotalUserCount();
 	}
 }
 

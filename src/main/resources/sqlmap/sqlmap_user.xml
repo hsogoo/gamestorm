@@ -13,4 +13,37 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
 		where id = #userId#
 	</select>
 
+	<select id="gs_user.getTotalUserCount" resultClass="Long">
+		select count(1)
+		from gs_user
+	</select>
+
+	<select id="gs_user.getAllUserList" resultClass="com.hsogoo.gamestorm.vo.User">
+		select 
+			id,
+			user_name userName,
+			password,
+			user_email userEmail,
+			user_level_id userLevelId,
+			user_level_name userLevelName,
+			user_type userType,
+			create_time createTime,
+			status
+		from gs_user
+	</select>
+	
+	<select id="gs_user.getPageUserList" parameterClass=java.util.HashMap resultClass="com.hsogoo.gamestorm.vo.User">
+		select 
+			id,
+			user_name userName,
+			password,
+			user_email userEmail,
+			user_level_id userLevelId,
+			user_level_name userLevelName,
+			user_type userType,
+			create_time createTime,
+			status
+		from gs_user limit #start# , #offset#
+	</select>
+
 </sqlMap>

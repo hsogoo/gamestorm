@@ -1,5 +1,7 @@
 package com.hsogoo.gamestorm.service.user;
 
+import java.util.List;
+
 import com.hsogoo.gamestorm.vo.User;
 
 /**
@@ -10,5 +12,11 @@ import com.hsogoo.gamestorm.vo.User;
 public interface UserService {
 
 	public User getUserById(Long userId);
+	
+	public List<User> getAllUserList();
+	
+	public List<User> getPageUserList(int page,int pageSize);
+	
+	public Long getTotalUserCount();
 	
 }

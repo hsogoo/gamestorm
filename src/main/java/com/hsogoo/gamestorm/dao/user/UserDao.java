@@ -1,6 +1,6 @@
 package com.hsogoo.gamestorm.dao.user;
 
-import org.springframework.stereotype.Repository;
+import java.util.List;
 
 import com.hsogoo.gamestorm.vo.User;
 
@@ -12,5 +12,11 @@ import com.hsogoo.gamestorm.vo.User;
 public interface UserDao {
 	
 	public User getUserById(Long userId);
+
+	public List<User> getAllUserList();
+
+	public List<User> getPageUserList(int page, int pageSize);
+	
+	public Long getTotalUserCount();
 	
 }

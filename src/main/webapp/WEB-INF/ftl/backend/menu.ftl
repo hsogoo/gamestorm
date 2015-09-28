@@ -119,7 +119,7 @@
 				</a>
 				<ul class="sub-menu">
 					<li>
-						<a href="components_pickers.html">
+						<a href="/backend/user/manage">
 						<i class="icon-list"></i>
 						用户列表</a>
 					</li>

@@ -2,6 +2,8 @@ package com.hsogoo.gamestorm.dao.gameCategory;
 
 import java.util.List;
 
+import com.hsogoo.gamestorm.vo.GameCategory;
+
 
 /**
  * Created by weile on 15/9/24.
@@ -28,7 +30,7 @@ public interface GameCategoryDao {
      * @param categoryId
      * @return
      */
-    void insertGameAndCategoryRelation(Long gameId,Long categoryId);
+    public void insertGameAndCategoryRelation(Long gameId,Long categoryId);
 
     /**
      * 更新游戏和分类对应关系数据
@@ -38,5 +40,7 @@ public interface GameCategoryDao {
      * @param status 状态
      * @return
      */
-    int updateGameAndCategoryRelation(Long id,Long gameId, Long categoryId,Boolean status);
+    public int updateGameAndCategoryRelation(Long id,Long gameId, Long categoryId,Boolean status);
+
+	public List<GameCategory> getAllGameCategoryList();
 }

@@ -1,16 +1,16 @@
 package com.hsogoo.gamestorm.controller.category;
 
-import com.hsogoo.gamestorm.service.category.CategoryService;
-import com.hsogoo.gamestorm.vo.Category;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
+import com.hsogoo.gamestorm.service.category.CategoryService;
+import com.hsogoo.gamestorm.vo.Category;
 
 /**
  * Created by weile on 15/9/21.
@@ -24,8 +24,11 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @RequestMapping("/manage")
-    public String getCategoryPage(Model model){
-        return "backend/category/categoryManager";
+    public ModelAndView getCategoryPage(ModelAndView model){
+        List<Category> categoryList = categoryService.getAllCategoryList();
+        model.setViewName("/backend/category/categoryManager");
+        model.addObject("categoryList", categoryList);
+        return model;
     }
 
     @RequestMapping("/categoryList")

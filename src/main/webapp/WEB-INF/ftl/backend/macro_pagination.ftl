@@ -14,7 +14,7 @@
                 <#if (2*sideNum+1) gte totalPage?number >
                     <#assign endPage = totalPage?number >
                 <#else>
-                	<#assign endPage = 2*sideNum+1 >
+                	<#assign endPage = (2*sideNum+1) >
                 </#if>
             <#else>
             	<#assign endPage = sideNum + currentPage?number >

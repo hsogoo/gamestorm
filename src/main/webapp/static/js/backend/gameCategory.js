@@ -1,6 +1,11 @@
 $(document).ready(function() {
 	//queryForGameCategory(1);
-	
+    if ($().select2) {
+        $('.select2me').select2({
+            placeholder: "Select",
+            allowClear: true
+        });
+    }
 });
 
 function queryForGameCategory(page){

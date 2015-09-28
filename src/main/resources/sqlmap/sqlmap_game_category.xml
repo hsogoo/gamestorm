@@ -31,5 +31,17 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
         </dynamic>
         where id = #id#
     </update>
+    
+    <select id="game_category.getAllGameCategoryList" resultClass="com.hsogoo.gamestorm.vo.GameCategory">
+    	select 
+    		id,
+    		game_name gameName,
+    		game_id gameId,
+    		category_name categoryName,
+    		category_id categoryId,
+    		status
+    	from 
+    		gs_game_category
+    </select>
 
 </sqlMap>

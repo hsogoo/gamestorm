@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.hsogoo.gamestorm.service.game.GameService;
+import com.hsogoo.gamestorm.service.gameCategory.GameCategoryService;
 import com.hsogoo.gamestorm.vo.Game;
+import com.hsogoo.gamestorm.vo.GameCategory;
 
 /**
  * @author hsogoo
@@ -22,37 +23,37 @@ import com.hsogoo.gamestorm.vo.Game;
 public class GameCategoryController {
 	
 	@Autowired
-	private GameService gameService;
+	private GameCategoryService gameCategoryService;
 	
 	@RequestMapping("/manage")
-	public String getGameCategoryPage(ModelAndView model){
-		return "/backend/gameCategory/gameCategoryManager";
-	}
-	
-	@RequestMapping("/gameCategoryList")
-	@ResponseBody
-	public ModelAndView getGameCategoryList(ModelAndView model,@RequestParam (value ="page") String page){
-		List<Game> gameList = gameService.getAllGameList();
-		model.setViewName("/backend/gameCategory/gameCategoryList");
-		model.addObject("currentPage", page);
-		//TODO:分页查询
-		model.addObject("totalPage", gameList.size());
-		model.addObject("gameCategoryList", gameList);
+	public ModelAndView getGameCategoryPage(ModelAndView model){
+		List<GameCategory> gameCategoryList = gameCategoryService.getAllGameCategoryList();
+		model.setViewName("/backend/gameCategory/gameCategoryManager");
+		model.addObject("gameCategoryList", gameCategoryList);
 		return model;
 	}
 	
-	@RequestMapping("/doAddGameCategory")
-	public ModelAndView doAddGameCategory(Game game){
-		gameService.addGame(game);
-		ModelAndView model = new ModelAndView("redirect:/backend/gameCategory/manage");
-		return model;
-	}
+//	@RequestMapping("/gameCategoryList")
+//	@ResponseBody
+//	public ModelAndView getAllGameCategoryList(ModelAndView model,@RequestParam (value ="page") String page){
+//		List<GameCategory> gameCategoryList = gameCategoryService.getAllGameCategoryList();
+//		model.setViewName("/backend/gameCategory/gameCategoryList");
+//		model.addObject("gameCategoryList", gameCategoryList);
+//		return model;
+//	}
 	
-	@RequestMapping("/doAddCategoryGame")
-	public ModelAndView doAddCategoryGame(Game game){
-		gameService.addGame(game);
-		ModelAndView model = new ModelAndView("redirect:/backend/gameCategory/manage");
-		return model;
-	}
+//	@RequestMapping("/doAddGameCategory")
+//	public ModelAndView doAddGameCategory(Game game){
+//		gameService.addGame(game);
+//		ModelAndView model = new ModelAndView("redirect:/backend/gameCategory/manage");
+//		return model;
+//	}
+//	
+//	@RequestMapping("/doAddCategoryGame")
+//	public ModelAndView doAddCategoryGame(Game game){
+//		gameService.addGame(game);
+//		ModelAndView model = new ModelAndView("redirect:/backend/gameCategory/manage");
+//		return model;
+//	}
 	
 }

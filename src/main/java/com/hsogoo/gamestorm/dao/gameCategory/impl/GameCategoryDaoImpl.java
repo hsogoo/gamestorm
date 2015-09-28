@@ -4,6 +4,8 @@ import com.hsogoo.gamestorm.dao.BaseDao;
 import com.hsogoo.gamestorm.dao.gameCategory.GameCategoryDao;
 import com.hsogoo.gamestorm.vo.Category;
 import com.hsogoo.gamestorm.vo.Game;
+import com.hsogoo.gamestorm.vo.GameCategory;
+
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
@@ -40,4 +42,9 @@ public class GameCategoryDaoImpl extends BaseDao implements GameCategoryDao {
         map.put("id", id);
         return getSqlMapClientTemplate().update("game_category.updateGameAndCategoryRelation", map);
     }
+
+	@Override
+	public List<GameCategory> getAllGameCategoryList() {
+		return getSqlMapClientTemplate().queryForList("game_category.getAllGameCategoryList");
+	}
 }

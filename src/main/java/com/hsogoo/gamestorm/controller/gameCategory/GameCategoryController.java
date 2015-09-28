@@ -37,19 +37,19 @@ public class GameCategoryController {
 	@RequestMapping("/selectGames")
 	public ModelAndView getSelectGames(
 			ModelAndView model,
-			@RequestParam(value = "gameId",required = false) Long gameId,
-			@RequestParam(value = "gameName",required = false) String gameName
+			@RequestParam(value = "searchGameId",required = false) Long searchGameId,
+			@RequestParam(value = "searchGameName",required = false) String searchGameName
 			){
-		List<Game> games = gameCategoryService.getAllCanSelectGames(gameId,gameName);
+		List<Game> games = gameCategoryService.getAllCanSelectGames(searchGameId,searchGameName);
 		model.addObject("games", games);
 		return model;
 	}
 
 	@RequestMapping("/selectCategorys")
 	public ModelAndView selectCategorys(ModelAndView model,
-										@RequestParam(value = "categoryId",required = false) Long categoryId,
-										@RequestParam(value = "categoryName",required = false) String categoryName){
-		List<Category> categories = gameCategoryService.getAllCanSelectCategorys(categoryId, categoryName);
+										@RequestParam(value = "searchCategoryId",required = false) Long searchCategoryId,
+										@RequestParam(value = "searchCategoryName",required = false) String searchCategoryName){
+		List<Category> categories = gameCategoryService.getAllCanSelectCategorys(searchCategoryId, searchCategoryName);
 		model.addObject("categories", categories);
 		return model;
 	}

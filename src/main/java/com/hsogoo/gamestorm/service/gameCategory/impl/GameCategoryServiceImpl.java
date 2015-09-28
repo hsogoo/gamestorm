@@ -38,12 +38,12 @@ public class GameCategoryServiceImpl implements GameCategoryService {
 		List<Game> games = gameDao.findFuzzyGames(gameId,gameName);
 
 		//games List转Map
-		Map<Long,Game> gameMap = new HashMap<Long,Game>();
+		Map<String,Game> gameMap = new HashMap<String,Game>();
 		for(Game  game:games){
 			if(game == null){
 				continue;
 			}
-			gameMap.put(game.getId(), game);
+			gameMap.put(game.getId().toString(), game);
 		}
 
 		//查询所有可用的类别列表
@@ -77,12 +77,12 @@ public class GameCategoryServiceImpl implements GameCategoryService {
 		List<Category> categories = categoryDao.findFuzzyCategorys(categoryId,categoryName);
 
 		//categories List转Map
-		Map<Long,Category> categoryHashMap = new HashMap<Long,Category>();
+		Map<String,Category> categoryHashMap = new HashMap<String,Category>();
 		for(Category  category:categories){
 			if(category == null){
 				continue;
 			}
-			categoryHashMap.put(category.getId(), category);
+			categoryHashMap.put(category.getId().toString(), category);
 		}
 
 		//查询所有可用的游戏列表

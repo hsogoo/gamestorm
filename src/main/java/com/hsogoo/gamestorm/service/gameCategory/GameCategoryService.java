@@ -5,5 +5,5 @@ package com.hsogoo.gamestorm.service.gameCategory;
  */
 public interface GameCategoryService {
 
-
+    
 }

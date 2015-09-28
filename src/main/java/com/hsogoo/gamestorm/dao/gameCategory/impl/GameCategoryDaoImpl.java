@@ -43,7 +43,6 @@ public class GameCategoryDaoImpl extends BaseDao implements GameCategoryDao {
         return getSqlMapClientTemplate().update("game_category.updateGameAndCategoryRelation", map);
     }
 
-	@Override
 	public List<GameCategory> getAllGameCategoryList() {
 		return getSqlMapClientTemplate().queryForList("game_category.getAllGameCategoryList");
 	}

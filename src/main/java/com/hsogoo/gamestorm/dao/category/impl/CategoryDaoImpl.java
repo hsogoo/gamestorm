@@ -31,7 +31,7 @@ public class CategoryDaoImpl extends BaseDao implements CategoryDao{
         return (Category) getSqlMapClientTemplate().queryForObject("gs_category.getCategory", id);
     }
 
-    public List<Category> findFuzzyCategorys(String categoryId,String categoryName){
+    public List<Category> findFuzzyCategorys(Long categoryId,String categoryName){
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("id",categoryId);
         map.put("categoryName",categoryName);

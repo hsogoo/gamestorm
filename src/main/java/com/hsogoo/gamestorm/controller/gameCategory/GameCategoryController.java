@@ -2,6 +2,7 @@ package com.hsogoo.gamestorm.controller.gameCategory;
 
 import java.util.List;
 
+import com.hsogoo.gamestorm.vo.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,28 +33,36 @@ public class GameCategoryController {
 		model.addObject("gameCategoryList", gameCategoryList);
 		return model;
 	}
-	
-//	@RequestMapping("/gameCategoryList")
-//	@ResponseBody
-//	public ModelAndView getAllGameCategoryList(ModelAndView model,@RequestParam (value ="page") String page){
-//		List<GameCategory> gameCategoryList = gameCategoryService.getAllGameCategoryList();
-//		model.setViewName("/backend/gameCategory/gameCategoryList");
-//		model.addObject("gameCategoryList", gameCategoryList);
-//		return model;
-//	}
-	
-//	@RequestMapping("/doAddGameCategory")
-//	public ModelAndView doAddGameCategory(Game game){
-//		gameService.addGame(game);
-//		ModelAndView model = new ModelAndView("redirect:/backend/gameCategory/manage");
-//		return model;
-//	}
-//	
-//	@RequestMapping("/doAddCategoryGame")
-//	public ModelAndView doAddCategoryGame(Game game){
-//		gameService.addGame(game);
-//		ModelAndView model = new ModelAndView("redirect:/backend/gameCategory/manage");
-//		return model;
-//	}
+
+	@RequestMapping("/selectGames")
+	public ModelAndView getSelectGames(
+			ModelAndView model,
+			@RequestParam(value = "gameId",required = false) Long gameId,
+			@RequestParam(value = "gameName",required = false) String gameName
+			){
+		List<Game> games = gameCategoryService.getAllCanSelectGames(gameId,gameName);
+		model.addObject("games", games);
+		return model;
+	}
+
+	@RequestMapping("/selectCategorys")
+	public ModelAndView selectCategorys(ModelAndView model,
+										@RequestParam(value = "categoryId",required = false) Long categoryId,
+										@RequestParam(value = "categoryName",required = false) String categoryName){
+		List<Category> categories = gameCategoryService.getAllCanSelectCategorys(categoryId, categoryName);
+		model.addObject("categories", categories);
+		return model;
+	}
+
+
+
+	@RequestMapping("/doAddGameCategory")
+	public ModelAndView doAddGameCategory(@RequestParam(value = "gameId") Long gameId
+			,@RequestParam(value = "categoryId") Long categoryId){
+		gameCategoryService.saveGameCategoryRelation(gameId,categoryId);
+		ModelAndView model = new ModelAndView("redirect:/backend/gameCategory/manage");
+		return model;
+	}
+
 	
 }

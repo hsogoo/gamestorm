@@ -13,6 +13,8 @@ public interface GameDao {
 
 	public List<Game> getAllGameList();
 
+	public List<Game> getAllUseGameList();
+
 	public void addGame(Game game);
 
 	/**
@@ -20,5 +22,5 @@ public interface GameDao {
 	 * @param gameName
 	 * @return
 	 */
-	public List<Game> findFuzzyGames(String gameId,String gameName);
+	public List<Game> findFuzzyGames(Long gameId,String gameName);
 }

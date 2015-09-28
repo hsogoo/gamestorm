@@ -24,3 +24,10 @@ function submitAddGameCategory(){
 	$("#addCategoryGameForm").submit();
 }
 
+
+//初始化游戏和类别下拉选项
+function initGameAndCategorySelector(){
+
+
+
+}

@@ -43,5 +43,5 @@ public interface CategoryDao {
      * @param categoryName
      * @return
      */
-    public List<Category> findFuzzyCategorys(String categoryId,String categoryName);
+    public List<Category> findFuzzyCategorys(Long categoryId,String categoryName);
 }

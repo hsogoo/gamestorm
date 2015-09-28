@@ -76,7 +76,7 @@
 									</div>
 									
 									<div class="form-group">
-										<label class="col-sm-3 control-label">选择游戏</label>
+										<label class="col-sm-3 control-label">选择类别</label>
 										<div class="col-sm-6">
 											<select class="select2_category form-control input-medium" data-placeholder="选择类别" tabindex="2" id="category">
 												<option value="Category 1">Category 1</option>

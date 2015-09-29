@@ -124,7 +124,7 @@
 						用户列表</a>
 					</li>
 					<li>
-						<a href="components_dropdowns.html">
+						<a href="/backend/user/levelSetting">
 						<i class="icon-bar-chart"></i>
 						会员等级设置</a>
 					</li>

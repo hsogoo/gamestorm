@@ -18,5 +18,7 @@ public interface UserDao {
 	public List<User> getPageUserList(int page, int pageSize);
 	
 	public Long getTotalUserCount();
+
+	public List<UserLevel> getAllUserLevelList();
 	
 }

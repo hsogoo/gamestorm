@@ -46,4 +46,13 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
 		from gs_user limit #start# , #offset#
 	</select>
 
+	<select id="gs_user_level.getAllUserLevelList"  resultClass="com.hsogoo.gamestorm.vo.UserLevel">
+		select 
+			id,
+			level_name levelName,
+			order_amount orderAmount,
+			user_discount userDiscount,
+		from gs_user_level
+	</select>
+
 </sqlMap>

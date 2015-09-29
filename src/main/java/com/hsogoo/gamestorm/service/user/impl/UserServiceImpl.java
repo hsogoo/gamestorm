@@ -43,5 +43,9 @@ public class UserServiceImpl implements UserService{
 	public Long getTotalUserCount() {
 		return userDao.getTotalUserCount();
 	}
-}
+
+	@Override
+	public List<UserLevel> getAllUserLevelList() {
+		return userDao.getAllUserLevelList();
+	}
 

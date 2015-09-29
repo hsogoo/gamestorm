@@ -47,4 +47,9 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 		return this.getSqlMapClientTemplate().queryForList("gs_user.getPageUserList", map);
 	}
 
+	@Override
+	public List<UserLevel> getAllUserLevelList() {
+		return this.getSqlMapClientTemplate().queryForList("gs_user_level.getAllUserLevelList");
+	}
+
 }

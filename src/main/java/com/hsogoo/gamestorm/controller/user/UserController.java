@@ -13,8 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hsogoo.gamestorm.service.user.UserService;
-import com.hsogoo.gamestorm.vo.Game;
-import com.hsogoo.gamestorm.vo.User;
+import com.hsogoo.gamestorm.vo.UserLevel;
 
 /**
  * @author hsogoo
@@ -28,19 +27,19 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping("/showInfo/{userId}")
-	@ResponseBody
-	public User showUserInfo(ModelMap modelMap, @PathVariable Long userId){
-		return userService.getUserById(userId);
-	}
+	// @RequestMapping("/showInfo/{userId}")
+	// @ResponseBody
+	// public User showUserInfo(ModelMap modelMap, @PathVariable Long userId){
+	// 	return userService.getUserById(userId);
+	// }
 	
-	@RequestMapping("/showUserPage/{userId}")
-	public String getUserPage(Model model, @PathVariable Long userId){
-		User user = userService.getUserById(userId);
-		model.addAttribute("user", user);
-		return "user";
+	// @RequestMapping("/showUserPage/{userId}")
+	// public String getUserPage(Model model, @PathVariable Long userId){
+	// 	User user = userService.getUserById(userId);
+	// 	model.addAttribute("user", user);
+	// 	return "user";
 		
-	}
+	// }
 	
 	@RequestMapping("/manage")
 	public String getUserPage(ModelAndView model){
@@ -63,6 +62,14 @@ public class UserController {
 		model.addObject("currentPage", page);
 		model.addObject("totalPage", (totalCount -1) / pageSize + 1 );
 		model.addObject("userList", userList);
+		return model;
+	}
+
+	@RequestMapping("/levelSetting")
+	public ModelAndView getGamePage(ModelAndView model){
+		List<UserLevel> userLevelList = gameService.getAllUserLevelList();
+		model.setViewName("/backend/user/userLevelSetting");
+		model.addObject("userLevelList", userLevelList);
 		return model;
 	}
 	

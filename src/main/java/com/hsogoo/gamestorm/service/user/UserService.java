@@ -19,4 +19,5 @@ public interface UserService {
 	
 	public Long getTotalUserCount();
 	
+	public List<UserLevel> getAllUserLevelList();
 }

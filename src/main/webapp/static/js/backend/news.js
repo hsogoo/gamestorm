@@ -1,6 +1,3 @@
-$(document).ready(function() {
-	queryForNews(1);
-});
 
 function queryForNews(page){
 	var url = "/backend/news/newsList";
@@ -12,3 +9,12 @@ function queryForNews(page){
 	});
 }
 
+function doAddNews(){
+	var url = "/backend/news/doAddNews";
+	var newsTitle = $("#newsTitle").val();
+	var newsContent = $("#summernote").code();
+	var param={"newsTitle":newsTitle,"newsContent":newsContent};
+	$.post(url,param,function(data){
+		window.location.href = "/backend/news/manage";
+	});
+}

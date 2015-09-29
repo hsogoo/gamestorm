@@ -15,4 +15,6 @@ public interface NewsDao {
 
 	public Long getTotalNewsCount();
 
+	public void doAddNews(News news);
+
 }

@@ -30,4 +30,9 @@ public class NewsServiceImpl implements NewsService {
 		return newsDao.getTotalNewsCount();
 	}
 
+	@Override
+	public void doAddNews(News news) {
+		newsDao.doAddNews(news);
+	}
+
 }

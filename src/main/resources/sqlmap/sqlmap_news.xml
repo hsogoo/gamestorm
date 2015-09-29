@@ -4,6 +4,13 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
 "http://ibatis.apache.org/dtd/sql-map-2.dtd">
 <sqlMap namespace="user">
 
+	<insert id="gs_news.doAddNews" parameterClass="com.hsogoo.gamestorm.vo.News">
+		insert into gs_news
+		(news_title,news_content,create_time)
+		values
+		(#newsTitle#, #newsContent#,now())
+	</insert>
+
 	<select id="gs_news.getTotalNewsCount" resultClass="Long">
 		select count(1)
 		from gs_news

@@ -16,7 +16,7 @@ public class News implements Serializable {
 	private String newsTitle;
 	private String newsContent;
 	private Boolean status = true;
-	private Date creatTime;
+	private Date createTime;
 
 	public Long getId() {
 		return id;
@@ -50,12 +50,12 @@ public class News implements Serializable {
 		this.status = status;
 	}
 
-	public Date getCreatTime() {
-		return creatTime;
+	public Date getCreateTime() {
+		return createTime;
 	}
 
-	public void setCreatTime(Date creatTime) {
-		this.creatTime = creatTime;
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
 	}
 
 }

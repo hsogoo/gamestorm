@@ -15,4 +15,6 @@ public interface NewsService {
 
 	public Long getTotalNewsCount();
 
+	public void doAddNews(News news);
+
 }

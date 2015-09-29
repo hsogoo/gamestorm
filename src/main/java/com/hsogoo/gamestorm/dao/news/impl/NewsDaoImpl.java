@@ -38,4 +38,9 @@ public class NewsDaoImpl extends BaseDao implements NewsDao {
 		}
 	}
 
+	@Override
+	public void doAddNews(News news) {
+		this.getSqlMapClientTemplate().insert("gs_news.doAddNews", news);
+	}
+
 }

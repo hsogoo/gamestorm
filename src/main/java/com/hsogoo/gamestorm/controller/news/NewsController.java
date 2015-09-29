@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hsogoo.gamestorm.service.news.NewsService;
+import com.hsogoo.gamestorm.vo.Category;
 import com.hsogoo.gamestorm.vo.News;
 
 /**
@@ -25,8 +26,13 @@ public class NewsController {
 	private NewsService newsService;
 	
 	@RequestMapping("/manage")
-	public String getUserPage(ModelAndView model){
+	public String getNewsPage(ModelAndView model){
 		return "/backend/news/newsManager";
+	}
+	
+	@RequestMapping("/addNewsPage")
+	public String addNewsPage(ModelAndView model){
+		return "/backend/news/newsAddPage";
 	}
 	
 	@RequestMapping("/newsList")
@@ -47,5 +53,12 @@ public class NewsController {
 		model.addObject("newsList", newsList);
 		return model;
 	}
+	
+    @RequestMapping("/doAddNews")
+    public ModelAndView doAddNews(News news){
+    	newsService.doAddNews(news);
+        ModelAndView model = new ModelAndView("redirect:/backend/news/manage");
+        return model;
+    }
 
 }

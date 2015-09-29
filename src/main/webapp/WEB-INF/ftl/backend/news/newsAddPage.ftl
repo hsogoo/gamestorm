@@ -14,6 +14,7 @@
 <link href="/static/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <link href="/static/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 <link href="/static/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+<link href="/static/assets/global/plugins/bootstrap-summernote/summernote.css" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
 
 <!-- BEGIN THEME STYLES -->
@@ -50,34 +51,34 @@
 					<div class="portlet box grey-cascade">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-star"></i>新闻列表
+								<i class="fa fa-star"></i>添加新闻
 							</div>
 						</div>
 						<div class="portlet-body">
 							<div class="table-toolbar">
-								<form role="form" class="form-inline">
+								<form role="form" class="form-horizontal">
 									<div class="form-group">
-										<div class="btn-group">
-											<a class="btn green" href="/backend/news/addNewsPage">
-											添加新闻 <i class="fa fa-plus"></i>
+										<label class="col-md-1 control-label">新闻标题</label>
+										<div class="col-md-6">
+											<input type="text" placeholder="新闻标题" class="form-control" id="newsTitle">
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="col-md-1 control-label"> 新闻内容 </label>
+										<div class="col-md-11">
+											<div id="summernote"></div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-offset-2 col-md-6">
+											<a data-toggle="modal" href="javaScript:void(0);" class="btn blue" onclick="doAddNews();">
+											添加新闻  <i class="fa fa-plus"></i>
 											</a>
 										</div>
 									</div>
-									
-									<div class="form-group">
-										<label class="control-label"> 新闻标题 </label>
-										<div class="input-group">
-											<span class="input-group-addon">
-											<i class="fa fa-comment-o"></i>
-											</span>
-											<input name="newsTitle" type="text" placeholder="新闻标题" class="form-control">
-										</div>
-									</div>
-									
-									<button class="btn blue" type="submit" onclick="queryForNews(1);"> 新闻搜索  <i class="icon-magnifier"></i></button>
 								</form>
 							</div>
-							<div id="newsList"></div>
 						</div>
 					</div>
 					<!-- END EXAMPLE TABLE PORTLET-->
@@ -97,6 +98,7 @@
 <script src="/static/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
 <script src="/static/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <script src="/static/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script src="/static/assets/global/plugins/bootstrap-summernote/summernote.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
@@ -104,6 +106,7 @@
 <script src="/static/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="/static/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
 <script src="/static/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="/static/assets/admin/pages/scripts/components-editors.js" type="text/javascript"></script>
 <script src="/static/js/backend/news.js"></script>
 
 <script>
@@ -112,7 +115,7 @@ jQuery(document).ready(function() {
 	Layout.init(); // init current layout
 	QuickSidebar.init(); // init quick sidebar
 	Demo.init(); // init demo features
-	queryForNews(1);
+	ComponentsEditors.init();
 });
 </script>
 <!-- END JAVASCRIPTS -->

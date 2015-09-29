@@ -39,12 +39,14 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 	}
 
 	@Override
-	public List<User> getPageUserList(int page, int pageSize) {
+	public List<User> getPageUserList(int page, int pageSize, String userName, String userEmail) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		Integer start = (page - 1) * pageSize;
 		Integer offset = pageSize;
 		map.put("start", start);
 		map.put("offset", offset);
+		map.put("userName", userName);
+		map.put("userEmail", userEmail);
 		return this.getSqlMapClientTemplate().queryForList("gs_user.getPageUserList", map);
 	}
 

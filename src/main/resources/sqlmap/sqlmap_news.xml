@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap
+PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="user">
+
+	<select id="gs_news.getTotalNewsCount" resultClass="Long">
+		select count(1)
+		from gs_news
+	</select>
+
+	<select id="gs_news.getPageNewsList" parameterClass="java.util.HashMap" resultClass="com.hsogoo.gamestorm.vo.News">
+		select 
+			id,
+			news_title newsTitle,
+			news_content newsContent,
+			create_time createTime,
+			status
+		from gs_news 
+		where 1=1
+		limit #start# , #offset#
+	</select>
+	
+</sqlMap>

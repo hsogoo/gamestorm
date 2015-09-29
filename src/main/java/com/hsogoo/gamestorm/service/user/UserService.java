@@ -16,7 +16,7 @@ public interface UserService {
 	
 	public List<User> getAllUserList();
 	
-	public List<User> getPageUserList(int page,int pageSize);
+	public List<User> getPageUserList(int page,int pageSize,String userName, String userEmail);
 	
 	public Long getTotalUserCount();
 	

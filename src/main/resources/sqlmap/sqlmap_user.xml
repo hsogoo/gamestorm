@@ -43,7 +43,17 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
 			user_type userType,
 			create_time createTime,
 			status
-		from gs_user limit #start# , #offset#
+		from gs_user 
+		where 1=1
+        <dynamic prepend="and" open="(" close=")">
+          <isNotEmpty prepend="or" property="userName">
+              user_name like '%#categoryName#%'
+          </isNotEmpty>
+          <isNotEmpty prepend="or" property="userEmail">
+              user_email like '#userEmail#%'
+         </isNotEmpty>
+        </dynamic>
+		limit #start# , #offset#
 	</select>
 
 	<select id="gs_user_level.getAllUserLevelList"  resultClass="com.hsogoo.gamestorm.vo.UserLevel">

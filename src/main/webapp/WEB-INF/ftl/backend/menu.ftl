@@ -162,7 +162,7 @@
 				</a>
 				<ul class="sub-menu">
 					<li>
-						<a href="/backend/user/manage">
+						<a href="/backend/news/manage">
 						<i class="icon-list"></i>
 						新闻列表</a>
 					</li>

@@ -27,7 +27,7 @@
 <!-- END PAGE LEVEL STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
-<@layout menuId="4">
+<@layout menuId="6">
 			<div class="page-content">
 	
 			<!-- BEGIN PAGE HEADER-->
@@ -39,7 +39,7 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">用户管理</a>
+						<a href="#">新闻管理</a>
 					</li>
 				</ul>
 			</div>
@@ -50,36 +50,34 @@
 					<div class="portlet box grey-cascade">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-star"></i>用户列表
+								<i class="fa fa-star"></i>新闻列表
 							</div>
 						</div>
 						<div class="portlet-body">
 							<div class="table-toolbar">
 								<form role="form" class="form-inline">
-										<div class="form-group">
-											<label class="control-label"> 用户名 </label>
-											<div class="input-group">
-												<span class="input-group-addon">
-												<i class="fa fa-user"></i>
-												</span>
-												<input name="userName" type="text" placeholder="用户名" class="form-control">
-											</div>
+									<div class="form-group">
+										<div class="btn-group">
+											<a class="btn green" href="#addNewsModal" data-toggle="modal">
+											添加新闻 <i class="fa fa-plus"></i>
+											</a>
 										</div>
+									</div>
 									
-										<div class="form-group">
-											<label class="control-label"> 注册邮件 </label>
-											<div class="input-group">
-												<span class="input-group-addon">
-												<i class="fa fa-envelope"></i>
-												</span>
-												<input name="userEmail" type="text" placeholder="电子邮件" class="form-control">
-											</div>
+									<div class="form-group">
+										<label class="control-label"> 新闻标题 </label>
+										<div class="input-group">
+											<span class="input-group-addon">
+											<i class="fa fa-comment-o"></i>
+											</span>
+											<input name="newsTitle" type="text" placeholder="新闻标题" class="form-control">
 										</div>
-										
-										<button class="btn blue" type="submit" onclick="queryForUser(1);"> 用户搜索  <i class="icon-magnifier"></i></button>
+									</div>
+									
+									<button class="btn blue" type="submit" onclick="queryForNews(1);"> 新闻搜索  <i class="icon-magnifier"></i></button>
 								</form>
 							</div>
-							<div id="userList"></div>
+							<div id="newsList"></div>
 						</div>
 					</div>
 					<!-- END EXAMPLE TABLE PORTLET-->
@@ -106,7 +104,7 @@
 <script src="/static/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="/static/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
 <script src="/static/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
-<script src="/static/js/backend/user.js"></script>
+<script src="/static/js/backend/news.js"></script>
 
 <script>
 jQuery(document).ready(function() {       

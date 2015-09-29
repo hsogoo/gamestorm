@@ -49,7 +49,10 @@ public class UserController {
 	
 	@RequestMapping("/userList")
 	@ResponseBody
-	public ModelAndView getUserList(ModelAndView model,@RequestParam (value ="page") String page){
+	public ModelAndView getUserList(ModelAndView model,
+									@RequestParam (value ="page") String page,
+									@RequestParam (value ="userName") String userName,
+									@RequestParam (value ="userEmail") String userEmail){
 		int pageSize = 10;
 		int currentPage = 1;
 		try{
@@ -57,12 +60,14 @@ public class UserController {
 		}catch (Exception e) {
 			currentPage = 1;
 		}
-		List<User> userList = userService.getPageUserList(currentPage, pageSize);
+		List<User> userList = userService.getPageUserList(currentPage, pageSize, userName, userEmail);
 		Long totalCount = userService.getTotalUserCount();
 		model.setViewName("/backend/user/userList");
 		model.addObject("currentPage", page);
 		model.addObject("totalPage", (totalCount -1) / pageSize + 1 );
 		model.addObject("userList", userList);
+		model.addObject("userName", userName);
+		model.addObject("userEmail", userEmail);
 		return model;
 	}
 

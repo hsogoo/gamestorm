@@ -16,17 +16,17 @@ import com.hsogoo.gamestorm.vo.UserLevel;
  * @description
  */
 @Service
-public class UserServiceImpl implements UserService{
-	
+public class UserServiceImpl implements UserService {
+
 	@Autowired
 	private UserDao userDao;
-	
-	public User getUserById(Long userId){
-//		User user = new User();
-//		user.setId(1L);
-//		user.setUserName("hsogoo");
-//		user.setPassword("123456");
-//		return user;
+
+	public User getUserById(Long userId) {
+		// User user = new User();
+		// user.setId(1L);
+		// user.setUserName("hsogoo");
+		// user.setPassword("123456");
+		// return user;
 		return userDao.getUserById(userId);
 	}
 
@@ -36,8 +36,8 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public List<User> getPageUserList(int page, int pageSize) {
-		return userDao.getPageUserList(page, pageSize);
+	public List<User> getPageUserList(int page, int pageSize, String userName, String userEmail) {
+		return userDao.getPageUserList(page, pageSize, userName, userEmail);
 	}
 
 	@Override

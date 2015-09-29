@@ -4,7 +4,9 @@ $(document).ready(function() {
 
 function queryForUser(page){
 	var url = "/backend/user/userList";
-	var param={"page":page};
+	var userName = $("input[name=userName]").val();
+	var userEmail = $("input[name=userEmail]").val();
+	var param={"page":page,"userName":userName,"userEmail":userEmail};
 	$.post(url,param,function(data){
 		$("#userList").html(data);
 	});

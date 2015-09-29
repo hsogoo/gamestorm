@@ -94,6 +94,11 @@
 						<a href="/backend/product/manage">
 						<i class="icon-diamond"></i>
 						金币价格配置</a>
+					</li>
+					<li>
+						<a href="/backend/product/manage">
+						<i class="icon-shield"></i>
+						装备价格配置</a>
 					</li>					
 				</ul>
 			</li>
@@ -138,9 +143,14 @@
 				</a>
 				<ul class="sub-menu">
 					<li>
-						<a href="form_controls.html">
+						<a href="/backend/user/manage">
 						<i class="icon-list"></i>
 						内容列表</a>
+					</li>
+					<li>
+						<a href="/backend/user/levelSetting">
+						<i class="icon-note"></i>
+						内容分类设置</a>
 					</li>
 				</ul>
 			</li>
@@ -152,7 +162,7 @@
 				</a>
 				<ul class="sub-menu">
 					<li>
-						<a href="table_basic.html">
+						<a href="/backend/user/manage">
 						<i class="icon-list"></i>
 						新闻列表</a>
 					</li>

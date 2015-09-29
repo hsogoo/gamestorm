@@ -4,5 +4,27 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
 "http://ibatis.apache.org/dtd/sql-map-2.dtd">
 <sqlMap namespace="game_server">
 
+    <select id="gs_game_server.getAllGameServerList" parameterClass="long" resultClass="com.hsogoo.gamestorm.vo.GameServer">
+        select
+          id,
+          game_id,
+          server_name,
+          status
+        from gs_game_server
+    </select>
+
+    <insert id="gs_game_server.insertGameServer" parameterClass="com.hsogoo.gamestorm.vo.GameServer" >
+        insert into gs_game_server (game_id,server_name,status) VALUES (#gameId#,#serverName#,#status#);
+    </insert>
+
+    <update id="gs_game_server.updateGameServer" parameterClass="com.hsogoo.gamestorm.vo.GameServer" >
+        UPDATE  gs_category
+        <dynamic prepend="set">
+            <isNotNull prepend="," property="serverName">server_name=#serverName#</isNotNull>
+            <isNotNull prepend="," property="gameId">game_id=#gameId#</isNotNull>
+            <isNotNull prepend="," property="status">status=#status#</isNotNull>
+        </dynamic>
+        where id = #id#
+    </update>
 
 </sqlMap>

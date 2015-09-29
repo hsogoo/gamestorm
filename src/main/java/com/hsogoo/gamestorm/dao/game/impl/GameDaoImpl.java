@@ -41,4 +41,8 @@ public class GameDaoImpl extends BaseDao implements GameDao{
 	public List<Game> getAllUseGameList() {
 		return this.getSqlMapClientTemplate().queryForList("gs_game.getAllUseGameList");
 	}
+
+	public Game getGameById(Long gameId) {
+		return (Game) getSqlMapClientTemplate().queryForObject("gs_game.getGameById",gameId);
+	}
 }

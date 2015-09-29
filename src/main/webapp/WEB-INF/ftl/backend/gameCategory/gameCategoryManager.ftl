@@ -64,9 +64,9 @@
 								<form role="form" class="form-inline">
 								
 									<div class="form-group">
-										<label class="col-sm-3 control-label">选择游戏</label>
-										<div class="col-sm-6">
-											<select id ＝"select2_game" select2_gameclass="select2_game form-control input-medium" data-placeholder="选择游戏" tabindex="1" id="game">
+										<label class="control-label">选择游戏</label>
+										<div class="input-group">
+											<select id="select2_game" class="form-control input-medium" data-placeholder="选择游戏" tabindex="1" id="game">
 												<option value="Category 1">Category 1</option>
 												<option value="Category 2">Category 2</option>
 												<option value="Category 3">Category 5</option>
@@ -76,9 +76,9 @@
 									</div>
 									
 									<div class="form-group">
-										<label class="col-sm-3 control-label">选择类别</label>
-										<div class="col-sm-6">
-											<select id="select2_category" class="select2_category form-control input-medium" data-placeholder="选择类别" tabindex="2" id="category">
+										<label class="control-label">选择类别</label>
+										<div class="input-group">
+											<select id="select2_category" class="form-control input-medium" data-placeholder="选择类别" tabindex="2" id="category">
 												<option value="Category 1">Category 1</option>
 												<option value="Category 2">Category 2</option>
 												<option value="Category 3">Category 5</option>
@@ -87,7 +87,7 @@
 										</div>
 									</div>
 									
-									<button class="btn blue" type="submit">添加</button>
+									<button class="btn blue" type="submit">添加游戏类目关联 <i class="icon-plus"></i> </button>
 								</form>
 							</div>
 							<#if gameCategoryList??&&gameCategoryList?size gt 0>

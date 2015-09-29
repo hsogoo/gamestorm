@@ -11,7 +11,7 @@ function queryForUser(page){
 }
 
 function submitAddUserLevel() {
-	$("#addUserLevel").submit();
+	$("#addUserLevelForm").submit();
 }
 
 function saveUserLevel(levelId){

@@ -121,13 +121,13 @@
 						</div>
 						<div class="modal-body">
 							 <div class="portlet-body form">
-							<form role="form" class="form-horizontal" action="/backend/user/doAddUserLevel" id="addUserLevel" method="post">
+							<form role="form" class="form-horizontal" action="/backend/user/doAddUserLevel" id="addUserLevelForm" method="post">
 								<div class="form-body">
 									<div class="form-group">
 										<label class="col-sm-4 control-label">等级名称</label>
 										<div class="col-sm-8">
 											<input type="text" placeholder="等级名称" class="form-control input-medium" name="levelName">
-											<span class="help-block">例如：Normal,Seliver,Gold </span>
+											<span class="help-block">例如：Normal,Silver,Gold </span>
 										</div>
 									</div>
 									<div class="form-group">
@@ -185,8 +185,7 @@ jQuery(document).ready(function() {
 	Layout.init(); // init current layout
 	QuickSidebar.init(); // init quick sidebar
 	Demo.init(); // init demo features
-	TableManaged.init();
-   	FormSamples.init();
+
 });
 </script>
 <!-- END JAVASCRIPTS -->

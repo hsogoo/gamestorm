@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hsogoo.gamestorm.service.user.UserService;
+import com.hsogoo.gamestorm.vo.User;
 import com.hsogoo.gamestorm.vo.UserLevel;
 
 /**
@@ -66,11 +67,25 @@ public class UserController {
 	}
 
 	@RequestMapping("/levelSetting")
-	public ModelAndView getGamePage(ModelAndView model){
-		List<UserLevel> userLevelList = gameService.getAllUserLevelList();
+	public ModelAndView getUserLevelPage(ModelAndView model){
+		List<UserLevel> userLevelList = userService.getAllUserLevelList();
 		model.setViewName("/backend/user/userLevelSetting");
 		model.addObject("userLevelList", userLevelList);
 		return model;
 	}
 	
+	@RequestMapping("/doAddUserLevel")
+	public ModelAndView doAddUserLevel(UserLevel userLevel){
+		userService.addUserLevel(userLevel);
+		ModelAndView model = new ModelAndView("redirect:/backend/user/levelSetting");
+		return model;
+	}
+
+    @RequestMapping("/doSaveUserLevel")
+    public ModelAndView doSaveUserLevel(UserLevel userLevel){
+        userService.updateUserLevel(userLevel);
+        ModelAndView model = new ModelAndView("redirect:/backend/user/levelSetting");
+        return model;
+    }
+
 }

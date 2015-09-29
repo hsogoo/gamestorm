@@ -3,6 +3,7 @@ package com.hsogoo.gamestorm.service.user;
 import java.util.List;
 
 import com.hsogoo.gamestorm.vo.User;
+import com.hsogoo.gamestorm.vo.UserLevel;
 
 /**
  * @author hsogoo
@@ -20,4 +21,8 @@ public interface UserService {
 	public Long getTotalUserCount();
 	
 	public List<UserLevel> getAllUserLevelList();
+
+	public void addUserLevel(UserLevel userLevel);
+
+	public void updateUserLevel(UserLevel userLevel);
 }

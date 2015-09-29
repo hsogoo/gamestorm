@@ -9,3 +9,18 @@ function queryForUser(page){
 		$("#userList").html(data);
 	});
 }
+
+function submitAddUserLevel() {
+	$("#addUserLevel").submit();
+}
+
+function saveUserLevel(levelId){
+	var levelName = $("input[name='levelName_"+levelId+"']").val();
+	var orderAmount = $("input[name='orderAmount_"+levelId+"']").val();
+	var levelDiscount = $("input[name=levelDiscount_"+levelId+"']").val();
+	var url = "/backend/user/doSaveUserLevel";
+	var param={"levelName":levelName,"orderAmount":orderAmount,"id":levelDiscount};
+	$.post(url,param,function(data){
+		window.location.href = "/backend/user/levelSetting";
+	});
+}

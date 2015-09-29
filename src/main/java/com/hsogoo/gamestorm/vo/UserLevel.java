@@ -1,6 +1,7 @@
 package com.hsogoo.gamestorm.vo;
 
 import java.util.Date;
+import java.math.BigDecimal;
 
 /**
  * @author hsogoo
@@ -10,8 +11,8 @@ import java.util.Date;
 public class UserLevel {
 
 	private Long id;
-	private BigDecimal levelName;
-	private String orderAmount;
+	private String levelName;
+	private BigDecimal orderAmount;
 	private BigDecimal levelDiscount;
 
 	public Long getId() {

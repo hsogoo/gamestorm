@@ -87,9 +87,6 @@
 										<td>
 											<input name="orderAmount_${userLevel.id}" value="${userLevel.orderAmount}" class="form-control input-medium"/>
 										</td>
-										<td>
-											<input name="orderAmount_${userLevel.id}" value="${userLevel.orderAmount}" class="form-control input-medium"/>
-										</td>
 										<td class="center">
 											<input name="levelDiscount_${userLevel.id}" value="${userLevel.levelDiscount}" class="form-control input-medium"/>
 										</td>
@@ -120,29 +117,29 @@
 					<div class="modal-content">
 						<div class="modal-header">
 							<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
-							<h4 class="modal-title">添加新游戏</h4>
+							<h4 class="modal-title">添加用户等级</h4>
 						</div>
 						<div class="modal-body">
 							 <div class="portlet-body form">
-							<form role="form" class="form-horizontal" action="/backend/user/doAddUserLevel" id="addGameForm" method="post">
+							<form role="form" class="form-horizontal" action="/backend/user/doAddUserLevel" id="addUserLevel" method="post">
 								<div class="form-body">
 									<div class="form-group">
 										<label class="col-sm-4 control-label">等级名称</label>
 										<div class="col-sm-8">
-											<input type="text" placeholder="等级名称" class="form-control input-medium" name="gameName">
+											<input type="text" placeholder="等级名称" class="form-control input-medium" name="levelName">
 											<span class="help-block">例如：Normal,Seliver,Gold </span>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-4 control-label">订单金额</label>
 										<div class="col-sm-8">
-											<input type="text" placeholder="订单金额" class="form-control input-inline input-medium" name="iconImage">
+											<input type="text" placeholder="订单金额" class="form-control input-inline input-medium" name="orderAmount">
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-4 control-label">用户折扣</label>
 										<div class="col-sm-8">
-											<input type="text" placeholder="用户折扣" class="form-control input-inline input-medium" name="displayImage">
+											<input type="text" placeholder="用户折扣" class="form-control input-inline input-medium" name="levelDiscount">
 											<span class="help-inline">例如：98折输入98</span>
 										</div>
 									</div>

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.hsogoo.gamestorm.dao.BaseDao;
 import com.hsogoo.gamestorm.dao.user.UserDao;
 import com.hsogoo.gamestorm.vo.User;
+import com.hsogoo.gamestorm.vo.UserLevel;
 
 /**
  * @author hsogoo
@@ -50,6 +51,16 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 	@Override
 	public List<UserLevel> getAllUserLevelList() {
 		return this.getSqlMapClientTemplate().queryForList("gs_user_level.getAllUserLevelList");
+	}
+
+	@Override
+	public void addUserLevel(UserLevel userLevel) {
+		this.getSqlMapClientTemplate().insert("gs_user_level.addUserLevel", userLevel);
+	}
+
+	@Override
+	public void updateUserLevel(UserLevel userLevel) {
+		this.getSqlMapClientTemplate().update("gs_user_level.updateUserLevel", userLevel);
 	}
 
 }

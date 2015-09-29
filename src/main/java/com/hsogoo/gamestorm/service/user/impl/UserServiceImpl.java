@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.hsogoo.gamestorm.dao.user.UserDao;
 import com.hsogoo.gamestorm.service.user.UserService;
 import com.hsogoo.gamestorm.vo.User;
+import com.hsogoo.gamestorm.vo.UserLevel;
 
 /**
  * @author hsogoo
@@ -49,3 +50,14 @@ public class UserServiceImpl implements UserService{
 		return userDao.getAllUserLevelList();
 	}
 
+	@Override
+	public void addUserLevel(UserLevel userLevel) {
+		userDao.addUserLevel(userLevel);
+	}
+
+	@Override
+	public void updateUserLevel(UserLevel userLevel) {
+		userDao.updateUserLevel(userLevel);
+	}
+
+}

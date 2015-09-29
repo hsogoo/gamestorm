@@ -42,4 +42,16 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
 		</dynamic>
 	</select>
 
+	<select id="gs_game.getGameById" parameterClass="long" resultClass="com.hsogoo.gamestorm.vo.Game">
+		select
+		id,
+		game_name gameName,
+		game_icon iconImage,
+		game_display displayImage,
+		game_banner bannerImage,
+		status
+		from gs_game
+		where id  = #gameId#
+	</select>
+
 </sqlMap>

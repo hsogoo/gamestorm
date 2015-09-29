@@ -23,4 +23,11 @@ public interface GameDao {
 	 * @return
 	 */
 	public List<Game> findFuzzyGames(Long gameId,String gameName);
+
+	/**
+	 * 根据游戏id获取游戏信息
+	 * @param gameId
+	 * @return
+	 */
+	public Game getGameById(Long gameId);
 }

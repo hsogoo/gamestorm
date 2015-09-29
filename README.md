@@ -12,7 +12,8 @@ Step1:1，完成游戏服务器的增删改查。
 
 Step2:完成游戏商品的增删改查。
 
-Step3:新闻和帮助中心。
+Step3:新闻和帮助中心。 （http://www.jqcool.net/bootstrap-summernote.html 研究富文本编辑器）
+      用户管理。（（on processing 90%）
 
 Step4:1，首页完成。
       2，游戏频道页。
@@ -25,7 +26,7 @@ Step5:1，购物车
       
 Step6:订单管理
 
-Step7：用户中心
+Step7：用户中心   
 
 
 

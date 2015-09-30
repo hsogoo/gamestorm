@@ -114,6 +114,7 @@ jQuery(document).ready(function() {
 	Layout.init(); // init current layout
 	QuickSidebar.init(); // init quick sidebar
 	Demo.init(); // init demo features
+        queryForUser(1);
 });
 </script>
 <!-- END JAVASCRIPTS -->

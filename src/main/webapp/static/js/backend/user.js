@@ -1,6 +1,3 @@
-$(document).ready(function() {
-	queryForUser(1);
-});
 
 function queryForUser(page){
 	var url = "/backend/user/userList";

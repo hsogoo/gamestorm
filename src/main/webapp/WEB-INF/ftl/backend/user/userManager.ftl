@@ -76,7 +76,7 @@
 											</div>
 										</div>
 										
-										<button class="btn blue" type="submit" onclick="queryForUser(1);"> 用户搜索  <i class="icon-magnifier"></i></button>
+										<button class="btn blue" type="submit" onclick="searchForUser(1);"> 用户搜索  <i class="icon-magnifier"></i></button>
 								</form>
 							</div>
 							<div id="userList"></div>
@@ -114,6 +114,7 @@ jQuery(document).ready(function() {
 	Layout.init(); // init current layout
 	QuickSidebar.init(); // init quick sidebar
 	Demo.init(); // init demo features
+    initUserManagePage(1);
 });
 </script>
 <!-- END JAVASCRIPTS -->

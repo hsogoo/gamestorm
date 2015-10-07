@@ -1,11 +1,33 @@
-$(document).ready(function() {
-	queryForUser(1);
-});
+function initUserManagePage(page){
+	var url = "/backend/user/userList";
+	var userName = "";
+	var userEmail = "";
+	var param={"page":page,"userName":userName,"userEmail":userEmail};
+	$.post(url,param,function(data){
+		$("#userList").html(data);
+	});
+}
+
+function searchForUser(page){
+	if($("#searchUserName").length){
+		$("#searchUserName").val($("input[name=userName]").val());
+	}
+	if($("#searchUserEmail").length){
+		$("#searchUserEmail").val($("input[name=userEmail]").val());
+	}
+	queryForUser(page);
+}
 
 function queryForUser(page){
 	var url = "/backend/user/userList";
-	var userName = $("input[name=userName]").val();
-	var userEmail = $("input[name=userEmail]").val();
+	var userName = "";
+	if($("#searchUserName").length){
+		userName = $("#searchUserName").val();		
+	}
+	var userEmail = "";
+	if($("#searchUserEmail").length){
+		userEmail = $("#searchUserEmail").val();
+	}
 	var param={"page":page,"userName":userName,"userEmail":userEmail};
 	$.post(url,param,function(data){
 		$("#userList").html(data);

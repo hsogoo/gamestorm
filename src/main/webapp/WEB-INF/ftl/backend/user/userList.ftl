@@ -1,4 +1,6 @@
 <#include "../macro_pagination.ftl">
+<input type="hidden" id="searchUserName" value="${userName}">
+<input type="hidden" id="searchUserEmail" value="${userEmail}">
 <#if userList??&&userList?size gt 0>
 	<#-- strat-->
 	<div class="portlet">

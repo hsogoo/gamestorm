@@ -70,7 +70,7 @@
 											<span class="input-group-addon">
 											<i class="fa fa-comment-o"></i>
 											</span>
-											<input name="newsTitle" type="text" placeholder="新闻标题" class="form-control">
+											<input name="newsTitle" type="text" placeholder="新闻标题" class="form-control input-large">
 										</div>
 									</div>
 									

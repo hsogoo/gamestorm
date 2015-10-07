@@ -72,7 +72,7 @@
 												<span class="input-group-addon">
 												<i class="fa fa-envelope"></i>
 												</span>
-												<input name="userEmail" type="text" placeholder="电子邮件" class="form-control">
+												<input name="userEmail" type="text" placeholder="电子邮件" class="form-control input-large">
 											</div>
 										</div>
 										

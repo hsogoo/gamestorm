@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap
+PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="content">
+
+	<select id="gs_content.getPageContentCount" resultClass="Long" parameterClass="java.util.HashMap">
+		select count(1)
+		from gs_content
+		where status = 1
+        <isNotEmpty prepend="and" property="typeId">
+            typeId = #typeId#
+        </isNotEmpty>
+	</select>
+
+	<select id="gs_content.getPageContentList" resultClass="com.hsogoo.gamestorm.vo.Content" parameterClass="java.util.HashMap">
+		select 
+			id,
+			type_id typeId,
+			type_name typeName,
+			title,
+			content,
+			create_time createTime,
+			status
+		from gs_content
+		where status = 1
+        <isNotEmpty prepend="and" property="typeId">
+            typeId = #typeId#
+        </isNotEmpty>
+        limit #start# , #offset#
+	</select>
+	
+	<select id="gs_content_type.getAllContentTypeList"  resultClass="com.hsogoo.gamestorm.vo.ContentType">
+		select 
+			id,
+			type_name typeName,
+			status
+		from gs_content_type
+	</select>
+	
+	<select id="gs_content_type.getAllActiveContentTypeList"  resultClass="com.hsogoo.gamestorm.vo.ContentType">
+		select 
+			id,
+			type_name typeName,
+			status
+		from gs_content_type where status = 1
+	</select>
+	
+	<insert id="gs_content_type.addContentType" parameterClass="com.hsogoo.gamestorm.vo.ContentType">
+		insert into gs_content_type
+			(type_name)
+		values
+			(#typeName#)
+	</insert>
+
+	<update id="gs_content_type.updateContentType" parameterClass="com.hsogoo.gamestorm.vo.ContentType">
+		update gs_content_type
+		set 
+			type_name = #typeName#,
+			status = #status#
+		where id = #id#
+	</update>
+	
+	<select id="gs_content_type.getContentTypeById"  resultClass="com.hsogoo.gamestorm.vo.ContentType" parameterClass="Long">
+		select 
+			id,
+			type_name typeName,
+			status
+		from gs_content_type
+		where id = #id#
+	</select>
+	
+	<update id="gs_content.updateContentStatus" parameterClass="java.util.HashMap">
+		update gs_content 
+		set status = #status#
+		where type_id = #typeId#
+	</update>
+	
+	<insert id="gs_content.doAddContent" parameterClass="com.hsogoo.gamestorm.vo.Content">
+		insert into gs_content
+			(title,content,type_id,type_name,create_time)
+		values
+			(#title#,#content#,#typeId#,#typeName#,now())
+	</insert>
+
+</sqlMap>

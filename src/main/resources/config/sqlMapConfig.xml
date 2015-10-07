@@ -16,5 +16,6 @@
 	<sqlMap resource="sqlmap/sqlmap_order.xml" />
 	<sqlMap resource="sqlmap/sqlmap_order_item.xml" />
 	<sqlMap resource="sqlmap/sqlmap_news.xml" />
+	<sqlMap resource="sqlmap/sqlmap_content.xml" />
 	
 </sqlMapConfig>

@@ -22,12 +22,13 @@
 <link href="/static/assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
 <link id="style_color" href="/static/assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css"/>
 <link href="/static/assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/select2/select2.css"/>
 <!-- END THEME STYLES -->
 
 <!-- END PAGE LEVEL STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
-<@layout menuId="6">
+<@layout menuId="5">
 			<div class="page-content">
 	
 			<!-- BEGIN PAGE HEADER-->
@@ -39,7 +40,7 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">新闻管理</a>
+						<a href="#">内容管理&帮助中心</a>
 					</li>
 				</ul>
 			</div>
@@ -50,7 +51,7 @@
 					<div class="portlet box blue-chambray">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-star"></i>新闻列表
+								<i class="fa fa-star"></i>内容列表
 							</div>
 						</div>
 						<div class="portlet-body">
@@ -58,26 +59,28 @@
 								<form role="form" class="form-inline">
 									<div class="form-group">
 										<div class="btn-group">
-											<a class="btn green" href="/backend/news/addNewsPage">
-											添加新闻 <i class="fa fa-plus"></i>
+											<a href="/backend/content/addNewContent" class="btn green">
+											添加内容 <i class="fa fa-plus"></i>
 											</a>
 										</div>
 									</div>
-									
 									<div class="form-group">
-										<label class="control-label"> 新闻标题 </label>
-										<div class="input-group">
-											<span class="input-group-addon">
-											<i class="fa fa-comment-o"></i>
-											</span>
-											<input name="newsTitle" type="text" placeholder="新闻标题" class="form-control input-large">
+										<label class="col-sm-4 control-label">选择内容分类</label>
+										<div class="col-sm-6">
+											<select class="select2_category form-control input-medium" data-placeholder="选择类别" id="contentType">
+												<option value="">所有分类</option>
+												<#if contentTypeList??&&contentTypeList?size gt 0>
+													<#list contentTypeList as contentType>
+														<option value="${contentType.id}">${contentType.typeName}</option>
+													</#list>
+												</#if>
+											</select>
 										</div>
 									</div>
-									
-									<button class="btn blue" type="submit" onclick="queryForNews(1);"> 新闻搜索  <i class="icon-magnifier"></i></button>
+									<button class="btn blue" type="submit" onclick="searchForContent(1);"> 内容搜索  <i class="icon-magnifier"></i></button>
 								</form>
 							</div>
-							<div id="newsList"></div>
+							<div id="contentList"></div>
 						</div>
 					</div>
 					<!-- END EXAMPLE TABLE PORTLET-->
@@ -104,7 +107,9 @@
 <script src="/static/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="/static/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
 <script src="/static/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
-<script src="/static/js/backend/news.js"></script>
+<script type="text/javascript" src="/static/assets/global/plugins/select2/select2.min.js"></script>
+<script src="/static/assets/admin/pages/scripts/form-samples.js"></script>
+<script src="/static/js/backend/content.js"></script>
 
 <script>
 jQuery(document).ready(function() {       
@@ -112,7 +117,8 @@ jQuery(document).ready(function() {
 	Layout.init(); // init current layout
 	QuickSidebar.init(); // init quick sidebar
 	Demo.init(); // init demo features
-	queryForNews(1);
+	FormSamples.init();
+	initContentManagePage(1);
 });
 </script>
 <!-- END JAVASCRIPTS -->

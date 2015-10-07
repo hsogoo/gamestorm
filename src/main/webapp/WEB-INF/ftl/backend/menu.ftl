@@ -143,12 +143,12 @@
 				</a>
 				<ul class="sub-menu">
 					<li>
-						<a href="/backend/user/manage">
+						<a href="/backend/content/manage">
 						<i class="icon-list"></i>
 						内容列表</a>
 					</li>
 					<li>
-						<a href="/backend/user/levelSetting">
+						<a href="/backend/content/contentTypeSetting">
 						<i class="icon-note"></i>
 						内容分类设置</a>
 					</li>

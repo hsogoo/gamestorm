@@ -52,7 +52,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<!-- BEGIN EXAMPLE TABLE PORTLET-->
-					<div class="portlet box grey-cascade">
+					<div class="portlet box blue-chambray">
 						<div class="portlet-title">
 							<div class="caption">
 								<i class="fa fa-star"></i>游戏类别列表

@@ -11,19 +11,36 @@ import java.util.Date;
 public class Content implements Serializable {
 
 	private static final long serialVersionUID = 8736155376891064808L;
-	/** 这里简单点不弄枚举了 */
-	private Integer type;
+	private Long id;
+	private Integer typeId;
+	private String typeName;
 	private String title;
 	private String content;
-	private Integer status;
+	private Boolean status = true;
 	private Date createTime;
 
-	public Integer getType() {
-		return type;
+	public Long getId() {
+		return id;
 	}
 
-	public void setType(Integer type) {
-		this.type = type;
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Integer getTypeId() {
+		return typeId;
+	}
+
+	public void setTypeId(Integer typeId) {
+		this.typeId = typeId;
+	}
+
+	public String getTypeName() {
+		return typeName;
+	}
+
+	public void setTypeName(String typeName) {
+		this.typeName = typeName;
 	}
 
 	public String getTitle() {
@@ -42,11 +59,11 @@ public class Content implements Serializable {
 		this.content = content;
 	}
 
-	public Integer getStatus() {
+	public Boolean getStatus() {
 		return status;
 	}
 
-	public void setStatus(Integer status) {
+	public void setStatus(Boolean status) {
 		this.status = status;
 	}
 

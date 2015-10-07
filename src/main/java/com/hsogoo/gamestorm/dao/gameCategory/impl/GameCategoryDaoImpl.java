@@ -27,11 +27,8 @@ public class GameCategoryDaoImpl extends BaseDao implements GameCategoryDao {
         return this.getSqlMapClientTemplate().queryForList("game_category.findExsitGameIdsByCategoryId",categoryId);
     }
 
-    public void insertGameAndCategoryRelation(Long gameId, Long categoryId) {
-        Map<String,Object> map = new HashMap<String, Object>();
-        map.put("gameId",gameId);
-        map.put("categoryId",categoryId);
-        this.getSqlMapClientTemplate().insert("game_category.insertGameAndCategoryRelation",map);
+    public void addGameCategory(GameCategory gameCategory) {
+        this.getSqlMapClientTemplate().insert("game_category.addGameCategory",gameCategory);
     }
 
     public int updateGameAndCategoryRelation(Long id,Long gameId, Long categoryId,Boolean status) {
@@ -45,5 +42,13 @@ public class GameCategoryDaoImpl extends BaseDao implements GameCategoryDao {
 
 	public List<GameCategory> getAllGameCategoryList() {
 		return getSqlMapClientTemplate().queryForList("game_category.getAllGameCategoryList");
+	}
+
+	@Override
+	public List<GameCategory> getGameCategoryByGameIdAndCategoryId(Long gameId,	Long categoryId) {
+        Map<String,Object> map = new HashMap<String, Object>();
+        map.put("gameId",gameId);
+        map.put("categoryId", categoryId);
+		return getSqlMapClientTemplate().queryForList("game_category.getGameCategoryByGameIdAndCategoryId", map);
 	}
 }

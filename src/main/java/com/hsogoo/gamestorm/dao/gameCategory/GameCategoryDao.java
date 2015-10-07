@@ -26,11 +26,10 @@ public interface GameCategoryDao {
 
     /**
      * 新增游戏和分类对应关系数据
-     * @param gameId
-     * @param categoryId
+     * @param gameCategory
      * @return
      */
-    public void insertGameAndCategoryRelation(Long gameId,Long categoryId);
+    public void addGameCategory(GameCategory gameCategory);
 
     /**
      * 更新游戏和分类对应关系数据
@@ -43,4 +42,6 @@ public interface GameCategoryDao {
     public int updateGameAndCategoryRelation(Long id,Long gameId, Long categoryId,Boolean status);
 
 	public List<GameCategory> getAllGameCategoryList();
+	
+	public List<GameCategory> getGameCategoryByGameIdAndCategoryId(Long gameId, Long categoryId);
 }

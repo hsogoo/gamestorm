@@ -60,17 +60,18 @@
 						</div>
 						<div class="portlet-body">
 							<div class="table-toolbar">
-								<h4>关联游戏和类别</h4>
 								<form role="form" class="form-inline">
 								
 									<div class="form-group">
 										<label class="control-label">选择游戏</label>
 										<div class="input-group">
-											<select id="select2_game" class="form-control input-medium" data-placeholder="选择游戏" tabindex="1" id="game">
-												<option value="Category 1">Category 1</option>
-												<option value="Category 2">Category 2</option>
-												<option value="Category 3">Category 5</option>
-												<option value="Category 4">Category 4</option>
+											<select class="select2_category form-control input-medium" data-placeholder="选择游戏" tabindex="1" id="game">
+												<option value="">选择游戏</option>
+												<#if gameList??&&gameList?size gt 0>
+													<#list gameList as game>
+														<option value="${game.id}">${game.gameName}</option>
+													</#list>
+												</#if>
 											</select>
 										</div>
 									</div>
@@ -78,60 +79,62 @@
 									<div class="form-group">
 										<label class="control-label">选择类别</label>
 										<div class="input-group">
-											<select id="select2_category" class="form-control input-medium" data-placeholder="选择类别" tabindex="2" id="category">
-												<option value="Category 1">Category 1</option>
-												<option value="Category 2">Category 2</option>
-												<option value="Category 3">Category 5</option>
-												<option value="Category 4">Category 4</option>
+											<select class="select2_category form-control input-medium" data-placeholder="选择类别" tabindex="2" id="category">
+												<option value="">选择类别</option>
+												<#if categoryList??&&categoryList?size gt 0>
+													<#list categoryList as category>
+														<option value="${category.id}">${category.categoryName}</option>
+													</#list>
+												</#if>
 											</select>
 										</div>
 									</div>
 									
-									<button class="btn blue" type="submit">添加游戏类目关联 <i class="icon-plus"></i> </button>
+									<button class="btn blue" type="submit" onclick="addGameCategory();">添加游戏类目关联 <i class="icon-plus"></i> </button>
 								</form>
 							</div>
-							<#if gameCategoryList??&&gameCategoryList?size gt 0>
-							<table class="table table-striped table-bordered table-hover" id="sample_2">
-							<thead>
-							<tr>
-								<th class="table-checkbox">
-									<input type="checkbox" class="group-checkable" data-set="#sample_2 .checkboxes"/>
-								</th>
-								<th>游戏名称</th>
-								<th>类别名称</th>
-								<th>状态</th>
-								<th>操作</th>
-							</tr>
-							</thead>
-							<tbody>
-							<#list gameCategoryList as gameCategory>
-							<tr class="odd gradeX">
-								<td>
-									<input type="checkbox" class="checkboxes" value="1"/>
-								</td>
-								<td>${gameCategory.gameName}</td>
-								<td>${gameCategory.categoryName}</td>
-								<td>
-									<#if gameCategory.status><span class="label label-sm label-success">Active</span><#else><span class="label label-sm label-danger">Stoped</span></#if>
-								</td>
-								<td class="center">
-									 <#if gameCategory.status>
-									 	<a onclick="saveCategory(6);" href="javascript:;" class="btn default btn-xs purple"><i class="fa fa-arrow-down"></i> 下架 </a>
-									 <#else>
-									 	<a onclick="saveCategory(6);" href="javascript:;" class="btn default btn-xs green"><i class="fa fa-arrow-up"></i> 上架 </a>
-									 </#if>
-								</td>
-							</tr>
-							</#list>
-							</tbody>
-							</table>
-							<#else>
-								<div class="row">
-									<div class="col-md-12">
-									 	<div class="alert alert-warning" style="margin-top:10px;">暂无游戏和类别的关联，请先关联游戏类别</div>
+								<#if gameCategoryList??&&gameCategoryList?size gt 0>
+									<table class="table table-striped table-bordered table-hover" id="sample_2">
+										<thead>
+											<tr>
+												<th class="table-checkbox">
+													<input type="checkbox" class="group-checkable" data-set="#sample_2 .checkboxes"/>
+												</th>
+												<th>游戏名称</th>
+												<th>类别名称</th>
+												<th>状态</th>
+												<th>操作</th>
+											</tr>
+										</thead>
+										<tbody>
+											<#list gameCategoryList as gameCategory>
+												<tr class="odd gradeX">
+													<td>
+														<input type="checkbox" class="checkboxes" value="1"/>
+													</td>
+													<td>${gameCategory.gameName}</td>
+													<td>${gameCategory.categoryName}</td>
+													<td>
+														<#if gameCategory.status><span class="label label-sm label-success">Active</span><#else><span class="label label-sm label-danger">Stoped</span></#if>
+													</td>
+													<td class="center">
+														 <#if gameCategory.status>
+														 	<a onclick="saveCategory(6);" href="javascript:;" class="btn default btn-xs purple"><i class="fa fa-arrow-down"></i> 下架 </a>
+														 <#else>
+														 	<a onclick="saveCategory(6);" href="javascript:;" class="btn default btn-xs green"><i class="fa fa-arrow-up"></i> 上架 </a>
+														 </#if>
+													</td>
+												</tr>
+											</#list>
+										</tbody>
+									</table>
+								<#else>
+									<div class="row">
+										<div class="col-md-12">
+										 	<div class="alert alert-warning" style="margin-top:10px;">暂无游戏和类别的关联，请先关联游戏类别</div>
+										</div>
 									</div>
-								</div>
-							</#if>
+								</#if>
 						</div>
 					</div>
 					<!-- END EXAMPLE TABLE PORTLET-->
@@ -173,8 +176,8 @@ jQuery(document).ready(function() {
 	Layout.init(); // init current layout
 	QuickSidebar.init(); // init quick sidebar
 	Demo.init(); // init demo features
-	TableManaged.init();
    	FormSamples.init();
+   	TableManaged.init();
 });
 </script>
 <!-- END JAVASCRIPTS -->

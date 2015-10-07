@@ -32,6 +32,11 @@ public class GameCategoryServiceImpl implements GameCategoryService {
 	public List<GameCategory> getAllGameCategoryList() {
 		return gameCategoryDao.getAllGameCategoryList();
 	}
+	
+	@Override
+	public List<GameCategory> getGameCategoryByGameIdAndCategoryId(Long gameId, Long categoryId) {
+		return gameCategoryDao.getGameCategoryByGameIdAndCategoryId(gameId, categoryId);
+	}
 
 	public List<Game> getAllCanSelectGames(Long gameId, String gameName) {
 		//模糊查询所有的游戏列表
@@ -112,7 +117,7 @@ public class GameCategoryServiceImpl implements GameCategoryService {
 	}
 
 
-	public void saveGameCategoryRelation(Long gameId, Long categoryId) {
-		gameCategoryDao.insertGameAndCategoryRelation(gameId,categoryId);
+	public void addGameCategory(GameCategory gameCategory) {
+		gameCategoryDao.addGameCategory(gameCategory);
 	}
 }

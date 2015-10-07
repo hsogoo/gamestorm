@@ -18,8 +18,8 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
         and status = 1
     </select>
 
-    <insert id="game_category.insertGameAndCategoryRelation" parameterClass="map">
-        insert into gs_game_category (game_id,category_id,status) VALUES (#gameId#,#categoryId#,1)
+    <insert id="game_category.addGameCategory" parameterClass="com.hsogoo.gamestorm.vo.GameCategory">
+        insert into gs_game_category (game_id,game_name,category_id,category_name) VALUES (#gameId#,#gameName#,#categoryId#,#categoryName#)
     </insert>
 
     <update id="game_category.updateGameAndCategoryRelationById" parameterClass="map">
@@ -42,6 +42,19 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
     		status
     	from 
     		gs_game_category
+    </select>
+    
+    <select id="game_category.getGameCategoryByGameIdAndCategoryId"  parameterClass="map" resultClass="com.hsogoo.gamestorm.vo.GameCategory">
+    	select 
+    		id,
+    		game_name gameName,
+    		game_id gameId,
+    		category_name categoryName,
+    		category_id categoryId,
+    		status
+    	from 
+    		gs_game_category
+    	where game_id = #gameId# and category_id = #categoryId#
     </select>
 
 </sqlMap>

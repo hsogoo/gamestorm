@@ -13,9 +13,11 @@ public interface GameCategoryService {
 
 	public List<GameCategory> getAllGameCategoryList();
 
-	List<Game> getAllCanSelectGames(Long gameId, String gameName);
+	public List<Game> getAllCanSelectGames(Long gameId, String gameName);
 
-	List<Category> getAllCanSelectCategorys(Long categoryId, String categoryName);
+	public List<Category> getAllCanSelectCategorys(Long categoryId, String categoryName);
 
-	void saveGameCategoryRelation(Long gameId, Long categoryId);
+	public void addGameCategory(GameCategory gameCategory);
+	
+	public List<GameCategory> getGameCategoryByGameIdAndCategoryId(Long gameId, Long categoryId);
 }

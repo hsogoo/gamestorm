@@ -24,6 +24,24 @@
 		<property name="url" value="${jdbc.url}" />
 		<property name="username" value="${jdbc.username}" />
 		<property name="password" value="${jdbc.password}" />
+    <!-- 对空闲DB连接是否进行有效验证 -->
+    <property name="testWhileIdle" value="true"/>
+    <!-- 在取出DB连接时是否进行有效验证 -->
+    <property name="testOnBorrow" value="true"/>
+    <!-- 在使用完返回DB连接时是否进行有效验证 -->
+    <property name="testOnReturn" value="false"/>
+    <property name="validationQuery">
+        <value>select 1</value>
+    </property>
+    <!--每隔一段多少毫秒跑一次检测空閑DB连接的線程-->
+    <property name="timeBetweenEvictionRunsMillis" value="30000"/>
+    <!--每次驗證空閑連接的連接數目-->
+    <property name="numTestsPerEvictionRun" value="3"/>
+    <property name="maxActive" value="15"/>
+    <property name="maxIdle" value="15"/>
+    <property name="maxWait" value="3000"/>
+    <property name="initialSize" value="1" />  
+    <property name="minIdle" value="1" />  
 	</bean>
 	
 	<!-- 配置SqlMapClient对象 -->  

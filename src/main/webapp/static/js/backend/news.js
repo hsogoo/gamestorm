@@ -6,6 +6,7 @@ function queryForNews(page){
 	var param={"page":page};
 	$.post(url,param,function(data){
 		$("#newsList").html(data);
+		$("[data-toggle='popover']").popover({html : true });
 	});
 }
 

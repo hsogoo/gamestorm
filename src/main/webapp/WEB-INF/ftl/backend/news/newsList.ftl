@@ -20,7 +20,7 @@
 		              <td>
 		              <span class="uni"><input type="checkbox"></span>
 		              </td>
-		              <td>${news.newsTitle}</td>
+		              <td><a href="#" title="${news.newsTitle}" data-container="body" data-toggle="popover" data-placement="right" data-content='${news.newsContent}'>${news.newsTitle}</a></td>
 		              <td>${news.createTime?string("yyyy-MM-dd HH:mm:ss")}</td>
 		              <td>
 		              	<#if news.status>

@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.hsogoo.gamestorm.dao.product.ProductDao;
 import com.hsogoo.gamestorm.service.product.ProductService;
+import com.hsogoo.gamestorm.vo.AttrType;
+import com.hsogoo.gamestorm.vo.AttrValue;
 import com.hsogoo.gamestorm.vo.Product;
 import com.hsogoo.gamestorm.vo.ProductType;
 
@@ -39,6 +41,16 @@ public class ProductServiceImpl implements ProductService{
 	@Override
 	public void addProductType(ProductType productType) {
 		productDao.addProductType(productType);
+	}
+
+	@Override
+	public List<AttrType> getAllAttrTypeList() {
+		return productDao.getAllAttrTypeList();
+	}
+
+	@Override
+	public List<AttrValue> getAllAttrValueList() {
+		return productDao.getAllAttrValueList();
 	}
 
 }

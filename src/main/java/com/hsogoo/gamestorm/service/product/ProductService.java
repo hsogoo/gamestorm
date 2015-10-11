@@ -2,6 +2,8 @@ package com.hsogoo.gamestorm.service.product;
 
 import java.util.List;
 
+import com.hsogoo.gamestorm.vo.AttrType;
+import com.hsogoo.gamestorm.vo.AttrValue;
 import com.hsogoo.gamestorm.vo.Product;
 import com.hsogoo.gamestorm.vo.ProductType;
 
@@ -19,4 +21,8 @@ public interface ProductService {
 	public List<ProductType> getProductTypeForCheck(ProductType productType);
 
 	public void addProductType(ProductType productType);
+
+	public List<AttrType> getAllAttrTypeList();
+
+	public List<AttrValue> getAllAttrValueList();
 }

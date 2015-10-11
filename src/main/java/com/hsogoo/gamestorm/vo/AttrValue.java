@@ -10,7 +10,7 @@ public class AttrValue {
 	private Long id;
 	private Long typeId;
 	private String typeName;
-	private String value;
+	private String attrValue;
 
 	public Long getId() {
 		return id;
@@ -36,12 +36,12 @@ public class AttrValue {
 		this.typeName = typeName;
 	}
 
-	public String getValue() {
-		return value;
+	public String getAttrValue() {
+		return attrValue;
 	}
 
-	public void setValue(String value) {
-		this.value = value;
+	public void setAttrValue(String attrValue) {
+		this.attrValue = attrValue;
 	}
 
 }

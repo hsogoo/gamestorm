@@ -39,5 +39,21 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
 		values
 		(#gameId#,#gameName#,#categoryId#,#categoryName#,#typeName#)
 	</insert>
+	
+	<select id="gs_attr_type.getAllAttrTypeList" resultClass="com.hsogoo.gamestorm.vo.AttrType">
+		select 
+		id,
+		attr_type_name typeName
+		from gs_attr_type
+	</select>
+	
+	<select id="gs_attr_value.getAllAttrValueList" resultClass="com.hsogoo.gamestorm.vo.AttrValue">
+		select 
+		id,
+		type_id typeId,
+		type_name typeName,
+		attr_value attrValue
+		from gs_attr_value
+	</select>
 
 </sqlMap>

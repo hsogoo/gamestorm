@@ -13,9 +13,10 @@ import com.hsogoo.gamestorm.constant.ResultConstant;
 import com.hsogoo.gamestorm.service.category.CategoryService;
 import com.hsogoo.gamestorm.service.game.GameService;
 import com.hsogoo.gamestorm.service.product.ProductService;
+import com.hsogoo.gamestorm.vo.AttrType;
+import com.hsogoo.gamestorm.vo.AttrValue;
 import com.hsogoo.gamestorm.vo.Category;
 import com.hsogoo.gamestorm.vo.Game;
-import com.hsogoo.gamestorm.vo.GameCategory;
 import com.hsogoo.gamestorm.vo.JsonResult;
 import com.hsogoo.gamestorm.vo.Product;
 import com.hsogoo.gamestorm.vo.ProductType;
@@ -74,17 +75,19 @@ public class ProductController {
 	
 	@RequestMapping("/attrType")
 	public ModelAndView getProductAttrType(ModelAndView model){
-		List<Product> productList = productService.getAllProductList();
-		model.setViewName("/backend/product/productManager");
-		model.addObject("productList", productList);
+		List<AttrType> attrTypeList = productService.getAllAttrTypeList();
+		model.setViewName("/backend/product/attrType");
+		model.addObject("attrTypeList", attrTypeList);
 		return model;
 	}
 	
 	@RequestMapping("/attrValue")
 	public ModelAndView getProductAttrValue(ModelAndView model){
-		List<Product> productList = productService.getAllProductList();
-		model.setViewName("/backend/product/productManager");
-		model.addObject("productList", productList);
+		List<AttrValue> attrValueList = productService.getAllAttrValueList();
+		List<AttrType> attrTypeList = productService.getAllAttrTypeList();
+		model.setViewName("/backend/product/attrValue");
+		model.addObject("attrValueList", attrValueList);
+		model.addObject("attrTypeList", attrTypeList);
 		return model;
 	}
 	

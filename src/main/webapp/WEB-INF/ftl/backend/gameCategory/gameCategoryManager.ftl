@@ -49,6 +49,9 @@
 				</ul>
 			</div>
 			<!-- END PAGE HEADER-->
+			
+			<div class="alert alert-success"><strong>模块功能说明： </strong>此模块用来设定游戏和类目的双向关联关系。比如：World of Warcraft US下面有PowerLeveling,Gold,Item等，而PowerLeveling下面则有World of Warcraft US,Diablo III等。</div>
+			
 			<div class="row">
 				<div class="col-md-12">
 					<!-- BEGIN EXAMPLE TABLE PORTLET-->
@@ -90,7 +93,7 @@
 										</div>
 									</div>
 									
-									<button class="btn blue" type="submit" onclick="addGameCategory();">添加游戏类目关联 <i class="icon-plus"></i> </button>
+									<button class="btn blue" onclick="addGameCategory();">添加游戏类目关联 <i class="icon-plus"></i> </button>
 								</form>
 							</div>
 								<#if gameCategoryList??&&gameCategoryList?size gt 0>

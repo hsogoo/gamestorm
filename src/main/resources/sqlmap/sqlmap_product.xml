@@ -4,4 +4,40 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
 "http://ibatis.apache.org/dtd/sql-map-2.dtd">
 <sqlMap namespace="product">
 
+	<select id="gs_product_type.getAllProductTypeList" resultClass="com.hsogoo.gamestorm.vo.ProductType">
+		select
+		id,
+		game_id gameId,
+		game_name gameName,
+		category_id categoryId,
+		category_name categoryName,
+		type_name typeName,
+		status
+		from
+		gs_product_type
+	</select>
+
+	<select id="gs_product_type.getProductTypeForCheck"
+		parameterClass="com.hsogoo.gamestorm.vo.ProductType" resultClass="com.hsogoo.gamestorm.vo.ProductType">
+		select
+		id,
+		game_id gameId,
+		game_name gameName,
+		category_id categoryId,
+		category_name categoryName,
+		type_name typeName,
+		status
+		from
+		gs_product_type
+		where game_id = #gameId# and category_id =#categoryId#
+		and type_name = #typeName#
+	</select>
+
+	<insert id="gs_product_type.addProductType" parameterClass="com.hsogoo.gamestorm.vo.ProductType">
+		insert into gs_product_type
+		(game_id,game_name,category_id,category_name,type_name)
+		values
+		(#gameId#,#gameName#,#categoryId#,#categoryName#,#typeName#)
+	</insert>
+
 </sqlMap>

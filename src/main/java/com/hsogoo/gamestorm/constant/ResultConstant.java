@@ -8,6 +8,6 @@ public class ResultConstant {
 	
 	public final static String SUCCESS = "00";
 	public final static String ERROR_EXIST_CODE = "01";
-	public final static String ERROR_EXIST_MSG = "该游戏和类别的关联关系已经存在";
+	public final static String ERROR_EXIST_MSG = "添加的内容已经存在";
 
 }

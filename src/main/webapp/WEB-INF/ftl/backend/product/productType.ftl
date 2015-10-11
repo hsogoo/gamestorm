@@ -32,7 +32,7 @@
 <!-- END PAGE LEVEL STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
-<@layout menuId="1">
+<@layout menuId="2">
 			<div class="page-content">
 	
 			<!-- BEGIN PAGE HEADER-->
@@ -44,11 +44,14 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">游戏管理</a>
+						<a href="#">商品管理</a>
 					</li>
 				</ul>
 			</div>
 			<!-- END PAGE HEADER-->
+			
+			<div class="alert alert-success"><strong>模块功能说明： </strong>此模块用来设定某游戏，某类目下的商品类型，相当于三级类目。比如：World of Warcraft US下面的PowerLeveling有等级代练，荣誉代练等，这些在这里进行设置。</div>
+			
 			<div class="row">
 				<div class="col-md-12">
 					<!-- BEGIN EXAMPLE TABLE PORTLET-->
@@ -96,11 +99,11 @@
 											<span class="input-group-addon">
 											<i class="icon-present"></i>
 											</span>
-											<input name="productType" type="text" placeholder="商品类型名称" class="form-control input-large">
+											<input name="productType" id="productType" type="text" placeholder="商品类型名称" class="form-control input-large">
 										</div>
 									</div>
 									
-									<button class="btn blue" type="submit" onclick="addproductType();">添加商品类型 <i class="icon-plus"></i> </button>
+									<button class="btn blue" onclick="addProductType();">添加商品类型 <i class="icon-plus"></i> </button>
 								</form>
 							</div>
 								<#if productTypeList??&&productTypeList?size gt 0>
@@ -112,7 +115,7 @@
 												</th>
 												<th>游戏名称</th>
 												<th>类别名称</th>
-												<th>状态</th>
+												<th>类型名称</th>
 												<th>操作</th>
 											</tr>
 										</thead>
@@ -124,15 +127,9 @@
 													</td>
 													<td>${productType.gameName}</td>
 													<td>${productType.categoryName}</td>
-													<td>
-														<#if productType.status><span class="label label-sm label-success">Active</span><#else><span class="label label-sm label-danger">Stoped</span></#if>
-													</td>
+													<td>${productType.typeName}</td>
 													<td class="center">
-														 <#if productType.status>
-														 	<a onclick="saveCategory(6);" href="javascript:;" class="btn default btn-xs purple"><i class="fa fa-arrow-down"></i> 下架 </a>
-														 <#else>
-														 	<a onclick="saveCategory(6);" href="javascript:;" class="btn default btn-xs green"><i class="fa fa-arrow-up"></i> 上架 </a>
-														 </#if>
+														<a onclick="editProductType(${productType.id});" href="javascript:;" class="btn default btn-xs purple"><i class="fa fa-edit"></i> 修改 </a>
 													</td>
 												</tr>
 											</#list>

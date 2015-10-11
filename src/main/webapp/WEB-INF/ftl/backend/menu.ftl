@@ -99,7 +99,12 @@
 						<a href="/backend/product/attrValue">
 						<i class="icon-shield"></i>
 						系列属性管理</a>
-					</li>					
+					</li>
+					<li>
+						<a href="/backend/product/attrValue">
+						<i class="icon-compass"></i>
+						代练价格管理</a>
+					</li>							
 				</ul>
 			</li>
 			<#if menuId?number == 3><li class="active open"><#else><li></#if>

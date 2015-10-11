@@ -86,19 +86,19 @@
 						商品列表</a>
 					</li>
 					<li>
-						<a href="/backend/product/manage">
+						<a href="/backend/product/type">
 						<i class="icon-rocket"></i>
-						代练价格配置</a>
+						商品类型管理</a>
 					</li>
 					<li>
-						<a href="/backend/product/manage">
+						<a href="/backend/product/attrType">
 						<i class="icon-diamond"></i>
-						金币价格配置</a>
+						系列类型管理</a>
 					</li>
 					<li>
-						<a href="/backend/product/manage">
+						<a href="/backend/product/attrValue">
 						<i class="icon-shield"></i>
-						装备价格配置</a>
+						系列属性管理</a>
 					</li>					
 				</ul>
 			</li>

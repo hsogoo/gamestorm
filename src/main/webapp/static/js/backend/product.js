@@ -32,3 +32,29 @@ function addProductType(){
 	});
 	
 }
+
+function submitAddAttrType(){
+	if($.trim($("#typeName").val()).length < 1){
+		alert("请输入系列类型名称");
+		return;
+	}
+	$("#addAttrTypeForm").submit();
+}
+
+$("#typeId").on("change",function(){
+	$("#typeName").val($("#typeId:selected").text());
+});
+
+function submitAddAttrValue(){
+
+	if($.trim($("#typeId").val()).length < 1){
+		alert("请先选择属性类型");
+		return;
+	}
+
+	if($.trim($("#attrValue").val()).length < 1){
+		alert("请输入系列值名称");
+		return;
+	}
+	$("#addAttrValueForm").submit();
+}

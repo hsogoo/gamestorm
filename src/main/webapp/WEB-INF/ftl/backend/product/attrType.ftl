@@ -120,7 +120,7 @@
 										<div class="form-group">
 											<label class="col-md-4 control-label">属性名称</label>
 											<div class="col-md-6">
-												<input type="text" placeholder="属性名称" class="form-control input-medium" name="typeName">
+												<input type="text" placeholder="属性名称" class="form-control input-medium" name="typeName" id="typeName">
 												<span class="help-block">例如：职业，赛季，难度等 </span>
 											</div>
 										</div>
@@ -130,7 +130,7 @@
 						</div>
 						<div class="modal-footer">
 							<button data-dismiss="modal" class="btn default" type="button">关闭</button>
-							<button class="btn blue" type="button" onclick="submitAddCategory();">添加</button>
+							<button class="btn blue" type="button" onclick="submitAddAttrType();">添加</button>
 						</div>
 					</div>
 					<!-- /.modal-content -->

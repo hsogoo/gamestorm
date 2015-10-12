@@ -43,4 +43,13 @@ public class ProductDaoImpl extends BaseDao implements ProductDao{
 		return this.getSqlMapClientTemplate().queryForList("gs_attr_value.getAllAttrValueList");
 	}
 
+	@Override
+	public void addAttrType(AttrType attrType) {
+		this.getSqlMapClientTemplate().insert("gs_attr_type.addAttrType", attrType);
+	}
+
+	@Override
+	public void addAttrValue(AttrValue attrValue) {
+		this.getSqlMapClientTemplate().insert("gs_attr_type.addAttrValue", attrValue);
+	}
 }

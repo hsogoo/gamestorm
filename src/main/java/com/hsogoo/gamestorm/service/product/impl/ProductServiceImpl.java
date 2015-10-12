@@ -53,4 +53,14 @@ public class ProductServiceImpl implements ProductService{
 		return productDao.getAllAttrValueList();
 	}
 
+	@Override
+	public void addAttrType(AttrType attrType) {
+		productDao.addAttrType(attrType);
+	}
+
+	@Override
+	public void addAttrValue(AttrValue attrValue){
+		productDao.addAttrValue(attrValue);
+	}
+
 }

@@ -56,4 +56,12 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
 		from gs_attr_value
 	</select>
 
+	<insert id="gs_attr_type.addAttrType" parameterClass="com.hsogoo.gamestorm.vo.AttrType">
+		insert into gs_attr_type (attr_type_name) values (#typeName#)
+	</insert>
+
+	<insert id="gs_attr_type.addAttrValue" parameterClass="com.hsogoo.gamestorm.vo.AttrValue">
+		insert into gs_attr_value (type_id,type_name,attr_value) values (#typeId#,#typeName#,#attrValue#)
+	</insert>
+
 </sqlMap>

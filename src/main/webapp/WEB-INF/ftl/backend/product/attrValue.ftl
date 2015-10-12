@@ -122,7 +122,7 @@
 										<div class="form-group">
 											<label class="control-label col-md-2">选择系列</label>
 											<div class="col-md-4">
-												<select class="select2_category form-control input-samll" data-placeholder="选择系列" tabindex="1" id="attrType">
+												<select class="select2_category form-control input-samll" data-placeholder="选择系列" tabindex="1" id="typeId">
 													<option value="">选择系列</option>
 													<#if attrTypeList??&&attrTypeList?size gt 0>
 														<#list attrTypeList as attrType>
@@ -131,11 +131,12 @@
 													</#if>
 												</select>
 											</div>
+											<input type="hidden" id="typeName">
 										</div>
 										<div class="form-group">
 											<label class="col-md-2 control-label">属性名称</label>
 											<div class="col-md-4">
-												<input type="text" placeholder="属性名称" class="form-control input-medium" name="typeName">
+												<input type="text" placeholder="属性名称" class="form-control input-medium" name="attrValue" id="attrValue">
 												<span class="help-block">例如：职业里面的盗贼，战士等 </span>
 											</div>
 										</div>

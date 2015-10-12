@@ -74,12 +74,20 @@ public class ProductController {
 	}
 	
 	@RequestMapping("/attrType")
-	public ModelAndView getProductAttrType(ModelAndView model){
+	public ModelAndView getAttrType(ModelAndView model){
 		List<AttrType> attrTypeList = productService.getAllAttrTypeList();
 		model.setViewName("/backend/product/attrType");
 		model.addObject("attrTypeList", attrTypeList);
 		return model;
 	}
+
+	@RequestMapping("/addAttrType")
+	public ModelAndView addAttrType(AttrType attrType){
+		productService.addAttrType(attrType);
+		ModelAndView model = new ModelAndView("redirect:/backend/product/attrType");
+		return model;
+	}
+
 	
 	@RequestMapping("/attrValue")
 	public ModelAndView getProductAttrValue(ModelAndView model){
@@ -90,6 +98,12 @@ public class ProductController {
 		model.addObject("attrTypeList", attrTypeList);
 		return model;
 	}
-	
+
+	@RequestMapping("/addAttrValue")
+	public ModelAndView addAttrValue(AttrValue attrValue){
+		productService.addAttrValue(attrValue);
+		ModelAndView model = new ModelAndView("redirect:/backend/product/attrValue");
+		return model;
+	}
 
 }

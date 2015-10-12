@@ -25,4 +25,8 @@ public interface ProductService {
 	public List<AttrType> getAllAttrTypeList();
 
 	public List<AttrValue> getAllAttrValueList();
+
+	public void addAttrType(AttrType attrType);
+
+	public void addAttrValue(AttrValue attrValue);
 }

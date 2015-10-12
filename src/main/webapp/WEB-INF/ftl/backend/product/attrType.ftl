@@ -165,7 +165,7 @@
 <script src="/static/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
 <script src="/static/assets/admin/pages/scripts/table-managed.js"></script>
 <script src="/static/assets/admin/pages/scripts/form-samples.js"></script>
-<script src="/static/js/backend/gameCategory.js"></script>
+<script src="/static/js/backend/product.js"></script>
 
 <script>
 jQuery(document).ready(function() {       

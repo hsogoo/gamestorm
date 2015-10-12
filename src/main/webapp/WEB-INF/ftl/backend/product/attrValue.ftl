@@ -146,7 +146,7 @@
 						</div>
 						<div class="modal-footer">
 							<button data-dismiss="modal" class="btn default" type="button">关闭</button>
-							<button class="btn blue" type="button" onclick="submitAddCategory();">添加</button>
+							<button class="btn blue" type="button" onclick="submitAddAttrValue();">添加</button>
 						</div>
 					</div>
 					<!-- /.modal-content -->
@@ -181,7 +181,7 @@
 <script src="/static/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
 <script src="/static/assets/admin/pages/scripts/table-managed.js"></script>
 <script src="/static/assets/admin/pages/scripts/form-samples.js"></script>
-<script src="/static/js/backend/gameCategory.js"></script>
+<script src="/static/js/backend/product.js"></script>
 
 <script>
 jQuery(document).ready(function() {       

@@ -1,7 +1,7 @@
 package com.hsogoo.gamestorm.controller.gameServer;
 
-import com.hsogoo.gamestorm.service.gameServer.GameServerService;
-import com.hsogoo.gamestorm.vo.GameServer;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
+import com.hsogoo.gamestorm.service.game.GameService;
+import com.hsogoo.gamestorm.service.gameServer.GameServerService;
+import com.hsogoo.gamestorm.vo.Game;
+import com.hsogoo.gamestorm.vo.GameServer;
 
 
 /**
@@ -23,10 +26,16 @@ public class GameServerController {
 
     @Autowired
     private GameServerService gameServerService;
+    @Autowired
+    private GameService gameService;
 
     @RequestMapping("/manage")
     public ModelAndView getGameServerPage(ModelAndView model){
-        model.setViewName("/backend/gameServer/gameServerManager");
+    	List<Game> gameList = gameService.getAllGameList();
+    	List<GameServer> gameServerList = gameServerService.getAllGameServerList();
+    	model.addObject("gameList",gameList);
+    	model.addObject("gameServerList",gameServerList);
+        model.setViewName("/backend/gameServer/gameServer");
         return model;
     }
 

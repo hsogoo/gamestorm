@@ -12,6 +12,7 @@
 	<sqlMap resource="sqlmap/sqlmap_game.xml" />
 	<sqlMap resource="sqlmap/sqlmap_category.xml" />
 	<sqlMap resource="sqlmap/sqlmap_game_category.xml" />
+	<sqlMap resource="sqlmap/sqlmap_game_server.xml" />
 	<sqlMap resource="sqlmap/sqlmap_product.xml" />
 	<sqlMap resource="sqlmap/sqlmap_order.xml" />
 	<sqlMap resource="sqlmap/sqlmap_order_item.xml" />

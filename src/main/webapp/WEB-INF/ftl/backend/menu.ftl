@@ -67,7 +67,7 @@
 						游戏类目管理</a>
 					</li>
 					<li>
-					<a href="/backend/gameCategory/manage">
+					<a href="/backend/gameServer/manage">
 					<i class="icon-list"></i>
 					游戏服务器列表</a>
 					</li>

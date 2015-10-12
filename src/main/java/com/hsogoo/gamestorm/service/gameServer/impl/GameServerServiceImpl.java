@@ -28,15 +28,15 @@ public class GameServerServiceImpl implements GameServerService {
         List<GameServer> gameServers =  gameServerDao.getAllGameServerList();
 
         //设置服务器对应游戏名称
-        for (Iterator<GameServer> iterator = gameServers.iterator(); iterator.hasNext(); ) {
-            GameServer gameServer =  iterator.next();
-            if(gameServer.getGameId() != null){
-                Game game = gameDao.getGameById(gameServer.getGameId());
-                if(game == null){
-                    gameServer.setGameName(game.getGameName());
-                }
-            }
-        }
+//        for (Iterator<GameServer> iterator = gameServers.iterator(); iterator.hasNext(); ) {
+//            GameServer gameServer =  iterator.next();
+//            if(gameServer.getGameId() != null){
+//                Game game = gameDao.getGameById(gameServer.getGameId());
+//                if(game == null){
+//                    gameServer.setGameName(game.getGameName());
+//                }
+//            }
+//        }
 
         return gameServers;
     }

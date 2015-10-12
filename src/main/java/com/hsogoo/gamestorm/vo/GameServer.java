@@ -1,6 +1,7 @@
 package com.hsogoo.gamestorm.vo;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * Created by weile on 15/9/29.
@@ -16,6 +17,8 @@ public class GameServer implements Serializable {
     private Long gameId;
 
     private String gameName;
+    
+    private BigDecimal priceExt;
 
     private Boolean status = true;
 
@@ -51,7 +54,15 @@ public class GameServer implements Serializable {
         this.gameName = gameName;
     }
 
-    public Boolean getStatus() {
+    public BigDecimal getPriceExt() {
+		return priceExt;
+	}
+
+	public void setPriceExt(BigDecimal priceExt) {
+		this.priceExt = priceExt;
+	}
+
+	public Boolean getStatus() {
         return status;
     }
 

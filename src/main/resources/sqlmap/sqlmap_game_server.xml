@@ -7,8 +7,10 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
     <select id="gs_game_server.getAllGameServerList" parameterClass="long" resultClass="com.hsogoo.gamestorm.vo.GameServer">
         select
           id,
-          game_id,
-          server_name,
+          game_id gameId,
+          game_name gameName,
+          price_ext priceExt,
+          server_name serverName,
           status
         from gs_game_server
     </select>

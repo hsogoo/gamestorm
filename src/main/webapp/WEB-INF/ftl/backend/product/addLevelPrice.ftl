@@ -39,7 +39,7 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">新闻管理</a>
+						<a href="#">商品管理</a>
 					</li>
 				</ul>
 			</div>

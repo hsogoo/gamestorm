@@ -42,7 +42,7 @@ function submitAddAttrType(){
 }
 
 $("#typeId").on("change",function(){
-	$("#typeName").val($("#typeId:selected").text());
+	$("#typeName").val($("#typeId :selected").text());
 });
 
 function submitAddAttrValue(){

@@ -122,7 +122,7 @@
 										<div class="form-group">
 											<label class="control-label col-md-2">选择系列</label>
 											<div class="col-md-4">
-												<select class="select2_category form-control input-samll" data-placeholder="选择系列" tabindex="1" id="typeId">
+												<select class="select2_category form-control input-samll" data-placeholder="选择系列" tabindex="1" id="typeId" name="typeId">
 													<option value="">选择系列</option>
 													<#if attrTypeList??&&attrTypeList?size gt 0>
 														<#list attrTypeList as attrType>
@@ -131,7 +131,7 @@
 													</#if>
 												</select>
 											</div>
-											<input type="hidden" id="typeName">
+											<input type="hidden" id="typeName" name="typeName">
 										</div>
 										<div class="form-group">
 											<label class="col-md-2 control-label">属性名称</label>

@@ -105,5 +105,19 @@ public class ProductController {
 		ModelAndView model = new ModelAndView("redirect:/backend/product/attrValue");
 		return model;
 	}
+	
+	@RequestMapping("/levelPrice")
+	public ModelAndView getLevelPrice(ModelAndView model){
+		model.setViewName("/backend/product/levelPrice");
+		return model;
+	}
+	
+	@RequestMapping("/addLevelPrice")
+	public ModelAndView addLevelPrice(ModelAndView model){
+		List<Game> gameList = gameService.getAllGameList();
+		model.addObject("gameList", gameList);
+		model.setViewName("/backend/product/addLevelPrice");
+		return model;
+	}
 
 }

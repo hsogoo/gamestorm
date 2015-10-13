@@ -101,7 +101,7 @@
 						系列属性管理</a>
 					</li>
 					<li>
-						<a href="/backend/product/attrValue">
+						<a href="/backend/product/levelPrice">
 						<i class="icon-compass"></i>
 						代练价格管理</a>
 					</li>							

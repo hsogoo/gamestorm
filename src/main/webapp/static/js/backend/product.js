@@ -58,3 +58,16 @@ function submitAddAttrValue(){
 	}
 	$("#addAttrValueForm").submit();
 }
+
+function addRow(obj){
+	var currentTr = $(obj).parent().parent();
+	var html = "<tr>" + currentTr.html() +"</tr>"
+	$("#levelPriceTable").append(html);
+}
+
+function deleteRow(obj){
+	if($("#levelPriceTable tr").length < 3){
+		return;
+	}
+	$(obj).parent().parent().remove();
+}

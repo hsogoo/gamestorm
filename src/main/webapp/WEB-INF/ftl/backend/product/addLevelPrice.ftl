@@ -27,7 +27,7 @@
 <!-- END PAGE LEVEL STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
-<@layout menuId="6">
+<@layout menuId="2">
 			<div class="page-content">
 	
 			<!-- BEGIN PAGE HEADER-->

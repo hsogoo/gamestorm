@@ -705,30 +705,15 @@
 									</div>
 									<div class="form-group">
 										<label class="col-sm-4 control-label">游戏小图标</label>
-										<div class="col-sm-8">
-											<input type="text" placeholder="游戏小图标的地址" class="form-control input-inline input-medium" name="iconImage" id="iconImage">
-											<span class="help-inline">暂时先输入图片地址，后续改成图片上传</span>
+										<div class="col-sm-8 fileupload-buttonbar">
+											<input type="hidden" name="iconImage" id="iconImage">
+											<span class="btn blue start fileinput-button">
+											<i class="fa fa-upload"></i>
+											<span>游戏小图标 </span>
+											<input name="file" type="file" id="file">
+											</span>
+											<img id="image" width="30px;" height="30px;"/>
 										</div>
-									</div>
-									<div class="form-group">
-										<form role="form" class="form-horizontal" action="/file/upload" id="upload" method="post" enctype="multipart/form-data" target="frameFile">
-											<div class="form-body">
-												<div class="fileupload-buttonbar">
-													<span class="btn green fileinput-button">
-													<i class="fa fa-plus"></i>
-													<span>
-													选择文件 </span>
-													<input name="file" type="file" id="file">
-													</span>
-													<span id="fileName"></span>
-													<button type="submit" class="btn blue start">
-														<i class="fa fa-upload"></i>
-														<span>
-														上传 </span>
-													</button>
-												</div>
-											</div>
-										</form>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-4 control-label">展示图片</label>
@@ -820,6 +805,7 @@
 <script src="/static/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
 <script src="/static/assets/admin/pages/scripts/table-managed.js"></script>
 <script src="/static/assets/admin/pages/scripts/form-samples.js"></script>
+<script src="/static/assets/global/plugins/ajaxfileupload.js"></script>
 <!--<script src="/static/assets/admin/pages/scripts/components-pickers.js"></script>-->
 <script>
 jQuery(document).ready(function() {       
@@ -831,8 +817,23 @@ jQuery(document).ready(function() {
    FormSamples.init();
    //ComponentsPickers.init();
    $("#file").on("change",function(e){
-   		$("#fileName").text($("#file").val());
+   		//$("#fileName").text($("#file").val());
+   		$.ajaxFileUpload({
+        //处理文件上传操作的服务器端地址(可以传参数,已亲测可用)
+        url:'/file/upload',
+        secureuri:false,                       //是否启用安全提交,默认为false
+        fileElementId:'file',           		//文件选择框的id属性
+        dataType:'json',                       //服务器返回的格式,可以是json或xml等
+        success:function(data, status){        //服务器响应成功时的处理函数
+            $("#image").attr("src",data.filePath);
+            $("#iconImage").val(data.filePath);
+        },
+        error:function(data, status, e){ //服务器响应失败时的处理函数
+            $('#result').html('图片上传失败，请重试！！');
+        }
+    });
    });
+   
 });
 </script>
 <!-- END JAVASCRIPTS -->

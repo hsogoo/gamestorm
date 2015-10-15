@@ -49,7 +49,7 @@ public class UploadController {
 		saveFile(filePath, multipartFile.getBytes());
 		Map<String, String> resultMap = new HashMap<String, String>(5);
 		resultMap.put("result", "success");
-		resultMap.put("filePath", filePath);
+		resultMap.put("filePath", FILE_PATH + newFileName);
 		return JSON.toJSONString(resultMap);
 	}
 

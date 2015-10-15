@@ -47,13 +47,13 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
 		where 1=1
         <dynamic prepend="and" open="(" close=")">
           <isNotEmpty prepend="or" property="userName">
-              user_name like '%#categoryName#%'
+              user_name like CONCAT('%', #userName#, '%')
           </isNotEmpty>
           <isNotEmpty prepend="or" property="userEmail">
-              user_email like '#userEmail#%'
+              user_email like CONCAT('%', #userEmail#, '%')
          </isNotEmpty>
         </dynamic>
-		limit #start# , #offset#
+		limit #start#,#offset#
 	</select>
 
 	<select id="gs_user_level.getAllUserLevelList"  resultClass="com.hsogoo.gamestorm.vo.UserLevel">

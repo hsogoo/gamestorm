@@ -28,7 +28,7 @@
 <link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/select2/select2.css"/>
 <link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
 <link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet"/>
-<link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet"
+<link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet">
 <!-- END PAGE LEVEL STYLES -->
 
 <!-- BEGIN PAGE LEVEL STYLES

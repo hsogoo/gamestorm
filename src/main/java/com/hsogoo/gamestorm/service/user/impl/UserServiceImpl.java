@@ -30,32 +30,26 @@ public class UserServiceImpl implements UserService {
 		return userDao.getUserById(userId);
 	}
 
-	@Override
 	public List<User> getAllUserList() {
 		return userDao.getAllUserList();
 	}
 
-	@Override
 	public List<User> getPageUserList(int page, int pageSize, String userName, String userEmail) {
 		return userDao.getPageUserList(page, pageSize, userName, userEmail);
 	}
 
-	@Override
 	public Long getTotalUserCount() {
 		return userDao.getTotalUserCount();
 	}
 
-	@Override
 	public List<UserLevel> getAllUserLevelList() {
 		return userDao.getAllUserLevelList();
 	}
 
-	@Override
 	public void addUserLevel(UserLevel userLevel) {
 		userDao.addUserLevel(userLevel);
 	}
 
-	@Override
 	public void updateUserLevel(UserLevel userLevel) {
 		userDao.updateUserLevel(userLevel);
 	}

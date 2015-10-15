@@ -24,7 +24,6 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public List<User> getAllUserList() {
 		return this.getSqlMapClientTemplate().queryForList("gs_user.getAllUserList");
 	}
@@ -38,7 +37,6 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 		}
 	}
 
-	@Override
 	public List<User> getPageUserList(int page, int pageSize, String userName, String userEmail) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		Integer start = (page - 1) * pageSize;
@@ -50,17 +48,14 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 		return this.getSqlMapClientTemplate().queryForList("gs_user.getPageUserList", map);
 	}
 
-	@Override
 	public List<UserLevel> getAllUserLevelList() {
 		return this.getSqlMapClientTemplate().queryForList("gs_user_level.getAllUserLevelList");
 	}
 
-	@Override
 	public void addUserLevel(UserLevel userLevel) {
 		this.getSqlMapClientTemplate().insert("gs_user_level.addUserLevel", userLevel);
 	}
 
-	@Override
 	public void updateUserLevel(UserLevel userLevel) {
 		this.getSqlMapClientTemplate().update("gs_user_level.updateUserLevel", userLevel);
 	}

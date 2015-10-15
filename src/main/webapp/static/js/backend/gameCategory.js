@@ -62,8 +62,7 @@ function addGameCategory(){
 	var categoryName = $("#category :selected").text();
 	var url = "/backend/gameCategory/addGameCategory";
 	var param = {"gameId":gameId,"gameName":gameName,"categoryId":categoryId,"categoryName":categoryName};
-	//郁闷啊，为什么这里要加一个断点才能进入controller？？？
-	$.getJSON(url,param,function(data){
+	$.post(url,param,function(data){
 		if(data.code == "00"){
 			window.location.href = "/backend/gameCategory/manage";
 		}else{

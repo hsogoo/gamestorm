@@ -27,6 +27,8 @@
 <!-- BEGIN PAGE LEVEL STYLES-->
 <link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/select2/select2.css"/>
 <link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet"
 <!-- END PAGE LEVEL STYLES -->
 
 <!-- BEGIN PAGE LEVEL STYLES
@@ -73,6 +75,13 @@
 											<a class="btn green" href="#addNewGameModal" data-toggle="modal">
 											Add New <i class="fa fa-plus"></i>
 											</a>
+										</div>
+
+										<div class="progress">
+											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+												<span class="sr-only">
+												20% Complete </span>
+											</div>
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -675,6 +684,8 @@
 				</div>
 			</div>
 
+
+			<iframe id='frameFile' name='frameFile' style='display: none;'></iframe>	
 			<div aria-hidden="true" role="basic" tabindex="-1" id="addNewGameModal" class="modal fade">
 				<div class="modal-dialog">
 					<div class="modal-content">
@@ -684,8 +695,7 @@
 						</div>
 						<div class="modal-body">
 							 <div class="portlet-body form">
-							<form role="form" class="form-horizontal" action="/backend/game/doAddGame" id="addGameForm" method="post">
-								<div class="form-body">
+								<div class="form-body form-horizontal">
 									<div class="form-group">
 										<label class="col-sm-4 control-label">游戏名称</label>
 										<div class="col-sm-8">
@@ -696,9 +706,29 @@
 									<div class="form-group">
 										<label class="col-sm-4 control-label">游戏小图标</label>
 										<div class="col-sm-8">
-											<input type="text" placeholder="游戏小图标的地址" class="form-control input-inline input-medium" name="iconImage">
+											<input type="text" placeholder="游戏小图标的地址" class="form-control input-inline input-medium" name="iconImage" id="iconImage">
 											<span class="help-inline">暂时先输入图片地址，后续改成图片上传</span>
 										</div>
+									</div>
+									<div class="form-group">
+										<form role="form" class="form-horizontal" action="/file/upload" id="upload" method="post" enctype="multipart/form-data" target="frameFile">
+											<div class="form-body">
+												<div class="fileupload-buttonbar">
+													<span class="btn green fileinput-button">
+													<i class="fa fa-plus"></i>
+													<span>
+													选择文件 </span>
+													<input name="file" type="file" id="file">
+													</span>
+													<span id="fileName"></span>
+													<button type="submit" class="btn blue start">
+														<i class="fa fa-upload"></i>
+														<span>
+														上传 </span>
+													</button>
+												</div>
+											</div>
+										</form>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-4 control-label">展示图片</label>
@@ -741,7 +771,6 @@
 									</div>
 									-->
 								</div>
-							</form>
 						</div>
 						</div>
 						<div class="modal-footer">
@@ -801,6 +830,9 @@ jQuery(document).ready(function() {
    TableManaged.init();
    FormSamples.init();
    //ComponentsPickers.init();
+   $("#file").on("change",function(e){
+   		$("#fileName").text($("#file").val());
+   });
 });
 </script>
 <!-- END JAVASCRIPTS -->

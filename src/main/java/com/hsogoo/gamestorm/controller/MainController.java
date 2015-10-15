@@ -33,7 +33,6 @@ public class MainController {
 	@RequestMapping("/index")
 	public String mainIndex(HttpServletRequest request,
 			HttpServletResponse response,Model model){
-		System.out.println(request.getRealPath("/"));
 		return "backend/index";
 	}
 	

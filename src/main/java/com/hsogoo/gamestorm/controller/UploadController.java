@@ -20,19 +20,20 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.alibaba.fastjson.JSON;
+import com.hsogoo.gamestorm.util.GenerateCodeUtil;
 
 /**
  * @author hsogoo
- * @time 2015-9-17 下午10:49:16
+ * @time 2015-9-17 下午10:49:16	
  * @description
  */
 @Controller
-@RequestMapping("upload")
+@RequestMapping("/file")
 public class UploadController {
 
 	private static final String FILE_PATH = "/static/upload/";
 
-	@RequestMapping(value = "one", method = RequestMethod.POST)
+	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	@ResponseBody
 	public String uploadFile(HttpServletRequest request,
 			HttpServletResponse response) throws IOException {
@@ -41,16 +42,10 @@ public class UploadController {
 		Iterator<String> fileNames = multipartRequest.getFileNames();
 		MultipartFile multipartFile = multipartRequest
 				.getFile(fileNames.next());
-		// 如果使用firebug，或者chrome的开发者工具，可以看到，这个文件上传工具发送了两个文件名
-		// 分别是：name="Filedata"; filename="AVScanner.ini"
-		// 用这两个文件名获得文件内容都可以，只不过第一个没有后缀，需要自己处理
-		// 第二个是原始的文件名，但是这个文件名有可能是上传文件时的全路径
-		// 例如 C:/testssh/a.log，如果是全路径的话，也需要处理
-		String fileAlias = multipartFile.getName();
-		System.out.println("Spring MVC获得的文件名：" + fileAlias);
 		// 获得文件原始名称
 		String name = multipartFile.getOriginalFilename();
-		String filePath = rootPath + FILE_PATH + name;
+		String newFileName = generateFileName(name);
+		String filePath = rootPath + FILE_PATH + newFileName;
 		saveFile(filePath, multipartFile.getBytes());
 		Map<String, String> resultMap = new HashMap<String, String>(5);
 		resultMap.put("result", "success");
@@ -79,6 +74,18 @@ public class UploadController {
 				bos.close();
 			}
 		}
+	}
+	
+	private String generateFileName(String fileName){
+		String fileSuffix = "。jpg";
+		if ((fileName != null) && (fileName.length() > 0)) {   
+            int dot = fileName.lastIndexOf('.');   
+            if ((dot >-1) && (dot < (fileName.length() - 1))) {   
+            	fileSuffix = fileName.substring(dot);   
+            }   
+        }
+		long currentTime = System.currentTimeMillis();
+		return GenerateCodeUtil.generateShortUuid() + String.valueOf(currentTime) + fileSuffix;
 	}
 
 }

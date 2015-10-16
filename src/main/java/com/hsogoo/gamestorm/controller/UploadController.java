@@ -12,7 +12,9 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -33,23 +35,25 @@ public class UploadController {
 
 	private static final String FILE_PATH = "/static/upload/";
 
-	@RequestMapping(value = "/upload", method = RequestMethod.POST)
+	@RequestMapping(value = "/upload/{type}", method = RequestMethod.POST)
 	@ResponseBody
-	public String uploadFile(HttpServletRequest request,
-			HttpServletResponse response) throws IOException {
+	public String uploadFile(HttpServletRequest request, HttpServletResponse response, @PathVariable String type) throws IOException {
+		String typeFile = "";
+		if(StringUtils.isNotBlank(type)){
+			typeFile = type + "/";
+		}
 		String rootPath = request.getRealPath("/");
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		Iterator<String> fileNames = multipartRequest.getFileNames();
-		MultipartFile multipartFile = multipartRequest
-				.getFile(fileNames.next());
+		MultipartFile multipartFile = multipartRequest.getFile(fileNames.next());
 		// 获得文件原始名称
 		String name = multipartFile.getOriginalFilename();
 		String newFileName = generateFileName(name);
-		String filePath = rootPath + FILE_PATH + newFileName;
+		String filePath = rootPath + FILE_PATH + typeFile + newFileName;
 		saveFile(filePath, multipartFile.getBytes());
 		Map<String, String> resultMap = new HashMap<String, String>(5);
 		resultMap.put("result", "success");
-		resultMap.put("filePath", FILE_PATH + newFileName);
+		resultMap.put("filePath", FILE_PATH + typeFile  + newFileName);
 		return JSON.toJSONString(resultMap);
 	}
 
@@ -77,7 +81,7 @@ public class UploadController {
 	}
 	
 	private String generateFileName(String fileName){
-		String fileSuffix = "。jpg";
+		String fileSuffix = ".jpg";
 		if ((fileName != null) && (fileName.length() > 0)) {   
             int dot = fileName.lastIndexOf('.');   
             if ((dot >-1) && (dot < (fileName.length() - 1))) {   

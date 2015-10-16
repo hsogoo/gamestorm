@@ -27,6 +27,8 @@
 <!-- BEGIN PAGE LEVEL STYLES-->
 <link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/select2/select2.css"/>
 <link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet">
 <!-- END PAGE LEVEL STYLES -->
 
 <!-- END PAGE LEVEL STYLES -->
@@ -162,29 +164,44 @@
 									<div class="form-group">
 										<label class="col-sm-4 control-label">游戏名称</label>
 										<div class="col-sm-8">
-											<input type="text" placeholder="游戏名称" class="form-control input-medium" name="gameName">
+											<input type="text" placeholder="游戏名称" class="form-control input-medium" name="gameName" id="gameName">
 											<span class="help-block">例如：World of Warcraft US </span>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-4 control-label">游戏小图标</label>
-										<div class="col-sm-8">
-											<input type="text" placeholder="游戏小图标的地址" class="form-control input-inline input-medium" name="iconImage">
-											<span class="help-inline">暂时先输入图片地址，后续改成图片上传</span>
+										<div class="col-sm-8 fileupload-buttonbar">
+											<img id="iconImagePriview" width="30px;" height="30px;"/>
+											<input type="hidden" name="iconImage" id="iconImage">
+											<span class="btn blue start fileinput-button">
+												<i class="fa fa-upload"></i>
+												<span>游戏小图标 </span>
+												<input type="file" id="iconImageFile" name="iconImageFile">
+											</span>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-4 control-label">展示图片</label>
-										<div class="col-sm-8">
-											<input type="text" placeholder="游戏展示图片的地址" class="form-control input-inline input-medium" name="displayImage">
-											<span class="help-inline">暂时先输入图片地址，后续改成图片上传</span>
+										<div class="col-sm-8 fileupload-buttonbar">
+											<img id="displayImagePriview" width="30px;" height="30px;"/>
+											<input type="hidden" name="displayImage" id="displayImage">
+											<span class="btn blue start fileinput-button">
+												<i class="fa fa-upload"></i>
+												<span>展示图片 </span>
+												<input type="file" id="displayImageFile" name="displayImageFile">
+											</span>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-4 control-label">广告图片</label>
-										<div class="col-sm-8">
-											<input type="text" placeholder="游戏广告图片的地址" class="form-control input-inline input-medium" name="bannerImage">
-											<span class="help-inline">暂时先输入图片地址，后续改成图片上传</span>
+										<div class="col-sm-8 fileupload-buttonbar">
+											<img id="bannerImagePriview" width="30px;" height="30px;"/>
+											<input type="hidden" name="bannerImage" id="bannerImage">
+											<span class="btn blue start fileinput-button">
+												<i class="fa fa-upload"></i>
+												<span>广告图片 </span>
+												<input type="file" id="bannerImageFile" name="bannerImageFile">
+											</span>
 										</div>
 									</div>
 								</div>
@@ -227,6 +244,7 @@
 <script src="/static/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
 <script src="/static/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
 <script src="/static/assets/admin/pages/scripts/table-managed.js"></script>
+<script src="/static/assets/global/plugins/ajaxfileupload.js"></script>
 <script src="/static/js/backend/game.js"></script>
 
 <script>

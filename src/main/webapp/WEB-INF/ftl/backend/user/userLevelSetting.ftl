@@ -87,11 +87,14 @@
 										<td>
 											<input name="orderAmount_${userLevel.id}" value="${userLevel.orderAmount}" class="form-control input-medium"/>
 										</td>
-										<td class="center">
-											<input name="levelDiscount_${userLevel.id}" value="${userLevel.levelDiscount}" class="form-control input-medium"/>
+										<td>
+											<div class="input-group">
+												<input name="levelDiscount_${userLevel.id}" value="${userLevel.levelDiscount}" class="form-control"  style="display: block;"/>
+												<span class="input-group-addon">%</span>
+											</div>
 										</td>
 										<td>
-											<a class="btn default btn-xs purple" href="javascript:;" onclick="saveUserLevel(${userLevel.id});"><i class="fa fa-edit"></i> Save </a>
+											<a class="btn default btn-xs purple" href="javascript:;" onclick="saveUserLevel(${userLevel.id});"><i class="fa fa-edit"></i> 修改 </a>
 										</td>
 									</tr>
 								</#list>

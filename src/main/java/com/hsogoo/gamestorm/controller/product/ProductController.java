@@ -119,5 +119,17 @@ public class ProductController {
 		model.setViewName("/backend/product/addLevelPrice");
 		return model;
 	}
+	
+	@RequestMapping("/addProductPage")
+	public ModelAndView addProductPage(ModelAndView model){
+		model.setViewName("/backend/product/addProduct");
+		List<Game> gameList = gameService.getAllGameList();
+		List<Category> categoryList = categoryService.getAllCategoryList();
+		List<ProductType> productTypeList = productService.getAllProductTypeList();
+		model.addObject("productTypeList", productTypeList);
+		model.addObject("gameList", gameList);
+		model.addObject("categoryList", categoryList);
+		return model;
+	}
 
 }

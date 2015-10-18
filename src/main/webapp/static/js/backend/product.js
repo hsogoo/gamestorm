@@ -71,3 +71,23 @@ function deleteRow(obj){
 	}
 	$(obj).parent().parent().remove();
 }
+
+$("#productImageFile").on("change",function(e){
+	$.ajaxFileUpload({
+	    url:'/file/upload/product',
+	    secureuri:false,                       //是否启用安全提交,默认为false
+	    fileElementId:'productImageFile',      //文件选择框的id属性
+	    dataType:'json',                       //服务器返回的格式,可以是json或xml等
+	    success:function(data, status){        //服务器响应成功时的处理函数
+	        $("#productImagePreview").attr("src",data.filePath);
+	        $("#productImage").val(data.filePath);
+	    },
+	    error:function(data, status, e){ 
+	        alert('商品图片上传失败，请重试！！');
+	    }
+	});
+});
+
+function doAddProduct(){
+	alert("暂未完成！敬请期待！呵呵呵~~~~~~~~~~~~~~~~~~");
+}

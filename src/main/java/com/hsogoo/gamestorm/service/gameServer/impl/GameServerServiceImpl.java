@@ -49,4 +49,14 @@ public class GameServerServiceImpl implements GameServerService {
     public int updateGameServer(GameServer gameServer) {
         return gameServerDao.update(gameServer);
     }
+
+	@Override
+	public void addGameServerList(List<GameServer> gameServerList) {
+		gameServerDao.addGameServerList(gameServerList);
+	}
+
+	@Override
+	public void deleteGameServerById(Long id) {
+		gameServerDao.deleteGameServerById(id);
+	}
 }

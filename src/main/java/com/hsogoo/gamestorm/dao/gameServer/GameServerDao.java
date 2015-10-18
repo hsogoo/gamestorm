@@ -9,9 +9,13 @@ import java.util.List;
  */
 public interface GameServerDao {
 
-    List<GameServer> getAllGameServerList();
+    public List<GameServer> getAllGameServerList();
 
-    void insert(GameServer gameServer);
+    public void insert(GameServer gameServer);
 
-    int update(GameServer gameServer);
+    public int update(GameServer gameServer);
+
+    public void addGameServerList(List<GameServer> gameServerList);
+
+	public void deleteGameServerById(Long id);
 }

@@ -18,5 +18,7 @@ public interface GameService {
 	public List<Game> getAllGameList();
 
 	public void addGame(Game game);
-	
+
+	public Game getGameById(Long gameId);
+
 }

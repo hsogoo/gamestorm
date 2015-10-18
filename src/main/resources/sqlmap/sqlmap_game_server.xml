@@ -16,14 +16,16 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
     </select>
 
     <insert id="gs_game_server.insertGameServer" parameterClass="com.hsogoo.gamestorm.vo.GameServer" >
-        insert into gs_game_server (game_id,server_name,status) VALUES (#gameId#,#serverName#,#status#);
+        insert into gs_game_server (game_id,game_name,server_name,price_ext,status) VALUES (#gameId#,#gameName#,#serverName#,#priceExt#,#status#);
     </insert>
 
     <update id="gs_game_server.updateGameServer" parameterClass="com.hsogoo.gamestorm.vo.GameServer" >
         UPDATE  gs_category
         <dynamic prepend="set">
             <isNotNull prepend="," property="serverName">server_name=#serverName#</isNotNull>
+            <isNotNull prepend="," property="priceExt">price_ext=#priceExt#</isNotNull>
             <isNotNull prepend="," property="gameId">game_id=#gameId#</isNotNull>
+            <isNotNull prepend="," property="gameName">game_name=#gameName#</isNotNull>
             <isNotNull prepend="," property="status">status=#status#</isNotNull>
         </dynamic>
         where id = #id#

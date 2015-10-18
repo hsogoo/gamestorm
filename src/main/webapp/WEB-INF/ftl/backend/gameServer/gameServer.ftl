@@ -64,22 +64,9 @@
 						<div class="portlet-body">
 							<div class="table-toolbar">
 								<form role="form" class="form-inline">
-								
-									<div class="form-group">
-										<label class="control-label">选择游戏</label>
-										<div class="input-group">
-											<select class="select2_category form-control input-medium" data-placeholder="选择游戏" tabindex="1" id="game">
-												<option value="">选择游戏</option>
-												<#if gameList??&&gameList?size gt 0>
-													<#list gameList as game>
-														<option value="${game.id}">${game.gameName}</option>
-													</#list>
-												</#if>
-											</select>
-										</div>
-									</div>
-									
-									<button class="btn blue" onclick="addGameCategory();">添加游戏服务器 <i class="icon-plus"></i> </button>
+                                    <a class="btn green" href="#addNewGameServerModal" data-toggle="modal">
+                                        添加新游戏服务器 <i class="fa fa-plus"></i>
+                                    </a>
 								</form>
 							</div>
 								<#if gameServerList??&&gameServerList?size gt 0>
@@ -107,7 +94,7 @@
 														<input name="gameServer_${gameServer.id}" value="${gameServer.priceExt}" class="form-control input-medium"/>
 													</td>
 													<td class="center">
-													 	<a onclick="saveCategory(${gameServer.id});" href="javascript:;" class="btn default btn-xs green"><i class="fa fa-arrow-up"></i> 修改 </a>
+													 	<a onclick="saveGameServer(${gameServer.id});" href="javascript:;" class="btn default btn-xs green"><i class="fa fa-arrow-up"></i> 修改 </a>
 													</td>
 												</tr>
 											</#list>
@@ -121,11 +108,64 @@
 									</div>
 								</#if>
 						</div>
+
+                        <div aria-hidden="true" role="basic" tabindex="-1" id="addNewGameServerModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
+                                        <h4 class="modal-title">添加新游戏服务器</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="portlet-body form">
+                                            <form role="form" class="form-horizontal" action="/backend/gameServer/doAddGameServer" id="addGameServerForm" method="post">
+                                                <div class="form-body">
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">服务器名称</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" placeholder="服务器名称" class="form-control input-medium" name="serverName">
+                                                            <span class="help-block">例如：World of Warcraft US </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">选择游戏</label>
+                                                        <div class="col-sm-8">
+                                                            <select class="select2_category form-control input-medium" data-placeholder="选择游戏" tabindex="1" name="gameId" id="game">
+                                                                <option value="">选择游戏</option>
+																<#if gameList??&&gameList?size gt 0>
+																	<#list gameList as game>
+                                                                        <option value="${game.id}">${game.gameName}</option>
+																	</#list>
+																</#if>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label">价格调整</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" placeholder="价格调整" class="form-control input-inline input-medium" name="priceExt">
+                                                            <span class="help-inline">服务器对比差价</span>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button data-dismiss="modal" class="btn default" type="button">关闭</button>
+                                        <button class="btn blue" type="button" onclick="submitAddGameServer();">添加</button>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
+
 					</div>
 					<!-- END EXAMPLE TABLE PORTLET-->
 				</div>
 			</div>
-
 		</div>
 </@layout>
 <script src="/static/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
@@ -153,7 +193,7 @@
 <script src="/static/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
 <script src="/static/assets/admin/pages/scripts/table-managed.js"></script>
 <script src="/static/assets/admin/pages/scripts/form-samples.js"></script>
-<script src="/static/js/backend/gameCategory.js"></script>
+<script src="/static/js/backend/gameServer.js"></script>
 
 <script>
 jQuery(document).ready(function() {       

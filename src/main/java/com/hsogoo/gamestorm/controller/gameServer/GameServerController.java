@@ -50,6 +50,7 @@ public class GameServerController {
         return model;
     }
 
+
     @RequestMapping("/addGameServer")
     public String addGameServerPage(ModelAndView model){
         return "/backend/gameServer/gameServerAdd";
@@ -57,6 +58,8 @@ public class GameServerController {
 
     @RequestMapping("/doAddGameServer")
     public ModelAndView doAddGameServer(GameServer gameServer){
+        Game game = gameService.getGameById(gameServer.getGameId());
+        gameServer.setGameName(game.getGameName());
         gameServerService.addGameServer(gameServer);
         ModelAndView model = new ModelAndView("redirect:/backend/gameServer/manage");
         return model;

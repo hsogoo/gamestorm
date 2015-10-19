@@ -3,6 +3,7 @@ package com.hsogoo.gamestorm.service.product.impl;
 import java.util.List;
 
 import com.hsogoo.gamestorm.vo.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -58,6 +59,11 @@ public class ProductServiceImpl implements ProductService{
 
 	public void addLevelConfig(ProductLevelConfig productLevelConfig){
 		productDao.insertLevelConfig(productLevelConfig);
+	}
+
+	@Override
+	public List<AttrValue> getAttrValueListById(Long attrTypeId) {
+		return productDao.getAttrValueListById(attrTypeId);
 	}
 
 

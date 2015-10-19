@@ -59,5 +59,4 @@
 			<li class="disabled"><a href="javascript:void(0);" onclick="${function}(${totalPage})">Next</a></li>
 		</#if>
 	</ul>
-	
 </#macro>

@@ -1,8 +1,9 @@
 package com.hsogoo.gamestorm.controller.product;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-import com.hsogoo.gamestorm.vo.*;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,14 @@ import com.hsogoo.gamestorm.constant.ResultConstant;
 import com.hsogoo.gamestorm.service.category.CategoryService;
 import com.hsogoo.gamestorm.service.game.GameService;
 import com.hsogoo.gamestorm.service.product.ProductService;
+import com.hsogoo.gamestorm.vo.AttrType;
+import com.hsogoo.gamestorm.vo.AttrValue;
+import com.hsogoo.gamestorm.vo.Category;
+import com.hsogoo.gamestorm.vo.Game;
+import com.hsogoo.gamestorm.vo.JsonResult;
+import com.hsogoo.gamestorm.vo.Product;
+import com.hsogoo.gamestorm.vo.ProductLevelConfig;
+import com.hsogoo.gamestorm.vo.ProductType;
 
 /**
  * @author hsogoo
@@ -130,9 +139,19 @@ public class ProductController {
 		List<Game> gameList = gameService.getAllGameList();
 		List<Category> categoryList = categoryService.getAllCategoryList();
 		List<ProductType> productTypeList = productService.getAllProductTypeList();
+		List<AttrType> attrTypeList = productService.getAllAttrTypeList();
+		Map<String,List<AttrValue>> attrMap = new HashMap<String,List<AttrValue>>();
+		if(CollectionUtils.isNotEmpty(attrTypeList)){
+			for(AttrType attrType : attrTypeList){
+				List<AttrValue> attrValueList = productService.getAttrValueListById(attrType.getId());
+				attrMap.put(attrType.getTypeName(), attrValueList);
+			}
+		}
 		model.addObject("productTypeList", productTypeList);
 		model.addObject("gameList", gameList);
 		model.addObject("categoryList", categoryList);
+		model.addObject("attrTypeList", attrTypeList);
+		model.addObject("attrMap", attrMap);
 		return model;
 	}
 

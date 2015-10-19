@@ -30,4 +30,6 @@ public interface ProductService {
 	public List<ProductLevelConfig> getAllProductLevelConfig();
 
 	public void addLevelConfig(ProductLevelConfig productLevelConfig);
+
+	public List<AttrValue> getAttrValueListById(Long attrTypeId);
 }

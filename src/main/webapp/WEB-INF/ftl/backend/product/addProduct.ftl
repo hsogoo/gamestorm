@@ -133,6 +133,7 @@
 													<option value="0">固定价格</option>
 													<option value="1">动态价格</option>
 												</select>
+												<span>等级代练的时候设置为动态价格</span>
 											</div>
 										</div>
 									</div>
@@ -156,10 +157,39 @@
 										<label class="col-md-1 control-label">是否有系列</label>
 										<div class="col-md-4">
 											<div class="icheck-inline">
-												<label><input type="checkbox" class="icheck" data-checkbox="icheckbox_square-blue" id="needAttrType" name="needAttrType"> 需要序列 </label>
+												<label><input type="checkbox" class="icheck" data-checkbox="icheckbox_square-blue" id="attrTypeControl" name="attrTypeControl"> 需要序列 </label>
+											</div>
+										</div>
+										<input type="hidden" name="needAttrType" id="needAttrType">
+									</div>
+									
+									<#if attrTypeList??&&attrTypeList?size gt 0>
+									<div class="form-group hidden" id="attrTypeDiv">
+										<label class="col-md-1 control-label">添加序列</label>
+										<div class="col-md-4">
+											<div class="icheck-inline">
+												<#list attrTypeList as attrType>
+													<label><input type="checkbox" class="icheck" data-checkbox="icheckbox_square-blue" id="attrType_${attrType.id}" attrTypeId="${attrType.id}">${attrType.typeName}</label>
+												</#list>
 											</div>
 										</div>
 									</div>
+									</#if>
+									
+									<#if attrMap??&&attrMap?size gt 0>
+									<div class="form-group hidden" id="attrValueDiv">
+										<label class="col-md-1 control-label">选择序列值</label>
+										<div class="col-md-4">
+											<#list attrMap?keys as typeKey>
+											<div class="icheck-inline">
+												<#list attrMap[typeKey] as attrValue>
+													<label><input type="checkbox" class="icheck" data-checkbox="icheckbox_square-blue" id="attrValue_${attrValue.id}" attrValueId="${attrValue.id}">${attrValue.attrValue}</label>
+												</#list>
+											</div>
+											</#list>
+										</div>
+									</div>
+									</#if>
 									
 									<div class="form-group">
 										<label class="col-md-1 control-label">是否推荐</label>

@@ -106,9 +106,20 @@ function doAddProduct(){
 $("#priceType").on("change",function(){
 	if($("#priceType").val() == 1){
 		$("#templeteDiv").removeClass("hidden").addClass("show");
+	}else{
+		$("#templeteDiv").removeClass("show").addClass("hidden");
 	}
 });
 
-$("#needAttrType").on("click",function(){
-	
+$("#attrTypeControl").on("ifChecked",function(){
+	$("#attrTypeDiv").removeClass("hidden").addClass("show");
+	$("needAttrType").val(1);
+	$("#attrValueDiv").removeClass("hidden").addClass("show");
 });
+
+$("#attrTypeControl").on("ifUnchecked",function(){
+	$("#attrTypeDiv").removeClass("show").addClass("hidden");
+	$("needAttrType").val(0);
+	$("#attrValueDiv").removeClass("show").addClass("hidden");
+});
+

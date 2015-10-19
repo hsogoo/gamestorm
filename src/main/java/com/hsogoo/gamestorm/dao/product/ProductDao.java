@@ -32,4 +32,6 @@ public interface ProductDao {
 
 	public void insertLevelConfig(ProductLevelConfig productLevelConfig);
 
+	public List<AttrValue> getAttrValueListById(Long attrTypeId);
+
 }

@@ -79,4 +79,14 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
 		insert into gs_level_config (game_id,start_level,end_level,price) values (#gameId#,#startLevel#,#endLevel#,#price#)
 	</insert>
 
+	<select id="gs_attr_value.getAttrValueListById" resultClass="com.hsogoo.gamestorm.vo.AttrValue" parameterClass="long">
+		select 
+		id,
+		type_id typeId,
+		type_name typeName,
+		attr_value attrValue
+		from gs_attr_value
+		where type_id = #attrTypeId#
+	</select>
+
 </sqlMap>

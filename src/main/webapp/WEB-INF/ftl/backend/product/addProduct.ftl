@@ -16,6 +16,7 @@
 <link href="/static/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
 <link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/select2/select2.css"/>
+<link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/bootstrap-select/bootstrap-select.min.css"/>
 <!-- BEGIN THEME STYLES -->
 <link href="/static/assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
 <link href="/static/assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
@@ -124,6 +125,18 @@
 									</div>
 									
 									<div class="form-group">
+										<label class="control-label col-md-1">价格类型</label>
+										<div class="col-md-4">
+											<div class="margin-bottom-10">
+												<select class="bs-select form-control input-small" data-style="blue"  name="priceType" id="priceType">
+													<option value="0">固定价格</option>
+													<option value="1">动态价格</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									
+									<div class="form-group">
 										<label class="col-md-1 control-label"> 商品描述 </label>
 										<div class="col-md-11">
 											<div id="summernote"></div>
@@ -163,6 +176,7 @@
 <script src="/static/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <script type="text/javascript" src="/static/assets/global/plugins/select2/select2.min.js"></script>
+<script type="text/javascript" src="/static/assets/global/plugins/bootstrap-select/bootstrap-select.min.js"></script>
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="/static/assets/global/scripts/metronic.js" type="text/javascript"></script>
 <script src="/static/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
@@ -172,6 +186,7 @@
 <script src="/static/assets/global/plugins/ajaxfileupload.js"></script>
 <script src="/static/assets/global/plugins/bootstrap-summernote/summernote.min.js" type="text/javascript"></script>
 <script src="/static/assets/admin/pages/scripts/components-editors.js" type="text/javascript"></script>
+<script src="/static/assets/admin/pages/scripts/components-dropdowns.js"></script>
 <script src="/static/js/backend/product.js"></script>
 
 <script>
@@ -182,6 +197,7 @@ jQuery(document).ready(function() {
 	Demo.init(); // init demo features
 	FormSamples.init();
 	ComponentsEditors.init();
+	ComponentsDropdowns.init();
 });
 </script>
 <!-- END JAVASCRIPTS -->

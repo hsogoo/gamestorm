@@ -16,19 +16,32 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
     </select>
 
     <insert id="gs_game_server.insertGameServer" parameterClass="com.hsogoo.gamestorm.vo.GameServer" >
-        insert into gs_game_server (game_id,game_name,server_name,price_ext,status) VALUES (#gameId#,#gameName#,#serverName#,#priceExt#,#status#);
+        insert into gs_game_server (game_id,game_name,server_name,price_ext,status) VALUES (#gameId#,#gameName#,#serverName#,#priceExt#,#status#)
     </insert>
 
     <update id="gs_game_server.updateGameServer" parameterClass="com.hsogoo.gamestorm.vo.GameServer" >
-        UPDATE  gs_category
+        UPDATE  gs_game_server
         <dynamic prepend="set">
-            <isNotNull prepend="," property="serverName">server_name=#serverName#</isNotNull>
-            <isNotNull prepend="," property="priceExt">price_ext=#priceExt#</isNotNull>
-            <isNotNull prepend="," property="gameId">game_id=#gameId#</isNotNull>
-            <isNotNull prepend="," property="gameName">game_name=#gameName#</isNotNull>
-            <isNotNull prepend="," property="status">status=#status#</isNotNull>
+            <isNotEmpty prepend="," property="serverName">server_name=#serverName#</isNotEmpty>
+            <isNotEmpty prepend="," property="priceExt">price_ext=#priceExt#</isNotEmpty>
+            <isNotEmpty prepend="," property="gameId">game_id=#gameId#</isNotEmpty>
+            <isNotEmpty prepend="," property="gameName">game_name=#gameName#</isNotEmpty>
+            <isNotEmpty prepend="," property="status">status=#status#</isNotEmpty>
         </dynamic>
         where id = #id#
     </update>
+    
+    <insert id="gs_game_server.addGameServerList" parameterClass="java.util.List" >
+        insert into gs_game_server 
+        (game_id,game_name,server_name,price_ext,status) 
+        VALUES 
+        <iterate conjunction=",">
+         (#[].gameId#,#[].gameName#,#[].serverName#,#[].priceExt#,#[].status#)
+        </iterate>
+    </insert>
+    
+    <delete id="gs_game_server.deleteGameServerById" parameterClass="long">
+    	delete from gs_game_server where id = #id#
+    </delete>
 
 </sqlMap>

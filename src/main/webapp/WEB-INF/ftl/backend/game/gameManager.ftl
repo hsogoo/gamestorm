@@ -29,7 +29,7 @@
 <link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
 <link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet">
-<!-- END PAGE LEVEL STYLES -->
+<link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/icheck/skins/all.css" rel="stylesheet">
 
 <!-- END PAGE LEVEL STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
@@ -95,21 +95,12 @@
 								<th class="table-checkbox">
 									<input type="checkbox" class="group-checkable" data-set="#sample_2 .checkboxes"/>
 								</th>
-								<th>
-									 游戏名称
-								</th>
-								<th>
-									 游戏小图标
-								</th>
-								<th>
-									 游戏显示图片
-								</th>
-								<th>
-									 游戏banner图
-								</th>
-								<th>
-									 游戏状态
-								</th>
+								<th> 游戏名称</th>
+								<th> 游戏小图标</th>
+								<th> 游戏显示图片</th>
+								<th> 游戏banner图</th>
+								<th> 是否推荐</th>
+								<th>游戏状态</th>
 							</tr>
 							</thead>
 							<tbody>
@@ -129,6 +120,9 @@
 								</td>
 								<td class="center">
 									 <img src="${game.bannerImage}" width="150" height="50">
+								</td>
+								<td class="center">
+									 <#if game.isRecommended><span class="label label-sm label-success">是</span><#else><span class="label label-sm label-danger">否</span></#if>
 								</td>
 								<td>
 									<#if game.status><span class="label label-sm label-success">Active</span><#else><span class="label label-sm label-danger">Stoped</span></#if>
@@ -204,6 +198,14 @@
 											</span>
 										</div>
 									</div>
+									<div class="form-group">
+										<label class="col-sm-4 control-label">是否推荐</label>
+										<div class="col-sm-8 input-group">
+											<div class="icheck-inline">
+												<label><input type="checkbox" class="icheck" data-checkbox="icheckbox_square-blue" id="isRecommended" name="isRecommended"> 设为推荐游戏 </label>
+											</div>
+										</div>
+									</div>
 								</div>
 							</form>
 						</div>
@@ -245,6 +247,8 @@
 <script src="/static/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
 <script src="/static/assets/admin/pages/scripts/table-managed.js"></script>
 <script src="/static/assets/global/plugins/ajaxfileupload.js"></script>
+<script src="/static/assets/global/plugins/icheck/icheck.min.js"></script>
+<script src="/static/assets/admin/pages/scripts/form-icheck.js"></script>
 <script src="/static/js/backend/game.js"></script>
 
 <script>
@@ -254,6 +258,7 @@ jQuery(document).ready(function() {
 	QuickSidebar.init(); // init quick sidebar
 	Demo.init(); // init demo features
 	TableManaged.init();
+	FormiCheck.init(); // init icheck	
 });
 </script>
 <!-- END JAVASCRIPTS -->

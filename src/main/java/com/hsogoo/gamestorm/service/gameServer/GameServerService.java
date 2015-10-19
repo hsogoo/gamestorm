@@ -9,9 +9,13 @@ import java.util.List;
  */
 public interface GameServerService {
 
-    List<GameServer> getAllGameServerList();
+    public List<GameServer> getAllGameServerList();
 
-    int addGameServer(GameServer gameServer);
+    public int addGameServer(GameServer gameServer);
 
-    int updateGameServer(GameServer gameServer);
+    public int updateGameServer(GameServer gameServer);
+
+    public void addGameServerList(List<GameServer> gameServerList);
+
+	public void deleteGameServerById(Long id);
 }

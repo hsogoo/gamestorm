@@ -25,4 +25,14 @@ public class GameServerDaoImpl extends BaseDao implements GameServerDao {
         return this.getSqlMapClientTemplate().update("gs_game_server.updateGameServer", gameServer);
     }
 
+	@Override
+	public void addGameServerList(List<GameServer> gameServerList) {
+		this.getSqlMapClientTemplate().insert("gs_game_server.addGameServerList", gameServerList);
+	}
+
+	@Override
+	public void deleteGameServerById(Long id) {
+		this.getSqlMapClientTemplate().delete("gs_game_server.deleteGameServerById",id);
+	}
+
 }

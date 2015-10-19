@@ -18,7 +18,7 @@ public class GameServer implements Serializable {
 
     private String gameName;
     
-    private BigDecimal priceExt;
+    private BigDecimal priceExt = BigDecimal.ZERO;
 
     private Boolean status = true;
 

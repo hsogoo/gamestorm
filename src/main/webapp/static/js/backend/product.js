@@ -72,7 +72,6 @@ function deleteRow(obj){
 	$(obj).parent().parent().remove();
 }
 
-
 function doAddLevelPrices(){
 	var url = "/backend/product/doAddLevelPrices";
 	var gameId = $("#gameId").val();
@@ -84,7 +83,6 @@ function doAddLevelPrices(){
 		window.location.href = "/backend/product/levelPrice";
 	});
 }
-
 $("#productImageFile").on("change",function(e){
 	$.ajaxFileUpload({
 	    url:'/file/upload/product',

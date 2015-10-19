@@ -123,7 +123,7 @@ public class ProductController {
 		model.setViewName("/backend/product/addLevelPrice");
 		return model;
 	}
-
+	
 	@RequestMapping("/addProductPage")
 	public ModelAndView addProductPage(ModelAndView model){
 		model.setViewName("/backend/product/addProduct");
@@ -135,5 +135,6 @@ public class ProductController {
 		model.addObject("categoryList", categoryList);
 		return model;
 	}
+
 
 }

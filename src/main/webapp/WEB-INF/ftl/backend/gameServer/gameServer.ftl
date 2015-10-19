@@ -94,7 +94,8 @@
 														<input name="gameServer_${gameServer.id}" value="${gameServer.priceExt}" class="form-control input-medium"/>
 													</td>
 													<td class="center">
-													 	<a onclick="saveGameServer(${gameServer.id});" href="javascript:;" class="btn default btn-xs green"><i class="fa fa-arrow-up"></i> 修改 </a>
+													 	<a onclick="saveGameServer(${gameServer.id});" href="javascript:;" class="btn default btn-xs green"><i class="fa fa-edit"></i> 修改 </a>
+													 	<a onclick="deleteGameServer(${gameServer.id});" href="javascript:;" class="btn default btn-xs red-intense"><i class="fa fa-times"></i> 删除 </a>
 													</td>
 												</tr>
 											</#list>
@@ -109,8 +110,8 @@
 								</#if>
 						</div>
 
-                        <div aria-hidden="true" role="basic" tabindex="-1" id="addNewGameServerModal" class="modal fade">
-                            <div class="modal-dialog">
+                        <div aria-hidden="true" role="basic" tabindex="-1" id="addNewGameServerModal" class="modal fade bs-modal-lg in">
+                            <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
@@ -121,16 +122,9 @@
                                             <form role="form" class="form-horizontal" action="/backend/gameServer/doAddGameServer" id="addGameServerForm" method="post">
                                                 <div class="form-body">
                                                     <div class="form-group">
-                                                        <label class="col-sm-4 control-label">服务器名称</label>
+                                                        <label class="col-md-2 control-label">选择游戏</label>
                                                         <div class="col-sm-8">
-                                                            <input type="text" placeholder="服务器名称" class="form-control input-medium" name="serverName">
-                                                            <span class="help-block">例如：World of Warcraft US </span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-sm-4 control-label">选择游戏</label>
-                                                        <div class="col-sm-8">
-                                                            <select class="select2_category form-control input-medium" data-placeholder="选择游戏" tabindex="1" name="gameId" id="game">
+                                                            <select class="select2_category form-control input-medium" data-placeholder="选择游戏" tabindex="1" name="gameId" id="gameId">
                                                                 <option value="">选择游戏</option>
 																<#if gameList??&&gameList?size gt 0>
 																	<#list gameList as game>
@@ -139,12 +133,12 @@
 																</#if>
                                                             </select>
                                                         </div>
+                                                        <input type="hidden" name="gameName" id="gameName">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label class="col-sm-4 control-label">价格调整</label>
+                                                        <label class="col-md-2 control-label">服务器名称</label>
                                                         <div class="col-sm-8">
-                                                            <input type="text" placeholder="价格调整" class="form-control input-inline input-medium" name="priceExt">
-                                                            <span class="help-inline">服务器对比差价</span>
+                                                            <textarea placeholder="服务器名称用逗号分割，不要超过1400个字" rows="5" class="form-control" id="serverName" style="width: 650px; height: 200px;" name="serverName"></textarea>
                                                         </div>
                                                     </div>
 

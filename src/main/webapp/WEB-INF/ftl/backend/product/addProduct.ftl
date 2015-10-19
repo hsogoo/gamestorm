@@ -25,6 +25,7 @@
 <link href="/static/assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/icheck/skins/all.css" rel="stylesheet">
 <link href="/static/assets/global/plugins/bootstrap-summernote/summernote.css" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
 
@@ -136,6 +137,39 @@
 										</div>
 									</div>
 									
+									<div class="form-group hidden" id="templeteDiv">
+										<label class="control-label col-md-1">选择模板</label>
+										<div class="col-md-4">
+											<select class="select2_category form-control input-medium" data-placeholder="选择模板" tabindex="3" id="type">
+												<option value="">选择模板</option>
+												<option value="1">魔兽世界代练模板</option>
+												<#if templeteList??&&templeteList?size gt 0>
+													<#list templeteList as templete>
+														<option value="${templete.id}">${templete.templeteName}</option>
+													</#list>
+												</#if>
+											</select>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="col-md-1 control-label">是否有系列</label>
+										<div class="col-md-4">
+											<div class="icheck-inline">
+												<label><input type="checkbox" class="icheck" data-checkbox="icheckbox_square-blue" id="needAttrType" name="needAttrType"> 需要序列 </label>
+											</div>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="col-md-1 control-label">是否推荐</label>
+										<div class="col-md-4">
+											<div class="icheck-inline">
+												<label><input type="checkbox" class="icheck" data-checkbox="icheckbox_square-blue" id="isRecommended" name="isRecommended"> 设为推荐游戏 </label>
+											</div>
+										</div>
+									</div>
+									
 									<div class="form-group">
 										<label class="col-md-1 control-label"> 商品描述 </label>
 										<div class="col-md-11">
@@ -187,6 +221,8 @@
 <script src="/static/assets/global/plugins/bootstrap-summernote/summernote.min.js" type="text/javascript"></script>
 <script src="/static/assets/admin/pages/scripts/components-editors.js" type="text/javascript"></script>
 <script src="/static/assets/admin/pages/scripts/components-dropdowns.js"></script>
+<script src="/static/assets/global/plugins/icheck/icheck.min.js"></script>
+<script src="/static/assets/admin/pages/scripts/form-icheck.js"></script>
 <script src="/static/js/backend/product.js"></script>
 
 <script>

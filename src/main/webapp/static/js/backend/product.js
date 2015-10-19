@@ -91,3 +91,13 @@ $("#productImageFile").on("change",function(e){
 function doAddProduct(){
 	alert("暂未完成！敬请期待！呵呵呵~~~~~~~~~~~~~~~~~~");
 }
+
+$("#priceType").on("change",function(){
+	if($("#priceType").val() == 1){
+		$("#templeteDiv").removeClass("hidden").addClass("show");
+	}
+});
+
+$("#needAttrType").on("click",function(){
+	
+});

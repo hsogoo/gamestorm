@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.hsogoo.gamestorm.vo.AttrType;
 import com.hsogoo.gamestorm.vo.AttrValue;
+import com.hsogoo.gamestorm.vo.ProductLevelConfig;
 import com.hsogoo.gamestorm.vo.ProductType;
 
 /**
@@ -26,5 +27,9 @@ public interface ProductDao {
 	public void addAttrType(AttrType attrType);
 
 	public void addAttrValue(AttrValue attrValue);
-	
+
+	public List<ProductLevelConfig> getAllProductLevelConfig();
+
+	public void insertLevelConfig(ProductLevelConfig productLevelConfig);
+
 }

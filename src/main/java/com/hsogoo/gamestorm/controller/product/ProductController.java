@@ -2,6 +2,7 @@ package com.hsogoo.gamestorm.controller.product;
 
 import java.util.List;
 
+import com.hsogoo.gamestorm.vo.*;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,13 +14,6 @@ import com.hsogoo.gamestorm.constant.ResultConstant;
 import com.hsogoo.gamestorm.service.category.CategoryService;
 import com.hsogoo.gamestorm.service.game.GameService;
 import com.hsogoo.gamestorm.service.product.ProductService;
-import com.hsogoo.gamestorm.vo.AttrType;
-import com.hsogoo.gamestorm.vo.AttrValue;
-import com.hsogoo.gamestorm.vo.Category;
-import com.hsogoo.gamestorm.vo.Game;
-import com.hsogoo.gamestorm.vo.JsonResult;
-import com.hsogoo.gamestorm.vo.Product;
-import com.hsogoo.gamestorm.vo.ProductType;
 
 /**
  * @author hsogoo
@@ -36,6 +30,7 @@ public class ProductController {
 	private GameService gameService;
 	@Autowired
 	private CategoryService categoryService;
+
 	
 	@RequestMapping("/manage")
 	public ModelAndView getProductPage(ModelAndView model){
@@ -108,15 +103,36 @@ public class ProductController {
 	
 	@RequestMapping("/levelPrice")
 	public ModelAndView getLevelPrice(ModelAndView model){
+		List<ProductLevelConfig> productLevelConfigList = productService.getAllProductLevelConfig();
 		model.setViewName("/backend/product/levelPrice");
+		model.addObject("productLevelConfigList", productLevelConfigList);
 		return model;
 	}
 	
+	@RequestMapping("/doAddLevelPrices")
+	public ModelAndView doAddLevelPrices(ProductLevelConfig productLevelConfig){
+		productService.addLevelConfig(productLevelConfig);
+		ModelAndView model = new ModelAndView("redirect:/backend/product/levelPrice");
+		return model;
+	}
+
 	@RequestMapping("/addLevelPrice")
 	public ModelAndView addLevelPrice(ModelAndView model){
 		List<Game> gameList = gameService.getAllGameList();
 		model.addObject("gameList", gameList);
 		model.setViewName("/backend/product/addLevelPrice");
+		return model;
+	}
+
+	@RequestMapping("/addProductPage")
+	public ModelAndView addProductPage(ModelAndView model){
+		model.setViewName("/backend/product/addProduct");
+		List<Game> gameList = gameService.getAllGameList();
+		List<Category> categoryList = categoryService.getAllCategoryList();
+		List<ProductType> productTypeList = productService.getAllProductTypeList();
+		model.addObject("productTypeList", productTypeList);
+		model.addObject("gameList", gameList);
+		model.addObject("categoryList", categoryList);
 		return model;
 	}
 

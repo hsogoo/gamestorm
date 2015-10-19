@@ -2,15 +2,12 @@ package com.hsogoo.gamestorm.service.product.impl;
 
 import java.util.List;
 
+import com.hsogoo.gamestorm.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hsogoo.gamestorm.dao.product.ProductDao;
 import com.hsogoo.gamestorm.service.product.ProductService;
-import com.hsogoo.gamestorm.vo.AttrType;
-import com.hsogoo.gamestorm.vo.AttrValue;
-import com.hsogoo.gamestorm.vo.Product;
-import com.hsogoo.gamestorm.vo.ProductType;
 
 /**
  * @author hsogoo
@@ -23,44 +20,45 @@ public class ProductServiceImpl implements ProductService{
 	@Autowired
 	private ProductDao productDao;
 	
-	@Override
 	public List<Product> getAllProductList() {
 		return null;
 	}
 
-	@Override
 	public List<ProductType> getAllProductTypeList() {
 		return productDao.getAllProductTypeList();
 	}
 
-	@Override
 	public List<ProductType> getProductTypeForCheck(ProductType productType) {
 		return productDao.getProductTypeForCheck(productType);
 	}
 
-	@Override
 	public void addProductType(ProductType productType) {
 		productDao.addProductType(productType);
 	}
 
-	@Override
 	public List<AttrType> getAllAttrTypeList() {
 		return productDao.getAllAttrTypeList();
 	}
 
-	@Override
 	public List<AttrValue> getAllAttrValueList() {
 		return productDao.getAllAttrValueList();
 	}
 
-	@Override
 	public void addAttrType(AttrType attrType) {
 		productDao.addAttrType(attrType);
 	}
 
-	@Override
 	public void addAttrValue(AttrValue attrValue){
 		productDao.addAttrValue(attrValue);
 	}
+
+	public List<ProductLevelConfig> getAllProductLevelConfig() {
+		return productDao.getAllProductLevelConfig();
+	}
+
+	public void addLevelConfig(ProductLevelConfig productLevelConfig){
+		productDao.insertLevelConfig(productLevelConfig);
+	}
+
 
 }

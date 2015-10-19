@@ -52,7 +52,7 @@
 					<div class="portlet box blue-chambray">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-star"></i>添加新闻
+								<i class="fa fa-star"></i>添加等级代练的价格
 							</div>
 						</div>
 						<div class="portlet-body">
@@ -61,7 +61,7 @@
 									<div class="form-group">
 										<label class="control-label col-md-1">选择游戏</label>
 										<div class="col-md-2">
-											<select class="select2_category form-control input-samll" data-placeholder="选择游戏" tabindex="1" id="typeId">
+											<select class="select2_category form-control input-samll" data-placeholder="选择游戏" tabindex="1" name="gameId" id="gameId">
 												<option value="">选择游戏</option>
 												<#if gameList??&&gameList?size gt 0>
 													<#list gameList as game>
@@ -111,7 +111,7 @@
 										</div>
 										<div class="form-group">
 											<div class="col-sm-offset-2 col-md-6">
-												<a data-toggle="modal" href="javaScript:void(0);" class="btn blue" onclick="doAddNews();">
+												<a data-toggle="modal" href="javaScript:void(0);" class="btn blue" onclick="doAddLevelPrices();">
 												添加代练价格模版  <i class="fa fa-plus"></i>
 												</a>
 											</div>

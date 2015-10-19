@@ -27,6 +27,7 @@
 <!-- BEGIN PAGE LEVEL STYLES-->
 <link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/select2/select2.css"/>
 <link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/icheck/skins/all.css" rel="stylesheet">
 <!-- END PAGE LEVEL STYLES -->
 
 <!-- END PAGE LEVEL STYLES -->
@@ -89,8 +90,12 @@
 					              <td><input type="checkbox" class="checkboxes" value="1"/></td>
 					              <td><input name="categoryName_${category.id}" value="${category.categoryName}" class="form-control input-medium"/></td>
 					              <td>
-					              	<span><input type="radio" name="status_${category.id}" value="1" <#if category.status>checked="checked"</#if>/>激活</span>
-					              	<span><input type="radio" name="status_${category.id}" value="0" <#if !category.status>checked="checked"</#if>/>暂停</span>
+              						<div class="input-group">
+											<div class="icheck-inline">
+												<label><input type="radio" name="status_${category.id}" value="1" <#if category.status>checked="checked"</#if> class="icheck" data-radio="iradio_square-blue"> 激活</label>
+												<label><input type="radio" name="status_${category.id}" value="0" <#if !category.status>checked="checked"</#if> checked class="icheck" data-radio="iradio_square-blue"> 暂停 </label>
+											</div>
+										</div>
 					              </td>
 				                      <td><#if category.status><span class="label label-sm label-success">Active</span><#else><span class="label label-sm label-danger">Stoped</span></#if></td>
 					              <td><a class="btn default btn-xs purple" href="javascript:;" onclick="saveCategory(${category.id});"><i class="fa fa-edit"></i> Save </a></td>
@@ -171,6 +176,8 @@
 <script src="/static/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
 <script src="/static/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
 <script src="/static/assets/admin/pages/scripts/table-managed.js"></script>
+<script src="/static/assets/global/plugins/icheck/icheck.min.js"></script>
+<script src="/static/assets/admin/pages/scripts/form-icheck.js"></script>
 <script src="/static/js/backend/category.js"></script>
 
 <script>
@@ -180,6 +187,7 @@ jQuery(document).ready(function() {
 	QuickSidebar.init(); // init quick sidebar
 	Demo.init(); // init demo features
 	TableManaged.init();
+	FormiCheck.init(); // init icheck
 });
 </script>
 <!-- END JAVASCRIPTS -->

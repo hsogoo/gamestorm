@@ -29,7 +29,7 @@
 <link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
 <link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet">
-<!-- END PAGE LEVEL STYLES -->
+<link rel="stylesheet" type="text/css" href="/static/assets/global/plugins/icheck/skins/all.css" rel="stylesheet">
 
 <!-- END PAGE LEVEL STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
@@ -204,6 +204,14 @@
 											</span>
 										</div>
 									</div>
+									<div class="form-group">
+										<label class="col-sm-4 control-label">是否推荐</label>
+										<div class="col-sm-8 input-group">
+											<div class="icheck-inline">
+												<label><input type="checkbox" class="icheck" data-checkbox="icheckbox_square-blue"> 设为推荐游戏 </label>
+											</div>
+										</div>
+									</div>
 								</div>
 							</form>
 						</div>
@@ -245,6 +253,8 @@
 <script src="/static/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
 <script src="/static/assets/admin/pages/scripts/table-managed.js"></script>
 <script src="/static/assets/global/plugins/ajaxfileupload.js"></script>
+<script src="/static/assets/global/plugins/icheck/icheck.min.js"></script>
+<script src="/static/assets/admin/pages/scripts/form-icheck.js"></script>
 <script src="/static/js/backend/game.js"></script>
 
 <script>
@@ -254,6 +264,7 @@ jQuery(document).ready(function() {
 	QuickSidebar.init(); // init quick sidebar
 	Demo.init(); // init demo features
 	TableManaged.init();
+	FormiCheck.init(); // init icheck	
 });
 </script>
 <!-- END JAVASCRIPTS -->

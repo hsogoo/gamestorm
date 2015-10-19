@@ -2,10 +2,7 @@ package com.hsogoo.gamestorm.service.product;
 
 import java.util.List;
 
-import com.hsogoo.gamestorm.vo.AttrType;
-import com.hsogoo.gamestorm.vo.AttrValue;
-import com.hsogoo.gamestorm.vo.Product;
-import com.hsogoo.gamestorm.vo.ProductType;
+import com.hsogoo.gamestorm.vo.*;
 
 /**
  * @author hsogoo
@@ -29,4 +26,8 @@ public interface ProductService {
 	public void addAttrType(AttrType attrType);
 
 	public void addAttrValue(AttrValue attrValue);
+
+	public List<ProductLevelConfig> getAllProductLevelConfig();
+
+	public void addLevelConfig(ProductLevelConfig productLevelConfig);
 }

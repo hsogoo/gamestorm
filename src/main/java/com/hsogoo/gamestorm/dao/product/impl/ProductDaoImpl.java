@@ -2,6 +2,7 @@ package com.hsogoo.gamestorm.dao.product.impl;
 
 import java.util.List;
 
+import com.hsogoo.gamestorm.vo.ProductLevelConfig;
 import org.springframework.stereotype.Repository;
 
 import com.hsogoo.gamestorm.dao.BaseDao;
@@ -18,38 +19,39 @@ import com.hsogoo.gamestorm.vo.ProductType;
 @Repository
 public class ProductDaoImpl extends BaseDao implements ProductDao{
 
-	@Override
 	public List<ProductType> getAllProductTypeList() {
 		return this.getSqlMapClientTemplate().queryForList("gs_product_type.getAllProductTypeList");
 	}
 
-	@Override
 	public List<ProductType> getProductTypeForCheck(ProductType productType) {
 		return this.getSqlMapClientTemplate().queryForList("gs_product_type.getProductTypeForCheck", productType);
 	}
 
-	@Override
 	public void addProductType(ProductType productType) {
 		this.getSqlMapClientTemplate().insert("gs_product_type.addProductType", productType);
 	}
 
-	@Override
 	public List<AttrType> getAllAttrTypeList() {
 		return this.getSqlMapClientTemplate().queryForList("gs_attr_type.getAllAttrTypeList");
 	}
 
-	@Override
 	public List<AttrValue> getAllAttrValueList() {
 		return this.getSqlMapClientTemplate().queryForList("gs_attr_value.getAllAttrValueList");
 	}
 
-	@Override
 	public void addAttrType(AttrType attrType) {
 		this.getSqlMapClientTemplate().insert("gs_attr_type.addAttrType", attrType);
 	}
 
-	@Override
 	public void addAttrValue(AttrValue attrValue) {
 		this.getSqlMapClientTemplate().insert("gs_attr_type.addAttrValue", attrValue);
+	}
+
+	public List<ProductLevelConfig> getAllProductLevelConfig(){
+		return this.getSqlMapClientTemplate().queryForList("gs_level_config.getAllLevelConfigList");
+	}
+
+	public void insertLevelConfig(ProductLevelConfig productLevelConfig) {
+		this.getSqlMapClientTemplate().insert("gs_level_config.insertLevelConfig", productLevelConfig);
 	}
 }

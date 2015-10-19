@@ -64,4 +64,19 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
 		insert into gs_attr_value (type_id,type_name,attr_value) values (#typeId#,#typeName#,#attrValue#)
 	</insert>
 
+	<select id="gs_level_config.getAllLevelConfigList" resultClass="com.hsogoo.gamestorm.vo.ProductLevelConfig">
+		select
+		id,
+		game_id gameId,
+		start_level startLevel,
+		end_level endLevel,
+		price price
+		from
+		gs_level_config
+	</select>
+
+	<insert id="gs_level_config.insertLevelConfig" parameterClass="com.hsogoo.gamestorm.vo.ProductLevelConfig">
+		insert into gs_level_config (game_id,start_level,end_level,price) values (#gameId#,#startLevel#,#endLevel#,#price#)
+	</insert>
+
 </sqlMap>

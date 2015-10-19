@@ -72,6 +72,17 @@ function deleteRow(obj){
 	$(obj).parent().parent().remove();
 }
 
+function doAddLevelPrices(){
+	var url = "/backend/product/doAddLevelPrices";
+	var gameId = $("#gameId").val();
+	var startLevel = $("#startLevel").val();
+	var endLevel = $("#endLevel").val();
+	var price = $("#levelPrice").val();
+	var param={"gameId":gameId,"startLevel":startLevel,"endLevel":endLevel,"price":price};
+	$.post(url,param,function(data){
+		window.location.href = "/backend/product/levelPrice";
+	});
+}
 $("#productImageFile").on("change",function(e){
 	$.ajaxFileUpload({
 	    url:'/file/upload/product',
@@ -82,7 +93,7 @@ $("#productImageFile").on("change",function(e){
 	        $("#productImagePreview").attr("src",data.filePath);
 	        $("#productImage").val(data.filePath);
 	    },
-	    error:function(data, status, e){ 
+	    error:function(data, status, e){
 	        alert('商品图片上传失败，请重试！！');
 	    }
 	});

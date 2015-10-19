@@ -208,7 +208,7 @@
 										<label class="col-sm-4 control-label">是否推荐</label>
 										<div class="col-sm-8 input-group">
 											<div class="icheck-inline">
-												<label><input type="checkbox" class="icheck" data-checkbox="icheckbox_square-blue"> 设为推荐游戏 </label>
+												<label><input type="checkbox" class="icheck" data-checkbox="icheckbox_square-blue" id="isRecommended" name="isRecommended"> 设为推荐游戏 </label>
 											</div>
 										</div>
 									</div>

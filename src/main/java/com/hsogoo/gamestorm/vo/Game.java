@@ -17,6 +17,7 @@ public class Game implements Serializable {
 	private String displayImage;
 	private String bannerImage;
 	private Boolean status = true;
+	private Boolean isRecommended = false;
 	private List<Category> categoryList;
 
 	public Long getId() {
@@ -73,6 +74,14 @@ public class Game implements Serializable {
 
 	public void setCategoryList(List<Category> categoryList) {
 		this.categoryList = categoryList;
+	}
+
+	public Boolean getIsRecommended() {
+		return isRecommended;
+	}
+
+	public void setIsRecommended(Boolean isRecommended) {
+		this.isRecommended = isRecommended;
 	}
 
 }

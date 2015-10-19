@@ -28,6 +28,7 @@ public class GameDaoImpl extends BaseDao implements GameDao{
 		map.put("iconImage", game.getIconImage());
 		map.put("displayImage", game.getDisplayImage());
 		map.put("bannerImage", game.getBannerImage());
+		map.put("isRecommended", game.getIsRecommended());
 		this.getSqlMapClientTemplate().insert("gs_game.addGame",map);
 	}
 

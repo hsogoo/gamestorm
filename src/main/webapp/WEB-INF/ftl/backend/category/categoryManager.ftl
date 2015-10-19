@@ -93,7 +93,7 @@
               						<div class="input-group">
 											<div class="icheck-inline">
 												<label><input type="radio" name="status_${category.id}" value="1" <#if category.status>checked="checked"</#if> class="icheck" data-radio="iradio_square-blue"> 激活</label>
-												<label><input type="radio" name="status_${category.id}" value="0" <#if !category.status>checked="checked"</#if> checked class="icheck" data-radio="iradio_square-blue"> 暂停 </label>
+												<label><input type="radio" name="status_${category.id}" value="0" <#if !category.status>checked="checked"</#if> class="icheck" data-radio="iradio_square-blue"> 暂停 </label>
 											</div>
 										</div>
 					              </td>

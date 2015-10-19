@@ -95,21 +95,12 @@
 								<th class="table-checkbox">
 									<input type="checkbox" class="group-checkable" data-set="#sample_2 .checkboxes"/>
 								</th>
-								<th>
-									 游戏名称
-								</th>
-								<th>
-									 游戏小图标
-								</th>
-								<th>
-									 游戏显示图片
-								</th>
-								<th>
-									 游戏banner图
-								</th>
-								<th>
-									 游戏状态
-								</th>
+								<th> 游戏名称</th>
+								<th> 游戏小图标</th>
+								<th> 游戏显示图片</th>
+								<th> 游戏banner图</th>
+								<th> 是否推荐</th>
+								<th>游戏状态</th>
 							</tr>
 							</thead>
 							<tbody>
@@ -129,6 +120,9 @@
 								</td>
 								<td class="center">
 									 <img src="${game.bannerImage}" width="150" height="50">
+								</td>
+								<td class="center">
+									 <#if game.isRecommended><span class="label label-sm label-success">是</span><#else><span class="label label-sm label-danger">否</span></#if>
 								</td>
 								<td>
 									<#if game.status><span class="label label-sm label-success">Active</span><#else><span class="label label-sm label-danger">Stoped</span></#if>

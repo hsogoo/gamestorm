@@ -11,15 +11,16 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
 		game_icon iconImage, 
 		game_display displayImage,
 		game_banner bannerImage,
+		is_recommended isRecommended,
 		status
 		from gs_game 
 	</select>
 	
 	<insert id="gs_game.addGame" parameterClass="map">
 		insert into gs_game
-		(game_name,game_icon,game_display,game_banner)
+		(game_name,game_icon,game_display,game_banner,is_recommended)
 		values
-		(#gameName#,#iconImage#,#displayImage#,#bannerImage#)
+		(#gameName#,#iconImage#,#displayImage#,#bannerImage#,#isRecommended#)
 	</insert>
 
 	<select id="gs_game.findFuzzyGames" parameterClass="map" resultClass="com.hsogoo.gamestorm.vo.Game">
@@ -29,6 +30,7 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
 		game_icon iconImage,
 		game_display displayImage,
 		game_banner bannerImage,
+		is_recommended isRecommended,
 		status
 		from gs_game
 		where status = 1
@@ -49,6 +51,7 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
 		game_icon iconImage,
 		game_display displayImage,
 		game_banner bannerImage,
+		is_recommended isRecommended,
 		status
 		from gs_game
 		where id  = #gameId#

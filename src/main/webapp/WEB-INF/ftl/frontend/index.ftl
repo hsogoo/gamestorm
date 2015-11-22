@@ -352,12 +352,12 @@
 					<#--广告开始-->
 					<div class="box banner-center effect">
 						<a href="#" class="overlay">&nbsp;</a>
-						<a href="#"><img alt="" src="/static/img/store/sd-banner-0.jpg" class="img-responsive img-banner"></a>
+						<a href="#"><img alt="" src="/static/img/store/sd-banner-1.jpg" class="img-responsive img-banner"></a>
 						<div class="description"></div>
 					</div>
 					<div class="box banner-center effect">
 						<a href="#" class="overlay">&nbsp;</a>
-						<a href="#"><img alt="" src="/static/img/store/sd-banner-1.png" class="img-responsive img-banner"></a>
+						<a href="#"><img alt="" src="/static/img/store/sd-banner-0.jpg" class="img-responsive img-banner"></a>
 						<div class="description"></div>
 					</div>
 					<#--广告结束-->
@@ -423,93 +423,107 @@
 								</ul>
 							</div>
 							<#--内容-->
-							<div class="tab-content" style="padding-left:20px;padding-right:20px;padding-top:20px;">
-								<#--推荐商品分割线-->
-								<div class="row hidden-xs" style="margin-bottom:20px;">
-									<div class="col-lg-2 col-md-2 col-sm-2 image">
-										<img width="40px" height="40px" alt="Reins of the Spectral Tiger" src="https://www.zamgold.com/images/items/Reins of the Spectral Tiger.png">
+							<div class="tab-content" style="padding-left:20px;padding-right:20px;padding-top:20px;" id="recommendedProduct">
+								<#--推荐商品分割线1-->
+								<div class="row hidden-xs product-row">
+									<div class="col-lg-8 col-md-8 col-sm-8">
+										<img alt="Reins of the Spectral Tiger" src="https://www.zamgold.com/images/items/Reins of the Spectral Tiger.png">
+										<div class="product-left">
+											<p class="fs-title">world of warcraft us powerlevling 1-90</span><br>
+											<p class="fs-category">world of warcraft us</span>
+										</div>
 									</div>
 									<div class="col-lg-4 col-md-4 col-sm-4">
-										world of warcraft us powerlevling 1-90
-									</div>
-									<div class="col-lg-3 col-md-3 col-sm-3 price">
-										$99.99
-									</div>
-									<div class="col-lg-3 col-md-3 col-sm-3">
-										<button class="btn btn-shopping-cart" onclick="addToCart('51');">
-											<span>Add to Cart</span>
-										</button>
+										<div class="col-lg-4 col-md-4 col-sm-4 price">
+											$99.99
+										</div>
+										<div class="col-lg-8 col-md-8 col-sm-8">
+											<button class="btn btn-shopping-cart" onclick="addToCart('51');">
+												<span>Add to Cart</span>
+											</button>
+										</div>
 									</div>
 								</div>
-								<#--推荐商品分割线-->
-								<div class="row hidden-xs" style="margin-bottom:20px;">
-									<div class="col-lg-2 col-md-2 col-sm-2 image">
-										<img width="40px" height="40px" alt="Steelforged Axe (705)" src="https://www.zamgold.com/images/items/Steelforged Axe (660).jpg">
+								<#--推荐商品分割线2-->
+								<div class="row hidden-xs product-row">
+									<div class="col-lg-8 col-md-8 col-sm-8">
+										<img alt="Champion's Honor * 5" src="https://www.zamgold.com/images/items/Champion's Honor.jpg">
+										<div class="product-left">
+											<p class="fs-title">world of warcraft us Champion's Honor * 5</span><br>
+											<p class="fs-category">world of warcraft us</span>
+										</div>
 									</div>
 									<div class="col-lg-4 col-md-4 col-sm-4">
-										world of warcraft us powerlevling 1-90
-									</div>
-									<div class="col-lg-3 col-md-3 col-sm-3 price">
-										$99.99
-									</div>
-									<div class="col-lg-3 col-md-3 col-sm-3">
-										<button class="btn btn-shopping-cart" onclick="addToCart('51');">
-											<span>Add to Cart</span>
-										</button>
+										<div class="col-lg-4 col-md-4 col-sm-4 price">
+											$99.99
+										</div>
+										<div class="col-lg-8 col-md-8 col-sm-8">
+											<button class="btn btn-shopping-cart" onclick="addToCart('51');">
+												<span>Add to Cart</span>
+											</button>
+										</div>
 									</div>
 								</div>
-								<#--推荐商品分割线-->
-								<div class="row hidden-xs" style="margin-bottom:20px;">
-									<div class="col-lg-2 col-md-2 col-sm-2 image">
-										<img width="40px" height="40px" alt="Truesteel Helm (715)" src="https://www.zamgold.com/images/items/Truesteel Helm.png">
+								<#--推荐商品分割线3-->
+								<div class="row hidden-xs product-row">
+									<div class="col-lg-8 col-md-8 col-sm-8">
+										<img src="https://www.zamgold.com/images/items/Whispering Taladite Ring.jpg" alt="Whispering Taladite Ring (715)">
+										<div class="product-left">
+											<p class="fs-title">world of warcraft us Ghastly Charger's Skull</span><br>
+											<p class="fs-category">world of warcraft us</span>
+										</div>
 									</div>
 									<div class="col-lg-4 col-md-4 col-sm-4">
-										world of warcraft us powerlevling 1-90
-									</div>
-									<div class="col-lg-3 col-md-3 col-sm-3 price">
-										$99.99
-									</div>
-									<div class="col-lg-3 col-md-3 col-sm-3">
-										<button class="btn btn-shopping-cart" onclick="addToCart('51');">
-											<span>Add to Cart</span>
-										</button>
+										<div class="col-lg-4 col-md-4 col-sm-4 price">
+											$99.99
+										</div>
+										<div class="col-lg-8 col-md-8 col-sm-8">
+											<button class="btn btn-shopping-cart" onclick="addToCart('51');">
+												<span>Add to Cart</span>
+											</button>
+										</div>
 									</div>
 								</div>
-								<#--推荐商品分割线-->
-								<div class="row hidden-xs" style="margin-bottom:20px;">
-									<div class="col-lg-2 col-md-2 col-sm-2 image">
-										<img width="40px" height="40px" alt="Plasma Mechshades (715)" src="https://www.zamgold.com/images/items/Plasma Mechshades.jpg">
+								<#--推荐商品分割线4-->
+								<div class="row hidden-xs product-row">
+									<div class="col-lg-8 col-md-8 col-sm-8">
+										<img src="https://www.zamgold.com/images/items/Truesteel Helm.png" alt="Truesteel Helm (715)">
+										<div class="product-left">
+											<p class="fs-title">world of warcraft us Medallion of the Legion * 20</span><br>
+											<p class="fs-category">world of warcraft us</span>
+										</div>
 									</div>
 									<div class="col-lg-4 col-md-4 col-sm-4">
-										world of warcraft us powerlevling 1-90
-									</div>
-									<div class="col-lg-3 col-md-3 col-sm-3 price">
-										$99.99
-									</div>
-									<div class="col-lg-3 col-md-3 col-sm-3">
-										<button class="btn btn-shopping-cart" onclick="addToCart('51');">
-											<span>Add to Cart</span>
-										</button>
+										<div class="col-lg-4 col-md-4 col-sm-4 price">
+											$99.99
+										</div>
+										<div class="col-lg-8 col-md-8 col-sm-8">
+											<button class="btn btn-shopping-cart" onclick="addToCart('51');">
+												<span>Add to Cart</span>
+											</button>
+										</div>
 									</div>
 								</div>
-								<#--推荐商品分割线-->
-								<div class="row hidden-xs" style="margin-bottom:20px;">
-									<div class="col-lg-2 col-md-2 col-sm-2 image">
-										<img width="40px" height="40px" alt="Whispering Taladite Ring (715)" src="https://www.zamgold.com/images/items/Whispering Taladite Ring.jpg">
+								<#--推荐商品分割线5-->
+								<div class="row hidden-xs product-row">
+									<div class="col-lg-8 col-md-8 col-sm-8">
+										<img src="https://www.zamgold.com/images/items/Plasma Mechshades.jpg" alt="Plasma Mechshades (715)">
+										<div class="product-left">
+											<p class="fs-title">world of warcraft us Etched-Blade Warstaff (705)</span><br>
+											<p class="fs-category">world of warcraft us</span>
+										</div>
 									</div>
 									<div class="col-lg-4 col-md-4 col-sm-4">
-										world of warcraft us powerlevling 1-90
-									</div>
-									<div class="col-lg-3 col-md-3 col-sm-3 price">
-										$99.99
-									</div>
-									<div class="col-lg-3 col-md-3 col-sm-3">
-										<button class="btn btn-shopping-cart" onclick="addToCart('51');">
-											<span>Add to Cart</span>
-										</button>
+										<div class="col-lg-4 col-md-4 col-sm-4 price">
+											$99.99
+										</div>
+										<div class="col-lg-8 col-md-8 col-sm-8">
+											<button class="btn btn-shopping-cart" onclick="addToCart('51');">
+												<span>Add to Cart</span>
+											</button>
+										</div>
 									</div>
 								</div>
-								<#--推荐商品分割线-->
 							</div>
 							<#--内容-->
 						</div>
@@ -632,69 +646,74 @@
 	
 	<div class="footer-center">
 		<div class="container">
-						<div class="row">	
-				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"><div class="box pav-custom  ">
-		<div class="box-heading"><span>INFORMATION</span></div>
-		<div class="box-content">
-		<div class="">
-			<ul class="list">
-	<li class="first"><a href="index.php?route=information/information&amp;information_id=4"><i class="fa fa-stop">&nbsp;</i>About Us</a></li>
-	<li><a href="index.php?route=information/information&amp;information_id=6"><i class="fa fa-stop">&nbsp;</i>Delivery Information</a></li>
-	<li><a href="index.php?route=information/information&amp;information_id=3"><i class="fa fa-stop">&nbsp;</i>Privacy Policy</a></li>
-	<li><a href="index.php?route=information/information&amp;information_id=5"><i class="fa fa-stop">&nbsp;</i>Terms &amp; Conditions</a></li>
-	<li class="last"><a href="index.php?route=information/sitemap"><i class="fa fa-stop">&nbsp;</i>Site Map</a></li>
-</ul>
-		</div>
-	</div>
-</div></div>
+			<div class="row">
+				
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<div class="box pav-custom  ">
+						<div class="box-heading"><span>INFORMATION</span></div>
+						<div class="box-content">
+							<div class="">
+								<ul class="list">
+									<li class="first"><a href="index.php?route=information/information&amp;information_id=4"><i class="fa fa-stop">&nbsp;</i>About Us</a></li>
+									<li><a href="index.php?route=information/information&amp;information_id=6"><i class="fa fa-stop">&nbsp;</i>Delivery Information</a></li>
+									<li><a href="index.php?route=information/information&amp;information_id=3"><i class="fa fa-stop">&nbsp;</i>Privacy Policy</a></li>
+									<li><a href="index.php?route=information/information&amp;information_id=5"><i class="fa fa-stop">&nbsp;</i>Terms &amp; Conditions</a></li>
+									<li class="last"><a href="index.php?route=information/sitemap"><i class="fa fa-stop">&nbsp;</i>Site Map</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
 					
-							
-				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"><div class="box pav-custom  ">
-		<div class="box-heading"><span>MY ACCOUNT</span></div>
-		<div class="box-content">
-		<div class="">
-			<ul class="list">
-	<li class="first"><a href="index.php?route=account/account"><i class="fa fa-stop">&nbsp;</i>My Account</a></li>
-	<li><a href="index.php?route=account/order"><i class="fa fa-stop">&nbsp;</i>Order History</a></li>
-	<li><a href="index.php?route=account/wishlist"><i class="fa fa-stop">&nbsp;</i>Wish List</a></li>
-	<li><a href="index.php?route=account/newsletter"><i class="fa fa-stop">&nbsp;</i>Newsletter</a></li>
-	<li class="last"><a href="?route=pavblog/blogs"><i class="fa fa-stop">&nbsp;</i>Blog</a></li>
-</ul>
-		</div>
-	</div>
-</div></div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<div class="box pav-custom  ">
+						<div class="box-heading"><span>MY ACCOUNT</span></div>
+						<div class="box-content">
+							<div class="">
+								<ul class="list">
+									<li class="first"><a href="index.php?route=account/account"><i class="fa fa-stop">&nbsp;</i>My Account</a></li>
+									<li><a href="index.php?route=account/order"><i class="fa fa-stop">&nbsp;</i>Order History</a></li>
+									<li><a href="index.php?route=account/wishlist"><i class="fa fa-stop">&nbsp;</i>Wish List</a></li>
+									<li><a href="index.php?route=account/newsletter"><i class="fa fa-stop">&nbsp;</i>Newsletter</a></li>
+									<li class="last"><a href="?route=pavblog/blogs"><i class="fa fa-stop">&nbsp;</i>Blog</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
 					
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<div class="box pav-custom  ">
+						<div class="box-heading"><span>Service &amp; Support</span></div>
+						<div class="box-content">
+							<div class="">
+								<ul class="list">
+									<li class="first"><a href="index.php?route=product/manufacturer"><i class="fa fa-stop">&nbsp;</i>Brands</a></li>
+									<li><a href="index.php?route=account/voucher"><i class="fa fa-stop">&nbsp;</i>Gift Vouchers</a></li>
+									<li><a href="index.php?route=affiliate/account"><i class="fa fa-stop">&nbsp;</i>Affiliates</a></li>
+									<li class="last"><a href="index.php?route=product/special"><i class="fa fa-stop">&nbsp;</i>Specials</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
 							
-				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"><div class="box pav-custom  ">
-		<div class="box-heading"><span>Service &amp; Support</span></div>
-		<div class="box-content">
-		<div class="">
-			<ul class="list">
-	<li class="first"><a href="index.php?route=product/manufacturer"><i class="fa fa-stop">&nbsp;</i>Brands</a></li>
-	<li><a href="index.php?route=account/voucher"><i class="fa fa-stop">&nbsp;</i>Gift Vouchers</a></li>
-	<li><a href="index.php?route=affiliate/account"><i class="fa fa-stop">&nbsp;</i>Affiliates</a></li>
-	<li class="last"><a href="index.php?route=product/special"><i class="fa fa-stop">&nbsp;</i>Specials</a></li>
-</ul>
-		</div>
-	</div>
-</div></div>
-					
-							
-				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"><div class="box pav-custom  ">
-		<div class="box-heading"><span>About Store</span></div>
-		<div class="box-content">
-		<div class="">
-			<p>Duis at nisl quis quam condimentum pulvinar. Quisque euismod convallis eros, quis lacinia enim rhoncus sed.</p>
-
-<ul>
-	<li class="first"><span class="fa fa-phone">&nbsp;</span><span>Phone: +01 888 (000) 1234</span></li>
-	<li class="last"><span class="fa fa-envelope">&nbsp;</span><span>Email: anh@gmail.com</span></li>
-</ul>
-		</div>
-	</div>
-</div></div>
-				</div>	
-			
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<div class="box pav-custom  ">
+						<div class="box-heading"><span>About Store</span></div>
+						<div class="box-content">
+							<div class="">
+								<p>Duis at nisl quis quam condimentum pulvinar. Quisque euismod convallis eros, quis lacinia enim rhoncus sed.</p>
+								<ul>
+									<li class="first"><span class="fa fa-phone">&nbsp;</span><span>Phone: +01 888 (000) 1234</span></li>
+									<li class="last"><span class="fa fa-envelope">&nbsp;</span><span>Email: anh@gmail.com</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>	
 		</div>
 	</div>
 

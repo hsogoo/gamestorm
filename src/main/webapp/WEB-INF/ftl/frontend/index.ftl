@@ -81,7 +81,7 @@
 		     								<li class="home first">
 		     									<a href="/index"><span class="menu-title">Home</span></a>
 		     								</li>
-		     								<li class="parent dropdown">
+		     								<li class="home dropdown">
 		     									<a href="/index"><span class="menu-title">PowerLeveling</span><b class="caret"></b></a>
 												<ul class="mega-col col-xs-12 col-sm-12 col-md-12">
 													<li class="first">
@@ -100,7 +100,7 @@
 													</li>
 												</ul>
 		     								</li>
-		     								<li class="parent dropdown ">
+		     								<li class="home dropdown ">
 		     									<a href="/index"><span class="menu-title">Gold</span><b class="caret"></b></a>
 		     									<ul class="mega-col col-xs-12 col-sm-12 col-md-12">
 													<li class="first">
@@ -119,7 +119,7 @@
 													</li>
 												</ul>
 		     								</li>
-		     								<li class="parent dropdown ">
+		     								<li class="home dropdown ">
 		     									<a href="/index"><span class="menu-title">ITEM</span><b class="caret"></b></a>
 		     									<ul class="mega-col col-xs-12 col-sm-12 col-md-12">
 													<li class="first">
@@ -138,7 +138,7 @@
 													</li>
 												</ul>
 		     								</li>
-		     								<li class="parent dropdown ">
+		     								<li class="home dropdown ">
 		     									<a href="/index"><span class="menu-title">CDKEY</span><b class="caret"></b></a>
 		     									<ul class="mega-col col-xs-12 col-sm-12 col-md-12">
 													<li class="first">
@@ -191,7 +191,7 @@
 										</a>
 										<div class="collapse navbar-collapse navbar-ex1-collapse">
 											<ul class="nav navbar-nav verticalmenu" id="left_nav">
-												<li class="parent dropdown">
+												<li class="home dropdown">
 													<a href="#">
 														<span style="background:url('http://abc0008.tonyspace.com/image/data/icon-verticalmenu/icon01.png') no-repeat;" class="menu-icon">
 															<span class="menu-title">World of warcraft Us</span>
@@ -205,7 +205,7 @@
 										                <li><a href="#">CDkey</a></li> 
 										            </ul> 
 												</li>
-												<li class="parent dropdown">
+												<li class="home dropdown">
 													<a href="#">
 														<span style="background:url('http://abc0008.tonyspace.com/image/data/icon-verticalmenu/icon01.png') no-repeat;" class="menu-icon">
 															<span class="menu-title">World of warcraft Us</span>
@@ -220,7 +220,7 @@
 										                <li><a href="#">CDkey</a></li> 
 										            </ul> 
 												</li>
-												<li class="parent dropdown">
+												<li class="home dropdown">
 													<a href="#">
 														<span style="background:url('http://abc0008.tonyspace.com/image/data/icon-verticalmenu/icon01.png') no-repeat;" class="menu-icon">
 															<span class="menu-title">World of warcraft Us</span>
@@ -235,7 +235,7 @@
 										                <li><a href="#">CDkey</a></li> 
 										            </ul> 
 												</li>
-												<li class="home first">
+												<li class="home">
 													<a href="#">
 														<span style="background:url('http://abc0008.tonyspace.com/image/data/icon-verticalmenu/icon01.png') no-repeat;" class="menu-icon">
 															<span class="menu-title">World of warcraft Us</span>
@@ -250,7 +250,7 @@
 										                <li><a href="#">CDkey</a></li> 
 										            </ul> 
 												</li>
-												<li class="parent dropdown">
+												<li class="home dropdown">
 													<a href="#">
 														<span style="background:url('http://abc0008.tonyspace.com/image/data/icon-verticalmenu/icon01.png') no-repeat;" class="menu-icon">
 															<span class="menu-title">World of warcraft Us</span>
@@ -265,7 +265,7 @@
 										                <li><a href="#">CDkey</a></li> 
 										            </ul> 
 												</li>
-												<li class="parent dropdown">
+												<li class="home dropdown">
 													<a href="#">
 														<span style="background:url('http://abc0008.tonyspace.com/image/data/icon-verticalmenu/icon01.png') no-repeat;" class="menu-icon">
 															<span class="menu-title">World of warcraft Us</span>
@@ -280,7 +280,7 @@
 										                <li><a href="#">CDkey</a></li> 
 										            </ul> 
 												</li>
-												<li class="parent dropdown">
+												<li class="home dropdown">
 													<a href="#">
 														<span style="background:url('http://abc0008.tonyspace.com/image/data/icon-verticalmenu/icon01.png') no-repeat;" class="menu-icon">
 															<span class="menu-title">World of warcraft Us</span>
@@ -295,7 +295,7 @@
 										                <li><a href="#">CDkey</a></li> 
 										            </ul> 
 												</li>
-												<li class="parent dropdown">
+												<li class="home dropdown">
 													<a href="#">
 														<span style="background:url('http://abc0008.tonyspace.com/image/data/icon-verticalmenu/icon01.png') no-repeat;" class="menu-icon">
 															<span class="menu-title">World of warcraft Us</span>
@@ -310,7 +310,7 @@
 										                <li><a href="#">CDkey</a></li> 
 										            </ul> 
 												</li>
-												<li class="parent dropdown">
+												<li class="home dropdown">
 													<a href="#">
 														<span style="background:url('http://abc0008.tonyspace.com/image/data/icon-verticalmenu/icon01.png') no-repeat;" class="menu-icon">
 															<span class="menu-title">World of warcraft Us</span>
@@ -325,7 +325,7 @@
 										                <li><a href="#">CDkey</a></li> 
 										            </ul> 
 												</li>
-												<li class="parent dropdown">
+												<li class="home dropdown">
 													<a href="#">
 														<span style="background:url('http://abc0008.tonyspace.com/image/data/icon-verticalmenu/icon01.png') no-repeat;" class="menu-icon">
 															<span class="menu-title">World of warcraft Us</span>
@@ -731,7 +731,7 @@
                 function() {
                     $(this).find("ul").show(100);
                     var y = $(this).position().top;
-                    var l = $(this).position().left+ $(this).width();
+                    var l = $(this).position().left+ $(this).width()-1;
                     $(this).find("ul").css("top",y);
                     $(this).find("ul").css("left",l);
                 },

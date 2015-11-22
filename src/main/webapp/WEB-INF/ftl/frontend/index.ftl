@@ -77,39 +77,86 @@
 		        						<span class="fa fa-bars"></span>		        
 		     						</a>
 		     						<div class="collapse navbar-collapse navbar-ex1-collapse hidden-sm hidden-xs">
-		     							<ul class="nav navbar-nav megamenu">
+		     							<ul class="nav navbar-nav megamenu" id="head_nav">
 		     								<li class="home first">
 		     									<a href="/index"><span class="menu-title">Home</span></a>
-		     									<div class="dropdown-menu level1">
-		     										<div class="dropdown-menu-inner">
-		     											<div class="row">
-		     												<div data-type="menu" class="mega-col col-xs-12 col-sm-12 col-md-12">
-		     													<div class="mega-col-inner">
-		     														<ul>
-		     															<li class="first">
-		     																<a href="#"><span class="menu-title">World of WarCraft US</span></a>
-		     															</li>
-		     															<li class=" ">
-		     																<a href="#"><span class="menu-title">World of WarCraft EU</span></a>
-		     															</li>
-		     															</li>
-		     															<li class=" ">
-		     																<a href="#"><span class="menu-title">World of WarCraft EU</span></a>
-		     															</li>
-		     															</li>
-		     															<li class=" ">
-		     																<a href="#"><span class="menu-title">World of WarCraft EU</span></a>
-		     															</li>
-		     														</ul>
-	     														</div>
-     														</div>
- 														</div>
-													</div>
-												</div>
 		     								</li>
-		     								<li class="parent dropdown "><a href="/index"><span class="menu-title">PowerLeveling</span><b class="caret"></b></a></li>
-		     								<li class="parent dropdown "><a href="/index"><span class="menu-title">Gold</span><b class="caret"></b></a></li>
-		     								<li class="parent dropdown "><a href="/index"><span class="menu-title">Item</span><b class="caret"></b></a></li>
+		     								<li class="parent dropdown">
+		     									<a href="/index"><span class="menu-title">PowerLeveling</span><b class="caret"></b></a>
+												<ul class="mega-col col-xs-12 col-sm-12 col-md-12">
+													<li class="first">
+														<a href="#"><span class="menu-title">World of WarCraft US</span></a>
+													</li>
+													<li class=" ">
+														<a href="#"><span class="menu-title">World of WarCraft EU</span></a>
+													</li>
+													</li>
+													<li class=" ">
+														<a href="#"><span class="menu-title">World of WarCraft EU</span></a>
+													</li>
+													</li>
+													<li class=" ">
+														<a href="#"><span class="menu-title">World of WarCraft EU</span></a>
+													</li>
+												</ul>
+		     								</li>
+		     								<li class="parent dropdown ">
+		     									<a href="/index"><span class="menu-title">Gold</span><b class="caret"></b></a>
+		     									<ul class="mega-col col-xs-12 col-sm-12 col-md-12">
+													<li class="first">
+														<a href="#"><span class="menu-title">World of WarCraft US</span></a>
+													</li>
+													<li class=" ">
+														<a href="#"><span class="menu-title">World of WarCraft EU</span></a>
+													</li>
+													</li>
+													<li class=" ">
+														<a href="#"><span class="menu-title">World of WarCraft EU</span></a>
+													</li>
+													</li>
+													<li class=" ">
+														<a href="#"><span class="menu-title">World of WarCraft EU</span></a>
+													</li>
+												</ul>
+		     								</li>
+		     								<li class="parent dropdown ">
+		     									<a href="/index"><span class="menu-title">ITEM</span><b class="caret"></b></a>
+		     									<ul class="mega-col col-xs-12 col-sm-12 col-md-12">
+													<li class="first">
+														<a href="#"><span class="menu-title">World of WarCraft US</span></a>
+													</li>
+													<li class=" ">
+														<a href="#"><span class="menu-title">World of WarCraft EU</span></a>
+													</li>
+													</li>
+													<li class=" ">
+														<a href="#"><span class="menu-title">World of WarCraft EU</span></a>
+													</li>
+													</li>
+													<li class=" ">
+														<a href="#"><span class="menu-title">World of WarCraft EU</span></a>
+													</li>
+												</ul>
+		     								</li>
+		     								<li class="parent dropdown ">
+		     									<a href="/index"><span class="menu-title">CDKEY</span><b class="caret"></b></a>
+		     									<ul class="mega-col col-xs-12 col-sm-12 col-md-12">
+													<li class="first">
+														<a href="#"><span class="menu-title">World of WarCraft US</span></a>
+													</li>
+													<li class=" ">
+														<a href="#"><span class="menu-title">World of WarCraft EU</span></a>
+													</li>
+													</li>
+													<li class=" ">
+														<a href="#"><span class="menu-title">World of WarCraft EU</span></a>
+													</li>
+													</li>
+													<li class=" ">
+														<a href="#"><span class="menu-title">World of WarCraft EU</span></a>
+													</li>
+												</ul>
+		     								</li>
 		     								<li class="last"><a href="/index"><span class="menu-title">About us</span></a></li>
 		     							</ul>
 		     						</div>
@@ -143,13 +190,20 @@
 											<span class="icon-bar"></span>		        
 										</a>
 										<div class="collapse navbar-collapse navbar-ex1-collapse">
-											<ul class="nav navbar-nav verticalmenu">
-												<li class="home first">
+											<ul class="nav navbar-nav verticalmenu" id="left_nav">
+												<li class="parent dropdown">
 													<a href="#">
 														<span style="background:url('http://abc0008.tonyspace.com/image/data/icon-verticalmenu/icon01.png') no-repeat;" class="menu-icon">
 															<span class="menu-title">World of warcraft Us</span>
+															<b class="caret"></b>
 														</span>
 													</a>
+													<ul style="display: none;"> 
+										                <li><a href="#">PowerLeveling</a></li> 
+										                <li><a href="#">Gold</a></li> 
+										                <li><a href="#">Item</a></li> 
+										                <li><a href="#">CDkey</a></li> 
+										            </ul> 
 												</li>
 												<li class="parent dropdown">
 													<a href="#">
@@ -159,20 +213,12 @@
 															<b class="caret"></b>
 														</span>
 													</a>
-												</li>
-												<li class="home first">
-													<a href="#">
-														<span style="background:url('http://abc0008.tonyspace.com/image/data/icon-verticalmenu/icon01.png') no-repeat;" class="menu-icon">
-															<span class="menu-title">World of warcraft Us</span>
-														</span>
-													</a>
-												</li>
-												<li class="home first">
-													<a href="#">
-														<span style="background:url('http://abc0008.tonyspace.com/image/data/icon-verticalmenu/icon01.png') no-repeat;" class="menu-icon">
-															<span class="menu-title">World of warcraft Us</span>
-														</span>
-													</a>
+										            <ul style="display: none;"> 
+										                <li><a href="#">PowerLeveling</a></li> 
+										                <li><a href="#">Gold</a></li> 
+										                <li><a href="#">Item</a></li> 
+										                <li><a href="#">CDkey</a></li> 
+										            </ul> 
 												</li>
 												<li class="parent dropdown">
 													<a href="#">
@@ -182,20 +228,27 @@
 															<b class="caret"></b>
 														</span>
 													</a>
+													<ul style="display: none;"> 
+										                <li><a href="#">PowerLeveling</a></li> 
+										                <li><a href="#">Gold</a></li> 
+										                <li><a href="#">Item</a></li> 
+										                <li><a href="#">CDkey</a></li> 
+										            </ul> 
 												</li>
 												<li class="home first">
 													<a href="#">
 														<span style="background:url('http://abc0008.tonyspace.com/image/data/icon-verticalmenu/icon01.png') no-repeat;" class="menu-icon">
 															<span class="menu-title">World of warcraft Us</span>
+															<span class="menu-desc"></span>
+															<b class="caret"></b>
 														</span>
 													</a>
-												</li>
-												<li class="home first">
-													<a href="#">
-														<span style="background:url('http://abc0008.tonyspace.com/image/data/icon-verticalmenu/icon01.png') no-repeat;" class="menu-icon">
-															<span class="menu-title">World of warcraft Us</span>
-														</span>
-													</a>
+													<ul style="display: none;"> 
+										                <li><a href="#">PowerLeveling</a></li> 
+										                <li><a href="#">Gold</a></li> 
+										                <li><a href="#">Item</a></li> 
+										                <li><a href="#">CDkey</a></li> 
+										            </ul> 
 												</li>
 												<li class="parent dropdown">
 													<a href="#">
@@ -205,20 +258,87 @@
 															<b class="caret"></b>
 														</span>
 													</a>
+													<ul style="display: none;"> 
+										                <li><a href="#">PowerLeveling</a></li> 
+										                <li><a href="#">Gold</a></li> 
+										                <li><a href="#">Item</a></li> 
+										                <li><a href="#">CDkey</a></li> 
+										            </ul> 
 												</li>
-												<li class="home first">
+												<li class="parent dropdown">
 													<a href="#">
 														<span style="background:url('http://abc0008.tonyspace.com/image/data/icon-verticalmenu/icon01.png') no-repeat;" class="menu-icon">
 															<span class="menu-title">World of warcraft Us</span>
+															<span class="menu-desc"></span>
+															<b class="caret"></b>
 														</span>
 													</a>
+													<ul style="display: none;"> 
+										                <li><a href="#">PowerLeveling</a></li> 
+										                <li><a href="#">Gold</a></li> 
+										                <li><a href="#">Item</a></li> 
+										                <li><a href="#">CDkey</a></li> 
+										            </ul> 
 												</li>
-												<li class="home first">
+												<li class="parent dropdown">
 													<a href="#">
 														<span style="background:url('http://abc0008.tonyspace.com/image/data/icon-verticalmenu/icon01.png') no-repeat;" class="menu-icon">
 															<span class="menu-title">World of warcraft Us</span>
+															<span class="menu-desc"></span>
+															<b class="caret"></b>
 														</span>
 													</a>
+													<ul style="display: none;"> 
+										                <li><a href="#">PowerLeveling</a></li> 
+										                <li><a href="#">Gold</a></li> 
+										                <li><a href="#">Item</a></li> 
+										                <li><a href="#">CDkey</a></li> 
+										            </ul> 
+												</li>
+												<li class="parent dropdown">
+													<a href="#">
+														<span style="background:url('http://abc0008.tonyspace.com/image/data/icon-verticalmenu/icon01.png') no-repeat;" class="menu-icon">
+															<span class="menu-title">World of warcraft Us</span>
+															<span class="menu-desc"></span>
+															<b class="caret"></b>
+														</span>
+													</a>
+													<ul style="display: none;"> 
+										                <li><a href="#">PowerLeveling</a></li> 
+										                <li><a href="#">Gold</a></li> 
+										                <li><a href="#">Item</a></li> 
+										                <li><a href="#">CDkey</a></li> 
+										            </ul> 
+												</li>
+												<li class="parent dropdown">
+													<a href="#">
+														<span style="background:url('http://abc0008.tonyspace.com/image/data/icon-verticalmenu/icon01.png') no-repeat;" class="menu-icon">
+															<span class="menu-title">World of warcraft Us</span>
+															<span class="menu-desc"></span>
+															<b class="caret"></b>
+														</span>
+													</a>
+													<ul style="display: none;"> 
+										                <li><a href="#">PowerLeveling</a></li> 
+										                <li><a href="#">Gold</a></li> 
+										                <li><a href="#">Item</a></li> 
+										                <li><a href="#">CDkey</a></li> 
+										            </ul> 
+												</li>
+												<li class="parent dropdown">
+													<a href="#">
+														<span style="background:url('http://abc0008.tonyspace.com/image/data/icon-verticalmenu/icon01.png') no-repeat;" class="menu-icon">
+															<span class="menu-title">World of warcraft Us</span>
+															<span class="menu-desc"></span>
+															<b class="caret"></b>
+														</span>
+													</a>
+													<ul style="display: none;"> 
+										                <li><a href="#">PowerLeveling</a></li> 
+										                <li><a href="#">Gold</a></li> 
+										                <li><a href="#">Item</a></li> 
+										                <li><a href="#">CDkey</a></li> 
+										            </ul> 
 												</li>
 											</ul>
 										</div>
@@ -307,7 +427,7 @@
 								<#--推荐商品分割线-->
 								<div class="row hidden-xs" style="margin-bottom:20px;">
 									<div class="col-lg-2 col-md-2 col-sm-2 image">
-										<img src="/static/img/store/sales.png" />
+										<img width="40px" height="40px" alt="Reins of the Spectral Tiger" src="https://www.zamgold.com/images/items/Reins of the Spectral Tiger.png">
 									</div>
 									<div class="col-lg-4 col-md-4 col-sm-4">
 										world of warcraft us powerlevling 1-90
@@ -324,7 +444,7 @@
 								<#--推荐商品分割线-->
 								<div class="row hidden-xs" style="margin-bottom:20px;">
 									<div class="col-lg-2 col-md-2 col-sm-2 image">
-										<img src="/static/img/store/sales.png" />
+										<img width="40px" height="40px" alt="Steelforged Axe (705)" src="https://www.zamgold.com/images/items/Steelforged Axe (660).jpg">
 									</div>
 									<div class="col-lg-4 col-md-4 col-sm-4">
 										world of warcraft us powerlevling 1-90
@@ -341,7 +461,7 @@
 								<#--推荐商品分割线-->
 								<div class="row hidden-xs" style="margin-bottom:20px;">
 									<div class="col-lg-2 col-md-2 col-sm-2 image">
-										<img src="/static/img/store/sales.png" />
+										<img width="40px" height="40px" alt="Truesteel Helm (715)" src="https://www.zamgold.com/images/items/Truesteel Helm.png">
 									</div>
 									<div class="col-lg-4 col-md-4 col-sm-4">
 										world of warcraft us powerlevling 1-90
@@ -358,7 +478,7 @@
 								<#--推荐商品分割线-->
 								<div class="row hidden-xs" style="margin-bottom:20px;">
 									<div class="col-lg-2 col-md-2 col-sm-2 image">
-										<img src="/static/img/store/sales.png" />
+										<img width="40px" height="40px" alt="Plasma Mechshades (715)" src="https://www.zamgold.com/images/items/Plasma Mechshades.jpg">
 									</div>
 									<div class="col-lg-4 col-md-4 col-sm-4">
 										world of warcraft us powerlevling 1-90
@@ -375,7 +495,7 @@
 								<#--推荐商品分割线-->
 								<div class="row hidden-xs" style="margin-bottom:20px;">
 									<div class="col-lg-2 col-md-2 col-sm-2 image">
-										<img src="/static/img/store/sales.png" />
+										<img width="40px" height="40px" alt="Whispering Taladite Ring (715)" src="https://www.zamgold.com/images/items/Whispering Taladite Ring.jpg">
 									</div>
 									<div class="col-lg-4 col-md-4 col-sm-4">
 										world of warcraft us powerlevling 1-90
@@ -597,34 +717,30 @@
 	<script src="/static/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="/static/js/frontend/store.js" type="text/javascript"></script>
 	<script src="/static/js/frontend/jquery-1.2.6.pack.js" type="text/javascript"></script>
+	<script>
+    $(function() {
+        $("#head_nav li").hover(
+                function() {
+                    $(this).find("ul").show(100);
+                },
+                function() {
+                    $(this).find("ul").hide(300);
+                }
+        );
+        $("#left_nav li").hover(
+                function() {
+                    $(this).find("ul").show(100);
+                    var y = $(this).position().top;
+                    var l = $(this).position().left+ $(this).width();
+                    $(this).find("ul").css("top",y);
+                    $(this).find("ul").css("left",l);
+                },
+                function() {
+                    $(this).find("ul").hide(300);
+                }
+        );
+    });
+</script>
 	
-	<script type="text/javascript">
-		var t = n = 0, count;
-		$(document).ready(function(){	
-			count=$("#banner_list a").length;
-			$("#banner_list a:not(:first-child)").hide();
-			$("#banner_info").html($("#banner_list a:first-child").find("img").attr('alt'));
-			$("#banner_info").click(function(){window.open($("#banner_list a:first-child").attr('href'), "_blank")});
-			$("#banner li").click(function() {
-				var i = $(this).text() - 1;
-				n = i;
-				if (i >= count) return;
-				$("#banner_info").html($("#banner_list a").eq(i).find("img").attr('alt'));
-				$("#banner_info").unbind().click(function(){window.open($("#banner_list a").eq(i).attr('href'), "_blank")})
-				$("#banner_list a").filter(":visible").fadeOut(500).parent().children().eq(i).fadeIn(1000);
-				document.getElementById("banner").style.background="";
-				$(this).toggleClass("on");
-				$(this).siblings().removeAttr("class");
-			});
-			t = setInterval("showAuto()", 4000);
-			$("#banner").hover(function(){clearInterval(t)}, function(){t = setInterval("showAuto()", 4000);});
-		})
-		
-		function showAuto()
-		{
-			n = n >=(count - 1) ? 0 : ++n;
-			$("#banner li").eq(n).trigger('click');
-		}
-	</script>
 </body>
 </html>

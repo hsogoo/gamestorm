@@ -53,7 +53,6 @@
              var eventtype = mobilecheck() ? 'click' : 'click';  
                 $($btn).bind( eventtype, function(e){  
                 $("#offcanvas-container").toggleClass(  "offcanvas-menu-open" ).addClass( "offcanvas-effect-"+effect );
-               
                  
                 $("#page").bind( eventtype , function (){
                     $("#offcanvas-container").toggleClass(  "offcanvas-menu-open" );
@@ -66,96 +65,6 @@
     }
     init();
 })();
-
-/* Offcanvas Sidebars */
-//$(document).ready( function (){  
-//    
-//    if( $("#columns").hasClass("offcanvas-siderbars") ) { 
-//        $('.offcanvas-sidebars-buttons button').hide();
-//        $( ".sidebar" ).parent().parent().find("section").addClass("main-column");
-//        $( ".sidebar" ).each( function(){ 
-//            $('[data-for="'+$(this).attr("id")+'"]').show();
-//            $(this).parent().attr("id","oc-"+$(this).attr("id") ).addClass("offcanvas-sidebar");
-//        } );
-//        $(".offcanvas-sidebars-buttons button").bind( "click", function(){
-//            if( $(this).data("for") == "column-right" ){
-//                 $(".offcanvas-siderbars").removeClass("column-left-active");
-//            }else {
-//                 $(".offcanvas-siderbars").removeClass("column-right-active");
-//            }
-//            $(".offcanvas-siderbars").toggleClass( $(this).data("for")+"-active" );
-//            $("#oc-"+$(this).data("for") ).toggleClass("canvas-show");
-//        } );
-//     }   
-//} );
-
- 
- 
-
-$(window).ready( function(){
-
-    /* Ajax Cart mobile detect*/
-//    $('#icon-cart-m').live('click', function() {
-//        $('#cart-m').addClass('active');
-//        $('#cart-m').load('index.php?route=module/cart #cart > *');
-//        $('#cart-m').live('mouseleave', function() {
-//            $(this).removeClass('active');
-//        });
-//    });
-//    /* start fix search detect mobile */
-//    $('#search_mobile .button-search-mobile').bind('click', function() {
-//        url = $('base').attr('href') + 'index.php?route=product/search';
-//        var search = $('input[name=\'search_m\']').attr('value');
-//        if (search) {
-//            url += '&search=' + encodeURIComponent(search);
-//        }
-//        location = url;
-//    });
-//    $('#search_mobile input[name=\'search_m\']').bind('keydown', function(e) {
-//        if (e.keyCode == 13) {
-//            url = $('base').attr('href') + 'index.php?route=product/search';
-//            var search = $('input[name=\'search_m\']').attr('value');
-//            if (search) {
-//                url += '&search=' + encodeURIComponent(search);
-//            }
-//            location = url;
-//        }
-//    });
-    /* end fix search detect mobile */
-
-	/*  Fix First Click Menu */
-	$(document.body).on('click', '#pav-mainnav [data-toggle="dropdown"], #menu-offcanvas [data-toggle="dropdown"]' ,function(){
-		if(!$(this).parent().hasClass('open') && this.href && this.href != '#'){
-			window.location.href = this.href;
-		}
-
-	});
-    $(document.body).on('click', '#pav-verticalmenu [data-toggle="dropdown"]' ,function(){
-        if(!$(this).parent().hasClass('open') && this.href && this.href != '#'){
-            window.location.href = this.href;
-        }
-
-    });
-
-	// $("#pav-mainnav").PavOffCavasmenu();
-	$('[data-toggle="tooltip"]').tooltip();
-	
-	$(".quantity-adder .add-action").click( function(){
-		if( $(this).hasClass('add-up') ) {  
-			$("[name=quantity]",'.quantity-adder').val( parseInt($("[name=quantity]",'.quantity-adder').val()) + 1 );
-		}else {
-			if( parseInt($("[name=quantity]",'.quantity-adder').val())  > 1 ) {
-				$("input",'.quantity-adder').val( parseInt($("[name=quantity]",'.quantity-adder').val()) - 1 );
-			}
-		}
-	} );
-
-    $("#image-additional a").click( function(e){
-        $("#image").parent('a').attr('href', $(this).data('zoom-image') );
-        e.preventDefault();
-    } );
-
-} );
 
 //function addToCart(product_id, quantity) {
 //    quantity = typeof(quantity) != 'undefined' ? quantity : 1;

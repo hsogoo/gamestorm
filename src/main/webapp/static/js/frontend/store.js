@@ -96,8 +96,58 @@
 //        }
 //    });
 //}
-
+var t = n = 0, count;
 $(document).ready(function() {
+	
+	count=$("#banner_list a").length;
+	$("#banner_list a:not(:first-child)").hide();
+	$("#banner_info").html($("#banner_list a:first-child").find("img").attr('alt'));
+	$("#banner_info").click(function(){window.open($("#banner_list a:first-child").attr('href'), "_blank")});
+	$("#banner li").click(function() {
+		var i = $(this).text() - 1;//获取Li元素内的值，即1，2，3，4
+		n = i;
+		if (i >= count) return;
+		$("#banner_info").html($("#banner_list a").eq(i).find("img").attr('alt'));
+		$("#banner_info").unbind().click(function(){window.open($("#banner_list a").eq(i).attr('href'), "_blank")})
+		$("#banner_list a").filter(":visible").fadeOut(500).parent().children().eq(i).fadeIn(1000);
+		document.getElementById("banner").style.background="";
+		$(this).toggleClass("on");
+		$(this).siblings().removeAttr("class");
+	});
+	t = setInterval("showAuto()", 4000);
+	$("#banner").hover(function(){clearInterval(t)}, function(){t = setInterval("showAuto()", 4000);});
+	
+	$("#head_nav li").hover(
+            function() {
+                $(this).find("ul").show(100);
+            },
+            function() {
+                $(this).find("ul").hide(300);
+            }
+    );
+    $("#left_nav li").hover(
+            function() {
+                $(this).find("ul").show(100);
+                var y = $(this).position().top-2;
+                var l = $(this).position().left+ $(this).width()-1;
+                $(this).find("ul").css("top",y);
+                $(this).find("ul").css("left",l);
+            },
+            function() {
+                $(this).find("ul").hide(300);
+            }
+    );
+	
+	/* Ajax Cart */
+	$('#cart > .heading a').bind('click', function() {
+		$('#cart').addClass('active');
+		
+//		$('#cart').load('index.php?route=module/cart #cart > *');
+		
+		$('#cart').bind('mouseleave', function() {
+			$(this).removeClass('active');
+		});
+	});
 	
 	/* Mega Menu */
 	$('#menu ul > li > a + div').each(function(index, element) {
@@ -155,3 +205,8 @@ $(document).ready(function() {
         });
     }
 });
+function showAuto()
+{
+	n = n >=(count - 1) ? 0 : ++n;
+	$("#banner li").eq(n).trigger('click');
+}

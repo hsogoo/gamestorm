@@ -58,6 +58,9 @@
 										<a><span id="cart-total">0 item(s) - $0.00</span><i class="fa fa-angle-down"></i></a>
 									</div>
 								</div>
+								<div class="content dropdown-menu">
+									<div class="empty">Your shopping cart is empty!</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -174,7 +177,7 @@
 	<#--body-->
 	<div class="pav-slideshow hidden-sm hidden-xs" id="pav-slideshow">
 		<div class="container">
-			<div class="row">
+			<div class="index-layout-row">
 				<div id="left" class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<#--导航开始-->
 					<div class="box pav-verticalmenu highlighted hidden-xs hidden-sm" id="pav-verticalmenu">
@@ -415,7 +418,7 @@
 					<#--游戏分类结束-->
 					
 					<#--推荐商品开始-->
-					<div class="row" style="margin-top:20px;">
+					<div class="row">
 						<div class="box producttabs">
 							<div class="tab-nav">
 								<ul id="newsDisplay" class="nav nav-tabs">
@@ -531,11 +534,11 @@
 					<#--推荐商品结束-->
 					
 					<#--网站新闻开始-->
-					<div class="row" style="margin-top:20px;">
+					<div class="row">
 						<div class="box producttabs">
 						  <div class="tab-nav">
 							<ul id="gameDisplay" class="nav nav-tabs">
-								 <li class="active first"><a data-toggle="tab" href="#tab-latest351624269">News</a></li>
+								 <li class="active first"><a href="#">News</a></li>
 							</ul>
 						  </div>
 						<div class="tab-content" style="padding-left:20px;padding-right:20px;padding-top:20px;">
@@ -732,61 +735,9 @@
 	</div>
 
 </footer>
-	<script src="/static/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
-	<script src="/static/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="/static/js/frontend/store.js" type="text/javascript"></script>
-	<script src="/static/js/frontend/jquery-1.2.6.pack.js" type="text/javascript"></script>
-	<script>
-    $(function() {
-        $("#head_nav li").hover(
-                function() {
-                    $(this).find("ul").show(100);
-                },
-                function() {
-                    $(this).find("ul").hide(300);
-                }
-        );
-        $("#left_nav li").hover(
-                function() {
-                    $(this).find("ul").show(100);
-                    var y = $(this).position().top;
-                    var l = $(this).position().left+ $(this).width()-1;
-                    $(this).find("ul").css("top",y);
-                    $(this).find("ul").css("left",l);
-                },
-                function() {
-                    $(this).find("ul").hide(300);
-                }
-        );
-    });
-    
-    var t = n = 0, count;
-	$(document).ready(function(){	
-		count=$("#banner_list a").length;
-		$("#banner_list a:not(:first-child)").hide();
-		$("#banner_info").html($("#banner_list a:first-child").find("img").attr('alt'));
-		$("#banner_info").click(function(){window.open($("#banner_list a:first-child").attr('href'), "_blank")});
-		$("#banner li").click(function() {
-			var i = $(this).text() - 1;//获取Li元素内的值，即1，2，3，4
-			n = i;
-			if (i >= count) return;
-			$("#banner_info").html($("#banner_list a").eq(i).find("img").attr('alt'));
-			$("#banner_info").unbind().click(function(){window.open($("#banner_list a").eq(i).attr('href'), "_blank")})
-			$("#banner_list a").filter(":visible").fadeOut(500).parent().children().eq(i).fadeIn(1000);
-			document.getElementById("banner").style.background="";
-			$(this).toggleClass("on");
-			$(this).siblings().removeAttr("class");
-		});
-		t = setInterval("showAuto()", 4000);
-		$("#banner").hover(function(){clearInterval(t)}, function(){t = setInterval("showAuto()", 4000);});
-	})
-	
-	function showAuto()
-	{
-		n = n >=(count - 1) ? 0 : ++n;
-		$("#banner li").eq(n).trigger('click');
-	}
-</script>
-	
+<script src="/static/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="/static/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/static/js/frontend/store.js" type="text/javascript"></script>
+<script src="/static/js/frontend/jquery-1.2.6.pack.js" type="text/javascript"></script>
 </body>
 </html>

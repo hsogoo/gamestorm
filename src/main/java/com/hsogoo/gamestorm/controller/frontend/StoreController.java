@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class StoreController {
 	
 	@RequestMapping("/index")
-	public String getUserPage(Model model){
+	public String getIndexPage(Model model){
 		return "frontend/index";
 	}
-	
+
 }

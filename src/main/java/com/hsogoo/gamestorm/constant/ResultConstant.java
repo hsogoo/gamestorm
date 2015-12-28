@@ -10,4 +10,6 @@ public class ResultConstant {
 	public final static String ERROR_EXIST_CODE = "01";
 	public final static String ERROR_EXIST_MSG = "添加的内容已经存在";
 
+	/**test git commit*/
+
 }

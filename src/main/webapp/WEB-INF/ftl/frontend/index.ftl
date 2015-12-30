@@ -18,7 +18,7 @@
 			<div class="container">
 				<div class="show-desktop hidden-sm hidden-xs">
 					<div class="quick-access pull-left">
-						<div class="login links">Welcome visitor you can <a href="/login">login</a> or <a href="/register">create an account</a>.</div>
+						<div class="login links">Welcome ${userName?default("visitor")} you can <a href="/login">login</a> or <a href="/register">create an account</a>.</div>
 					</div>
 					<div class="quick-top-link pull-right">
 						<ul class="links pull-left">								

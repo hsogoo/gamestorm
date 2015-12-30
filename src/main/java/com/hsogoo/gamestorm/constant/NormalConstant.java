@@ -7,6 +7,6 @@ package com.hsogoo.gamestorm.constant;
 public class NormalConstant {
 
     public final static String USER_SESSION_KEY = "userSession";
-    public final static String USER_LOGIN_KEY = "user";
+    public final static String USER_LOGIN_KEY = "userLogin";
     public final static String SESSION_CART_KEY =  "sessionCart";
 }

@@ -90,4 +90,17 @@ public class SessionUtil {
         return null;
     }
 
+    public static User getSessionUser(){
+        Map map = (Map) SESSION_MAP.get();
+
+        if (map != null) {
+            HttpSession httpSession = (HttpSession)map.get(NormalConstant.USER_SESSION_KEY);
+            if(httpSession != null ){
+                User user = (User)httpSession.getAttribute(NormalConstant.USER_LOGIN_KEY);
+                return user;
+            }
+        }
+        return null;
+    }
+
 }

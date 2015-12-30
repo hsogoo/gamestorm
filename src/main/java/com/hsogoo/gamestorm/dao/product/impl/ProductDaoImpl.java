@@ -55,7 +55,6 @@ public class ProductDaoImpl extends BaseDao implements ProductDao{
 		this.getSqlMapClientTemplate().insert("gs_level_config.insertLevelConfig", productLevelConfig);
 	}
 
-	@Override
 	public List<AttrValue> getAttrValueListById(Long attrTypeId) {
 		return this.getSqlMapClientTemplate().queryForList("gs_attr_value.getAttrValueListById", attrTypeId);
 	}

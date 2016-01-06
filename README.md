@@ -30,4 +30,6 @@ Step7：用户中心
 
 http://demo.18maret.com/demo/mimity/v1.3/
 
+http://linux.vbird.org/linux_basic/0110whatislinux.php#whatislinux_os
+
 

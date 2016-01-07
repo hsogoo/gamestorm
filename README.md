@@ -26,7 +26,7 @@ Step5:1，购物车
       
 Step6:订单管理
 
-Step7：用户中心   
+Step7：用户中心   d
 
 http://demo.18maret.com/demo/mimity/v1.3/
 

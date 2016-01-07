@@ -116,6 +116,6 @@
     <property name="target">      
       <bean class="com.archie.service.UserService"/>  
     </property>    
-  </bean> --> 
+  </bean> -->
 
 </beans>

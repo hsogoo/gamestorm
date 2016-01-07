@@ -14,7 +14,8 @@
 	<!-- Configures the @Controller programming model -->
 	<mvc:annotation-driven />
 
-	<!-- Forwards requests to the "/" resource to the "welcome" view -->
+	<!-- Forwards requests to the "/" resource to the "welcome" view or <mvc:default-servlet-handler />-->
+	<!-- <mvc:default-servlet-handler />-->
 	<mvc:view-controller path="/" view-name="frontend/index" />
 	
 	<mvc:resources mapping="/static/**" location="/static/"/>
